@@ -1,16 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://brexemdr3tnmy"]
+[gd_scene load_steps=4 format=3 uid="uid://brexemdr3tnmy"]
 
 [ext_resource type="PackedScene" uid="uid://b4kad2kuba1yn" path="res://player/left_hand_low.tscn" id="2_bqv2y"]
 [ext_resource type="PackedScene" path="res://addons/godot-xr-tools/misc/vr_common_shader_cache.tscn" id="2_rahno"]
 [ext_resource type="PackedScene" uid="uid://l2n30mpbkdyw" path="res://player/right_hand_low.tscn" id="3_itucv"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_uvqux"]
-
 [node name="Player" type="CharacterBody3D"]
-
-[node name="PlayerBody" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-shape = SubResource("CapsuleShape3D_uvqux")
 
 [node name="XROrigin3D" type="XROrigin3D" parent="."]
 

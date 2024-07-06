@@ -74,7 +74,11 @@ var _target_overrides := []
 # Current target (controller or override)
 var _target : Node3D
 
+# Gump Vars
 @onready var spike = preload("res://spike.tscn");
+var spike_ready := true;
+@onready var knuckle_1 = $Knuckle1;
+var spike_speed = 20;
 
 ## Pose-override class
 class PoseOverride:
@@ -167,9 +171,16 @@ func _physics_process(_delta: float) -> void:
 		if current_hand == "right":
 			$AnimationTree.set("parameters/Grip/blend_amount", grip)
 			$AnimationTree.set("parameters/Trigger/blend_amount", grip)
-			if grip >= 0.8:
-				if trigger >= 0.8:
-					print("Pew") 
+			if grip >= 0.8 and trigger >= 0.8 and spike_ready == true:
+				spike_ready = false;
+				var spawned_spike = spike.instantiate();
+				add_child(spawned_spike);
+				spawned_spike.transform = knuckle_1.global_transform
+				spawned_spike.linear_velocity = -spawned_spike.transform.basis.z*spike_speed;
+				print(spawned_spike.transform)
+				
+			if trigger <= 0.3:
+				spike_ready = true;
 	# Move to target
 	global_transform = _target.global_transform * _transform
 	force_update_transform()

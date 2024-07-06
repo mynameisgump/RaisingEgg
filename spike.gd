@@ -3,17 +3,11 @@ extends RigidBody3D
 var shoot = false;
 
 const DAMAGE = 50;
-const SPEED = 10;
+const SPEED = 0.5;
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	top_level = true;
-
-
-func _physics_process(delta):
-	if shoot:
-		apply_impulse(transform.basis.z,-transform.basis.z)
-
+	set_as_top_level(true);
 
 func _on_body_entered(body):
 	print("SPIKE HIT");
@@ -22,3 +16,7 @@ func _on_body_entered(body):
 		queue_free()
 	else:
 		queue_free()
+
+
+func _on_lifetime_timeout():
+	queue_free();

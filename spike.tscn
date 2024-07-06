@@ -16,4 +16,10 @@ script = ExtResource("1_5otq4")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.27235e-05, 4.88278e-05, -0.040186)
 shape = SubResource("BoxShape3D_ttmgn")
 
+[node name="Lifetime" type="Timer" parent="."]
+process_callback = 0
+wait_time = 30.0
+one_shot = true
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Lifetime" to="." method="_on_lifetime_timeout"]
