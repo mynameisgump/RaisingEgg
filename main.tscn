@@ -9,6 +9,11 @@
 
 [sub_resource type="Environment" id="Environment_wseoi"]
 ambient_light_color = Color(1, 1, 1, 1)
+fog_enabled = true
+fog_light_energy = 2.18
+fog_sun_scatter = 0.02
+fog_height = 247.91
+fog_height_density = -3.8669
 volumetric_fog_density = 0.1158
 volumetric_fog_emission_energy = 367.48
 volumetric_fog_gi_inject = 2.47
@@ -169,7 +174,6 @@ surface_material_override/0 = SubResource("StandardMaterial3D_ryni5")
 shape = SubResource("ConcavePolygonShape3D_80im5")
 
 [node name="Trees" type="Node3D" parent="World"]
-visible = false
 
 [node name="MultiMeshInstance3D" type="MultiMeshInstance3D" parent="World/Trees"]
 multimesh = SubResource("MultiMesh_blde1")
