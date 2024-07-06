@@ -1,6 +1,6 @@
 @tool
 @icon("res://addons/godot-xr-tools/editor/icons/hand.svg")
-class_name XRToolsHand
+class_name XRToolsRightHand
 extends Node3D
 
 
@@ -196,36 +196,6 @@ func _get_configuration_warnings() -> PackedStringArray:
 
 	# Return warnings
 	return warnings
-
-
-## Find an [XRToolsHand] node.
-##
-## This function searches from the specified node for an [XRToolsHand] assuming
-## the node is a sibling of the hand under an [XROrigin3D].
-static func find_instance(node : Node) -> XRToolsHand:
-	return XRTools.find_xr_child(
-		XRHelpers.get_xr_controller(node),
-		"*",
-		"XRToolsHand") as XRToolsHand
-
-
-## This function searches from the specified node for the left controller
-## [XRToolsHand] assuming the node is a sibling of the [XROrigin3D].
-static func find_left(node : Node) -> XRToolsHand:
-	return XRTools.find_xr_child(
-		XRHelpers.get_left_controller(node),
-		"*",
-		"XRToolsHand") as XRToolsHand
-
-
-## This function searches from the specified node for the right controller
-## [XRToolsHand] assuming the node is a sibling of the [XROrigin3D].
-static func find_right(node : Node) -> XRToolsHand:
-	return XRTools.find_xr_child(
-		XRHelpers.get_right_controller(node),
-		"*",
-		"XRToolsHand") as XRToolsHand
-
 
 ## Set the blend tree
 func set_hand_blend_tree(blend_tree : AnimationNodeBlendTree) -> void:

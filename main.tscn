@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://b8vxq2cwhj6my"]
+[gd_scene load_steps=23 format=3 uid="uid://b8vxq2cwhj6my"]
 
 [ext_resource type="PackedScene" uid="uid://cju7k5vr1h5iq" path="res://assets/egg.glb" id="1_wsf15"]
 [ext_resource type="PackedScene" uid="uid://brexemdr3tnmy" path="res://player.tscn" id="2_5m2jm"]
@@ -139,6 +139,8 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_bsly4")
 
+[sub_resource type="BoxMesh" id="BoxMesh_fp3dp"]
+
 [node name="Main" type="Node3D"]
 
 [node name="Sketchfab_Scene" parent="." instance=ExtResource("1_wsf15")]
@@ -188,5 +190,9 @@ skeleton = NodePath("")
 visible = false
 mesh = ExtResource("5_ac1nj")
 skeleton = NodePath("")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="World"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.46498, 0.428758, -3.74374)
+mesh = SubResource("BoxMesh_fp3dp")
 
 [node name="StartXR" parent="." instance=ExtResource("6_q2haw")]
