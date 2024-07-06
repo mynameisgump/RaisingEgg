@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=3 uid="uid://b4tmywn3xg05e"]
+
+[ext_resource type="PackedScene" uid="uid://bf3iet1pa70dk" path="res://assets/Rings/untitled.glb" id="1_q2kea"]
+[ext_resource type="Texture2D" uid="uid://cnhemdliy4qy6" path="res://assets/Textures/leafy_grass_diff_1k.jpg" id="2_ik1eu"]
+[ext_resource type="Texture2D" uid="uid://uemja02ule0e" path="res://assets/Textures/dry_mud_field_001_diff_2k.jpg" id="3_1trpg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hnehs"]
+albedo_texture = ExtResource("2_ik1eu")
+uv1_scale = Vector3(18.705, 18.705, 18.705)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sxskr"]
+albedo_texture = ExtResource("3_1trpg")
+uv1_scale = Vector3(3.505, 3.505, 3.505)
+uv1_triplanar = true
+
+[node name="untitled" instance=ExtResource("1_q2kea")]
+
+[node name="Inner" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_hnehs")
+
+[node name="Outer" parent="." index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_sxskr")
