@@ -1,16 +1,12 @@
 [gd_scene load_steps=5 format=3 uid="uid://brexemdr3tnmy"]
 
-[ext_resource type="Script" path="res://player.gd" id="1_mq7ld"]
+[ext_resource type="PackedScene" uid="uid://b4kad2kuba1yn" path="res://player/left_hand_low.tscn" id="2_bqv2y"]
 [ext_resource type="PackedScene" path="res://addons/godot-xr-tools/misc/vr_common_shader_cache.tscn" id="2_rahno"]
+[ext_resource type="PackedScene" uid="uid://l2n30mpbkdyw" path="res://player/right_hand_low.tscn" id="3_itucv"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_uvqux"]
 
-[sub_resource type="SphereMesh" id="SphereMesh_4i5hd"]
-radius = 0.1
-height = 0.2
-
 [node name="Player" type="CharacterBody3D"]
-script = ExtResource("1_mq7ld")
 
 [node name="PlayerBody" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -22,15 +18,13 @@ shape = SubResource("CapsuleShape3D_uvqux")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, -0.5)
 tracker = &"left_hand"
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/LeftHand"]
-mesh = SubResource("SphereMesh_4i5hd")
+[node name="LeftHand" parent="XROrigin3D/LeftHand" instance=ExtResource("2_bqv2y")]
 
 [node name="RightHand" type="XRController3D" parent="XROrigin3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1, -0.5)
 tracker = &"right_hand"
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/RightHand"]
-mesh = SubResource("SphereMesh_4i5hd")
+[node name="RightHand" parent="XROrigin3D/RightHand" instance=ExtResource("3_itucv")]
 
 [node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.46923, 0)
