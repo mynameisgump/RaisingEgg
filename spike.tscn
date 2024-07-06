@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://bifdf7dfe6145"]
+
+[node name="Spike" type="RigidBody3D"]

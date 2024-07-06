@@ -20,8 +20,6 @@ uniform float roughness: hint_range(0,1) = 0.5;
 uniform float metalic;
 uniform ivec2 resolution = ivec2(320, 240);
 
-
-
 vec4 snap_to_position(vec4 base_position)
 {
 	vec4 snapped_position = base_position;
