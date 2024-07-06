@@ -1,8 +1,11 @@
-[gd_resource type="ORMMaterial3D" load_steps=3 format=3 uid="uid://bn8kjg0h47rp0"]
+[gd_resource type="ORMMaterial3D" load_steps=4 format=3 uid="uid://bn8kjg0h47rp0"]
 
-[ext_resource type="Texture2D" uid="uid://be3qb7qgxks84" path="res://hand_Tex.tres" id="1_ta4nw"]
-[ext_resource type="Texture2D" uid="uid://h3sjbnu6uplb" path="res://addons/godot-xr-tools/hands/textures/hands_occlusionRoughnessMetallic.png" id="2_agvfk"]
+[ext_resource type="Texture2D" uid="uid://cver1sfcx6iov" path="res://assets/Textures/albedo.png" id="1_452rf"]
+[ext_resource type="Texture2D" uid="uid://bftksx12r6t1t" path="res://assets/Textures/normal.png" id="2_cvh8a"]
+[ext_resource type="Texture2D" uid="uid://bxk5nhcar65c5" path="res://assets/Textures/roughness.png" id="3_3ejq8"]
 
 [resource]
-albedo_texture = ExtResource("1_ta4nw")
-orm_texture = ExtResource("2_agvfk")
+albedo_texture = ExtResource("1_452rf")
+orm_texture = ExtResource("3_3ejq8")
+normal_enabled = true
+normal_texture = ExtResource("2_cvh8a")
