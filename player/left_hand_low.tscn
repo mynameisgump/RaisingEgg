@@ -1,9 +1,19 @@
-[gd_scene load_steps=13 format=3 uid="uid://b4kad2kuba1yn"]
+[gd_scene load_steps=14 format=3 uid="uid://b4kad2kuba1yn"]
 
 [ext_resource type="PackedScene" uid="uid://c4nba0qpi0uls" path="res://addons/godot-xr-tools/hands/model/Hand_Nails_low_L.gltf" id="1"]
 [ext_resource type="Script" path="res://LeftHand.gd" id="1_bqwi5"]
 [ext_resource type="PackedScene" path="res://addons/godot-xr-tools/hands/animations/left/AnimationPlayer.tscn" id="2"]
-[ext_resource type="Material" uid="uid://bn8kjg0h47rp0" path="res://addons/godot-xr-tools/hands/materials/caucasian_hand.tres" id="4"]
+[ext_resource type="Shader" path="res://shaders/VeinsTestClaude.gdshader" id="3_kr4rf"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sskug"]
+render_priority = 0
+shader = ExtResource("3_kr4rf")
+shader_parameter/vein_color = Color(1, 0, 0.0280781, 1)
+shader_parameter/base_color = Color(0.972521, 0.636572, 1, 1)
+shader_parameter/vein_width = 0.05
+shader_parameter/vein_scale = 20.0
+shader_parameter/glow_intensity = 1.0
+shader_parameter/smoothness = 0.845
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ndhsg"]
 animation = &"Sign 1"
@@ -74,7 +84,7 @@ bones/22/rotation = Quaternion(0.0985432, -0.0515229, -0.65627, 0.746287)
 bones/23/rotation = Quaternion(0.126804, -0.053291, -0.791773, 0.595128)
 
 [node name="mesh_Hand_Nails_low_L" parent="Hand_Nails_low_L/Armature/Skeleton3D" index="0"]
-surface_material_override/0 = ExtResource("4")
+surface_material_override/0 = SubResource("ShaderMaterial_sskug")
 
 [node name="AnimationPlayer" parent="Hand_Nails_low_L" instance=ExtResource("2")]
 

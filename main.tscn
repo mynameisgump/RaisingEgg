@@ -1,12 +1,13 @@
-[gd_scene load_steps=25 format=3 uid="uid://b8vxq2cwhj6my"]
+[gd_scene load_steps=26 format=3 uid="uid://b8vxq2cwhj6my"]
 
 [ext_resource type="PackedScene" uid="uid://cju7k5vr1h5iq" path="res://assets/egg.glb" id="1_wsf15"]
 [ext_resource type="PackedScene" uid="uid://brexemdr3tnmy" path="res://player.tscn" id="2_5m2jm"]
 [ext_resource type="Texture2D" uid="uid://cnhemdliy4qy6" path="res://assets/Textures/leafy_grass_diff_1k.jpg" id="3_inbci"]
 [ext_resource type="Texture2D" uid="uid://uemja02ule0e" path="res://assets/Textures/dry_mud_field_001_diff_2k.jpg" id="4_4aw08"]
 [ext_resource type="ArrayMesh" uid="uid://csprst6ukc4qy" path="res://deadTreeFixed.tres" id="5_ac1nj"]
-[ext_resource type="Shader" path="res://veins.gdshader" id="6_ajps4"]
+[ext_resource type="Shader" path="res://shaders/VeinsTestClaude.gdshader" id="6_o2b4q"]
 [ext_resource type="PackedScene" path="res://addons/godot-xr-tools/xr/start_xr.tscn" id="6_q2haw"]
+[ext_resource type="Texture2D" uid="uid://be3qb7qgxks84" path="res://hand_Tex.tres" id="7_7o2h4"]
 
 [sub_resource type="Environment" id="Environment_wseoi"]
 background_energy_multiplier = 0.5
@@ -144,7 +145,14 @@ shadow_mesh = SubResource("ArrayMesh_bsly4")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_174ea"]
 render_priority = 0
-shader = ExtResource("6_ajps4")
+shader = ExtResource("6_o2b4q")
+shader_parameter/vein_color = Color(0, 1, 0.5, 1)
+shader_parameter/base_color = Color(0.1, 0.1, 0.1, 1)
+shader_parameter/vein_width = 0.065
+shader_parameter/vein_scale = 5.196
+shader_parameter/glow_intensity = 2.0
+shader_parameter/smoothness = 0.1
+shader_parameter/texture_albedo = ExtResource("7_7o2h4")
 
 [sub_resource type="BoxMesh" id="BoxMesh_fp3dp"]
 material = SubResource("ShaderMaterial_174ea")
