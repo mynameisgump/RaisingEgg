@@ -86,7 +86,10 @@ parameters/Grip/blend_amount = 0.0
 parameters/Point/blend_amount = 1.0
 parameters/Trigger/blend_amount = 0.0
 
-[node name="SpotLight3D" type="SpotLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.01, 0)
+[node name="FingerLight" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.045, -0.025, 0)
+light_energy = 5.651
+spot_range = 4096.0
+spot_angle = 14.0981
 
 [editable path="Hand_Nails_low_L"]

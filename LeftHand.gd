@@ -75,6 +75,7 @@ var _target_overrides := []
 var _target : Node3D
 
 @onready var spike = preload("res://spike.tscn");
+@onready var fingerLight := $FingerLight
 
 ## Pose-override class
 class PoseOverride:
@@ -164,6 +165,10 @@ func _physics_process(_delta: float) -> void:
 		if _force_grip >= 0.0: grip = _force_grip
 		if _force_trigger >= 0.0: trigger = _force_trigger
 		$AnimationTree.set("parameters/Point/blend_amount", grip)
+		if grip >= 0.9 and fingerLight.visible == false:
+			fingerLight.visible = true
+		else:
+			fingerLight.visible = false
 		#$AnimationTree.set("parameters/Trigger/blend_amount", trigger)
 		
 	# Move to target
