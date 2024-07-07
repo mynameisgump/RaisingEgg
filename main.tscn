@@ -152,6 +152,8 @@ shader_parameter/vein_width = 0.065
 shader_parameter/vein_scale = 5.196
 shader_parameter/glow_intensity = 2.0
 shader_parameter/smoothness = 0.1
+shader_parameter/enable_movement = false
+shader_parameter/movement_speed = 1.0
 shader_parameter/texture_albedo = ExtResource("7_7o2h4")
 
 [sub_resource type="BoxMesh" id="BoxMesh_fp3dp"]

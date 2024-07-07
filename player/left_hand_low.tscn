@@ -1,19 +1,23 @@
-[gd_scene load_steps=14 format=3 uid="uid://b4kad2kuba1yn"]
+[gd_scene load_steps=15 format=3 uid="uid://b4kad2kuba1yn"]
 
 [ext_resource type="PackedScene" uid="uid://c4nba0qpi0uls" path="res://addons/godot-xr-tools/hands/model/Hand_Nails_low_L.gltf" id="1"]
 [ext_resource type="Script" path="res://LeftHand.gd" id="1_bqwi5"]
 [ext_resource type="PackedScene" path="res://addons/godot-xr-tools/hands/animations/left/AnimationPlayer.tscn" id="2"]
 [ext_resource type="Shader" path="res://shaders/VeinsTestClaude.gdshader" id="3_kr4rf"]
+[ext_resource type="Texture2D" uid="uid://cver1sfcx6iov" path="res://assets/Textures/albedo.png" id="4_sgixk"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_sskug"]
 render_priority = 0
 shader = ExtResource("3_kr4rf")
 shader_parameter/vein_color = Color(1, 0, 0.0280781, 1)
-shader_parameter/base_color = Color(0.972521, 0.636572, 1, 1)
-shader_parameter/vein_width = 0.05
-shader_parameter/vein_scale = 20.0
-shader_parameter/glow_intensity = 1.0
-shader_parameter/smoothness = 0.845
+shader_parameter/base_color = Color(0.1, 0.1, 0.1, 1)
+shader_parameter/vein_width = 0.082
+shader_parameter/vein_scale = 50.0
+shader_parameter/glow_intensity = 2.0
+shader_parameter/smoothness = 0.1
+shader_parameter/enable_movement = true
+shader_parameter/movement_speed = 5.0
+shader_parameter/texture_albedo = ExtResource("4_sgixk")
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ndhsg"]
 animation = &"Sign 1"

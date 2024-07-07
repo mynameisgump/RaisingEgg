@@ -8,6 +8,9 @@ uniform float vein_scale : hint_range(1.0, 50.0) = 10.0;
 uniform float glow_intensity : hint_range(0.0, 2.0) = 1.0;
 uniform float smoothness : hint_range(0.1, 2.0) = 0.5;
 
+uniform bool enable_movement = false;
+uniform float movement_speed : hint_range(0.1, 5.0) = 1.0;
+
 varying vec3 world_position;
 
 // Improved hash function
@@ -64,8 +67,13 @@ void vertex() {
 
 void fragment() {
     vec3 scaled_pos = world_position * vein_scale;
-    float noise_val = fbm(scaled_pos);
+	if (enable_movement) {
+        scaled_pos += vec3(TIME * movement_speed, TIME * movement_speed * 0.7, TIME * movement_speed * 0.3);
+    }
     
+    float noise_val = fbm(scaled_pos);
+	
+	
     // Create vein pattern
     float vein = 1.0 - smoothstep(vein_width, vein_width + smoothness, noise_val);
     vein = pow(vein, 1.0 / smoothness); // Adjust contrast
