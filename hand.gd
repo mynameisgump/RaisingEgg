@@ -164,12 +164,9 @@ func _physics_process(_delta: float) -> void:
 		if _force_grip >= 0.0: grip = _force_grip
 		if _force_trigger >= 0.0: trigger = _force_trigger
 
-		if current_hand == "right":
-			$AnimationTree.set("parameters/Grip/blend_amount", grip)
-			$AnimationTree.set("parameters/Trigger/blend_amount", grip)
-			if grip >= 0.8:
-				if trigger >= 0.8:
-					print("Pew") 
+		
+		$AnimationTree.set("parameters/Grip/blend_amount", grip)
+		$AnimationTree.set("parameters/Trigger/blend_amount", trigger)
 	# Move to target
 	global_transform = _target.global_transform * _transform
 	force_update_transform()

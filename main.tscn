@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://b8vxq2cwhj6my"]
+[gd_scene load_steps=29 format=3 uid="uid://b8vxq2cwhj6my"]
 
 [ext_resource type="PackedScene" uid="uid://cju7k5vr1h5iq" path="res://assets/egg.glb" id="1_wsf15"]
 [ext_resource type="PackedScene" uid="uid://brexemdr3tnmy" path="res://player.tscn" id="2_5m2jm"]
@@ -8,6 +8,7 @@
 [ext_resource type="Shader" path="res://shaders/VeinsTestClaude.gdshader" id="6_o2b4q"]
 [ext_resource type="PackedScene" path="res://addons/godot-xr-tools/xr/start_xr.tscn" id="6_q2haw"]
 [ext_resource type="Texture2D" uid="uid://be3qb7qgxks84" path="res://hand_Tex.tres" id="7_7o2h4"]
+[ext_resource type="PackedScene" uid="uid://bk1yfalpmuykh" path="res://player/eggCollide.tscn" id="9_1rpne"]
 
 [sub_resource type="Environment" id="Environment_wseoi"]
 background_energy_multiplier = 0.5
@@ -159,10 +160,18 @@ shader_parameter/texture_albedo = ExtResource("7_7o2h4")
 [sub_resource type="BoxMesh" id="BoxMesh_fp3dp"]
 material = SubResource("ShaderMaterial_174ea")
 
+[sub_resource type="SphereMesh" id="SphereMesh_b26ji"]
+radius = 0.2
+height = 0.4
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_xrtmd"]
+points = PackedVector3Array(-0.0364568, -0.195656, 0.0185092, 0.0368779, 0.195565, 0.0185007, 0.0368853, 0.195604, -0.0181044, -0.195489, 0.036663, -0.0181123, 0.0549565, -0.0364916, -0.188474, 0.109662, -0.0304041, 0.164375, 0.195897, -0.0305346, -0.024243, -0.103212, 0.0121549, 0.170483, -0.103095, 0.0181928, -0.169891, -0.138864, -0.133003, -0.0541982, 0.0850604, -0.175837, -0.0422302, 0.0846168, 0.108563, -0.144563, -0.10884, 0.163542, -0.0361215, 0.126667, 0.120431, 0.0965595, -0.0483719, 0.127496, 0.145916, -0.108418, -0.102569, 0.132939, 0.0846309, -0.144787, 0.108781, -0.0301552, -0.133555, -0.145528, 0.157765, 0.115118, -0.0422098, -0.0179719, 0.121349, -0.157569, 0.0308315, -0.0183482, 0.196272, 0.152009, -0.0242742, -0.127296, -0.162908, 0.0785448, 0.0847634, -0.181839, -0.0485515, 0.066925, 0.182927, -0.012136, 0.0793509, 0.158051, -0.121412, -0.0119336, 0.0966483, -0.120589, -0.126433, -0.0119341, -0.121417, 0.158057, -0.169457, -0.0545151, -0.0906838, -0.144776, 0.0845629, -0.108551, 0.0547578, 0.109154, 0.157871, -0.0784557, 0.175468, 0.0546335)
+
 [node name="Main" type="Node3D"]
 
 [node name="Sketchfab_Scene" parent="." instance=ExtResource("1_wsf15")]
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 0.283212, 0)
+visible = false
 
 [node name="Player" parent="." instance=ExtResource("2_5m2jm")]
 
@@ -214,3 +223,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.46498, 0.876508, -3.74374)
 mesh = SubResource("BoxMesh_fp3dp")
 
 [node name="StartXR" parent="." instance=ExtResource("6_q2haw")]
+
+[node name="Sketchfab_Scene2" parent="." instance=ExtResource("9_1rpne")]
+transform = Transform3D(0.06, 0, 0, 0, 0.06, 0, 0, 0, 0.06, 0, 0.476806, 0)
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.587442, 0.187772, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0751114, 0.131877, 0)
+mesh = SubResource("SphereMesh_b26ji")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0751114, 0.131877, 0)
+shape = SubResource("ConvexPolygonShape3D_xrtmd")
