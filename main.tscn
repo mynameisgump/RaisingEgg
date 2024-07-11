@@ -132,7 +132,7 @@ script = ExtResource("1_stx4d")
 [node name="Player" parent="." instance=ExtResource("2_5m2jm")]
 
 [node name="bb_egg" parent="." instance=ExtResource("3_eo53l")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -5.26386)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -9.26386)
 collision_mask = 131073
 input_capture_on_drag = true
 

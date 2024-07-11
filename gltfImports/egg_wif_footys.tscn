@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://ctqt5xq2e8mfj"]
+[gd_scene load_steps=6 format=3 uid="uid://ctqt5xq2e8mfj"]
 
 [ext_resource type="PackedScene" uid="uid://cfhjj6bn1xbuu" path="res://assets/EggWifFootys.glb" id="1_sr0ar"]
+[ext_resource type="Script" path="res://gltfImports/egg_wif_footys.gd" id="2_uf4rh"]
 
 [sub_resource type="Animation" id="Animation_a0ijr"]
 length = 0.001
@@ -172,8 +173,10 @@ _data = {
 "Walkin": SubResource("Animation_15sut")
 }
 
-[node name="EggWifFootys" instance=ExtResource("1_sr0ar")]
+[node name="EggWifFootys" node_paths=PackedStringArray("animation_player") instance=ExtResource("1_sr0ar")]
 transform = Transform3D(-1.31134e-09, 0, 0.03, 0, 0.03, 0, -0.03, 0, -1.31134e-09, 0, 0, 0)
+script = ExtResource("2_uf4rh")
+animation_player = NodePath("AnimationPlayer")
 
 [node name="Sketchfab_model" parent="." index="0"]
 transform = Transform3D(1, 0, 0, 0, -3.61999e-06, 1, 0, -1, -3.61999e-06, 0, 0, 0)
@@ -182,7 +185,6 @@ transform = Transform3D(1, 0, 0, 0, -3.61999e-06, 1, 0, -1, -3.61999e-06, 0, 0, 
 transform = Transform3D(-1.50966e-06, 0, 34.5371, 0, 34.5371, 0, -34.5371, 0, -1.50966e-06, 2.05678, -8.64198, -1.54418)
 
 [node name="Skeleton3D" parent="Armature_Female" index="0"]
-bones/0/position = Vector3(-0.1, 0.453593, -0.0255803)
 bones/0/rotation = Quaternion(0.999198, -0.000182965, -0.000182841, -0.0400373)
 bones/0/scale = Vector3(1, 1, 1)
 bones/1/scale = Vector3(1, 1, 1)
@@ -191,7 +193,7 @@ bones/2/rotation = Quaternion(0.999198, 0.000182965, 0.000182841, -0.0400373)
 bones/2/scale = Vector3(1, 1, 1)
 bones/3/scale = Vector3(1, 1, 1)
 bones/4/position = Vector3(-0.100141, 0.0797179, -0.0597217)
-bones/4/rotation = Quaternion(0.888449, 0.000104778, 0.00020282, 0.458975)
+bones/4/rotation = Quaternion(0.91224, 9.35187e-05, 0.000208252, 0.409656)
 bones/4/scale = Vector3(1, 1, 1)
 bones/19/rotation = Quaternion(0.91224, -9.35187e-05, -0.000208252, 0.409656)
 bones/19/scale = Vector3(1, 1, 1)
