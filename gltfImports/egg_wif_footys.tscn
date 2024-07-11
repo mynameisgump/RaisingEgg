@@ -72,7 +72,7 @@ tracks/6/keys = {
 
 [sub_resource type="Animation" id="Animation_15sut"]
 resource_name = "Walkin"
-length = 3.0
+length = 0.6
 loop_mode = 1
 tracks/0/type = "rotation_3d"
 tracks/0/imported = false
@@ -80,56 +80,56 @@ tracks/0/enabled = false
 tracks/0/path = NodePath("Armature_Female/Skeleton3D:Leg_Down.R")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, -0.999198, 0.000182965, 0.000182841, 0.0400373, 1, 1, 0.999198, -0.000182965, -0.000182841, -0.0400373)
+tracks/0/keys = PackedFloat32Array(0, 1, -0.999198, 0.000182965, 0.000182841, 0.0400373, 0.2, 1, 0.999198, -0.000182965, -0.000182841, -0.0400373)
 tracks/1/type = "position_3d"
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/path = NodePath("Armature_Female/Skeleton3D:Leg_Down.R")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
-tracks/1/keys = PackedFloat32Array(0, 1, -0.1, 0.45, -0.03, 1, 1, -0.1, 0.496432, 0.0271134, 2, 1, -0.1, 0.45, 0.027, 3, 1, -0.1, 0.45, -0.03)
+tracks/1/keys = PackedFloat32Array(0, 1, -0.1, 0.45, -0.03, 0.2, 1, -0.1, 0.496432, 0.0271134, 0.4, 1, -0.1, 0.45, 0.027, 0.6, 1, -0.1, 0.45, -0.03)
 tracks/2/type = "position_3d"
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/path = NodePath("Armature_Female/Skeleton3D:Leg_Foot.R")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
-tracks/2/keys = PackedFloat32Array(0, 1, -0.100141, 0.0797179, -0.0597217, 1, 1, -0.100141, 0.0797179, -0.0597217, 2, 1, -0.100141, 0.0797179, -0.0597217, 3, 1, -0.100141, 0.0797179, -0.0597217)
+tracks/2/keys = PackedFloat32Array(0, 1, -0.100141, 0.0797179, -0.0597217, 0.2, 1, -0.100141, 0.0797179, -0.0597217, 0.4, 1, -0.100141, 0.0797179, -0.0597217, 0.6, 1, -0.100141, 0.0797179, -0.0597217)
 tracks/3/type = "rotation_3d"
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/path = NodePath("Armature_Female/Skeleton3D:Leg_Foot.R")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
-tracks/3/keys = PackedFloat32Array(0, 1, 0.91224, 9.35187e-05, 0.000208252, 0.409656, 1, 1, 0.426865, 0.000206442, 9.74473e-05, 0.904315, 2, 1, 0.91224, 9.35187e-05, 0.000208252, 0.409656, 3, 1, 0.91224, 9.35187e-05, 0.000208252, 0.409656)
+tracks/3/keys = PackedFloat32Array(0, 1, 0.91224, 9.35187e-05, 0.000208252, 0.409656, 0.2, 1, 0.426865, 0.000206442, 9.74473e-05, 0.904315, 0.4, 1, 0.91224, 9.35187e-05, 0.000208252, 0.409656, 0.6, 1, 0.91224, 9.35187e-05, 0.000208252, 0.409656)
 tracks/4/type = "position_3d"
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/path = NodePath("Armature_Female/Skeleton3D:Leg_Down.L")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
-tracks/4/keys = PackedFloat32Array(0, 1, 0.00561435, 0.45, -0.03, 1, 1, 0.00561435, 0.496512, 0.0269776, 2, 1, 0.00561435, 0.448837, 0.0269776, 3, 1, 0.00561435, 0.45, -0.03)
+tracks/4/keys = PackedFloat32Array(0, 1, 0.00561435, 0.45, -0.03, 0.2, 1, 0.00561435, 0.496512, 0.0269776, 0.4, 1, 0.00561435, 0.448837, 0.0269776, 0.6, 1, 0.00561435, 0.45, -0.03)
 tracks/5/type = "rotation_3d"
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/path = NodePath("Armature_Female/Skeleton3D:Leg_Down.L")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
-tracks/5/keys = PackedFloat32Array(0, 1, -0.999198, -0.000182965, -0.000182841, 0.0400373, 1, 1, 0.999198, 0.000182965, 0.000182841, -0.0400373, 2, 1, 0.999198, 0.000182965, 0.000182841, -0.0400373, 3, 1, -0.999198, -0.000182965, -0.000182841, 0.0400373)
+tracks/5/keys = PackedFloat32Array(0, 1, -0.999198, -0.000182965, -0.000182841, 0.0400373, 0.2, 1, 0.999198, 0.000182965, 0.000182841, -0.0400373, 0.4, 1, 0.999198, 0.000182965, 0.000182841, -0.0400373, 0.6, 1, -0.999198, -0.000182965, -0.000182841, 0.0400373)
 tracks/6/type = "rotation_3d"
 tracks/6/imported = false
 tracks/6/enabled = true
 tracks/6/path = NodePath("Armature_Female/Skeleton3D:Leg_Foot.L")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
-tracks/6/keys = PackedFloat32Array(0, 1, 0.91224, -9.35187e-05, -0.000208252, 0.409656, 1, 1, 0.423113, -0.000206845, -9.65907e-05, 0.906077, 2, 1, 0.91044, -9.44283e-05, -0.000207841, 0.41364, 3, 1, 0.91224, -9.35187e-05, -0.000208252, 0.409656)
+tracks/6/keys = PackedFloat32Array(0, 1, 0.91224, -9.35187e-05, -0.000208252, 0.409656, 0.2, 1, 0.423113, -0.000206845, -9.65907e-05, 0.906077, 0.4, 1, 0.91044, -9.44283e-05, -0.000207841, 0.41364, 0.6, 1, 0.91224, -9.35187e-05, -0.000208252, 0.409656)
 tracks/7/type = "position_3d"
 tracks/7/imported = false
 tracks/7/enabled = true
 tracks/7/path = NodePath("Armature_Female/Skeleton3D:Leg_Foot.L")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
-tracks/7/keys = PackedFloat32Array(0, 1, 0.00575562, 0.0797179, -0.0597217, 1, 1, 0.00575562, 0.0797179, -0.0597217, 2, 1, 0.00575562, 0.0797179, -0.0597217, 3, 1, 0.00575562, 0.0797179, -0.0597217)
+tracks/7/keys = PackedFloat32Array(0, 1, 0.00575562, 0.0797179, -0.0597217, 0.2, 1, 0.00575562, 0.0797179, -0.0597217, 0.4, 1, 0.00575562, 0.0797179, -0.0597217, 0.6, 1, 0.00575562, 0.0797179, -0.0597217)
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
@@ -137,10 +137,10 @@ tracks/8/path = NodePath("Sketchfab_model:rotation")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(0, 0.5, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(-1.5708, 0, 0), Vector3(-1.5708, 0, 0), Vector3(-1.5708, 0, 0)]
+"values": [Vector3(-1.5708, 0, 0), Vector3(-1.5708, 0, 0), Vector3(-1.5708, 0, 0), Vector3(-1.5708, 0, 0)]
 }
 tracks/9/type = "value"
 tracks/9/imported = false
@@ -149,10 +149,10 @@ tracks/9/path = NodePath("Sketchfab_model:scale")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(0, 0.5, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(1, 1, 1), Vector3(0.8, 0.8, 0.8), Vector3(1, 1, 1)]
+"values": [Vector3(1, 1, 1), Vector3(0.8, 0.8, 0.8), Vector3(1, 1, 1), Vector3(1, 1, 1)]
 }
 tracks/10/type = "value"
 tracks/10/imported = false
@@ -161,10 +161,10 @@ tracks/10/path = NodePath("Sketchfab_model:position")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
-"times": PackedFloat32Array(0, 0.5, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0.8849, 0.284481, 0), Vector3(1.81569, 1.23396, 0)]
+"values": [Vector3(0, 0, 0), Vector3(0.8849, 0.284481, 0), Vector3(1.81569, 1.23396, 0), Vector3(0, 0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_f11er"]
@@ -185,6 +185,7 @@ transform = Transform3D(1, 0, 0, 0, -3.61999e-06, 1, 0, -1, -3.61999e-06, 0, 0, 
 transform = Transform3D(-1.50966e-06, 0, 34.5371, 0, 34.5371, 0, -34.5371, 0, -1.50966e-06, 2.05678, -8.64198, -1.54418)
 
 [node name="Skeleton3D" parent="Armature_Female" index="0"]
+bones/0/position = Vector3(-0.1, 0.47315, 0.0270565)
 bones/0/rotation = Quaternion(0.999198, -0.000182965, -0.000182841, -0.0400373)
 bones/0/scale = Vector3(1, 1, 1)
 bones/1/scale = Vector3(1, 1, 1)
@@ -193,8 +194,9 @@ bones/2/rotation = Quaternion(0.999198, 0.000182965, 0.000182841, -0.0400373)
 bones/2/scale = Vector3(1, 1, 1)
 bones/3/scale = Vector3(1, 1, 1)
 bones/4/position = Vector3(-0.100141, 0.0797179, -0.0597217)
-bones/4/rotation = Quaternion(0.91224, 9.35187e-05, 0.000208252, 0.409656)
+bones/4/rotation = Quaternion(0.714475, 0.000159723, 0.000163105, 0.699661)
 bones/4/scale = Vector3(1, 1, 1)
+bones/19/position = Vector3(0.00575562, 0.0797179, -0.0597217)
 bones/19/rotation = Quaternion(0.91224, -9.35187e-05, -0.000208252, 0.409656)
 bones/19/scale = Vector3(1, 1, 1)
 
@@ -202,3 +204,4 @@ bones/19/scale = Vector3(1, 1, 1)
 libraries = {
 "": SubResource("AnimationLibrary_f11er")
 }
+speed_scale = 3.0
