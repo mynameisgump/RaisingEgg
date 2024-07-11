@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://brexemdr3tnmy"]
+[gd_scene load_steps=11 format=3 uid="uid://brexemdr3tnmy"]
 
 [ext_resource type="PackedScene" uid="uid://ftgsmc4yl5i0" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_physics_hand_low.tscn" id="1_0wmyw"]
+[ext_resource type="Script" path="res://player.gd" id="1_xy30f"]
 [ext_resource type="PackedScene" path="res://addons/godot-xr-tools/misc/vr_common_shader_cache.tscn" id="2_rahno"]
 [ext_resource type="PackedScene" uid="uid://bo4v1rrvsnwgs" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_physics_hand_low.tscn" id="3_iepxb"]
 [ext_resource type="Script" path="res://addons/godot-xr-tools/hands/collision_hand.gd" id="3_vrs5k"]
@@ -17,6 +18,8 @@ closed_pose = ExtResource("4_7sukn")
 size = Vector3(0.055, 0.165, 0.14)
 
 [node name="Player" type="CharacterBody3D"]
+collision_layer = 0
+script = ExtResource("1_xy30f")
 
 [node name="XROrigin3D" type="XROrigin3D" parent="."]
 
@@ -42,6 +45,7 @@ current_hand = ""
 [node name="CollisionShape3D" type="CollisionShape3D" parent="XROrigin3D/RightHand/XRToolsCollisionHand"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0301867, -0.0427431, 0.0854864)
 shape = SubResource("BoxShape3D_b03lj")
+disabled = true
 
 [node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.46923, 0)
