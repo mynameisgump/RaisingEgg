@@ -1,7 +1,7 @@
 extends Node3D
 
 
-@onready var bb_egg := $RigidBBEgg
+@onready var bb_egg := $bb_egg
 @onready var player := $Player
 # Called when the node enters the scene tree for the first time.
 func _ready():

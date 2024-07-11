@@ -7,7 +7,7 @@ func _ready() -> void:
 	navigation_agent.velocity_computed.connect(Callable(_on_velocity_computed))
 
 func set_movement_target(movement_target: Vector3):
-	movement_target.y = position.y 
+	#movement_target.y = position.y 
 	#look_at(movement_target);
 	navigation_agent.set_target_position(movement_target)
 

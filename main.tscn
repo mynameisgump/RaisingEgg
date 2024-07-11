@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://main.gd" id="1_stx4d"]
 [ext_resource type="PackedScene" uid="uid://brexemdr3tnmy" path="res://player.tscn" id="2_5m2jm"]
-[ext_resource type="PackedScene" uid="uid://bpjld06r7wl5w" path="res://rigid_bb_egg.tscn" id="3_4hngb"]
+[ext_resource type="PackedScene" uid="uid://bomamngcgusvn" path="res://bb_egg.tscn" id="3_eo53l"]
 [ext_resource type="Texture2D" uid="uid://uemja02ule0e" path="res://assets/Textures/dry_mud_field_001_diff_2k.jpg" id="4_4aw08"]
 [ext_resource type="ArrayMesh" uid="uid://csprst6ukc4qy" path="res://deadTreeFixed.tres" id="5_ac1nj"]
 [ext_resource type="Shader" path="res://shaders/VeinsTestClaude.gdshader" id="6_o2b4q"]
@@ -131,10 +131,10 @@ script = ExtResource("1_stx4d")
 
 [node name="Player" parent="." instance=ExtResource("2_5m2jm")]
 
-[node name="RigidBBEgg" parent="." instance=ExtResource("3_4hngb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 3)
-collision_layer = 131072
-movement_speed = 10.0
+[node name="bb_egg" parent="." instance=ExtResource("3_eo53l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -5.26386)
+collision_mask = 131073
+input_capture_on_drag = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_wseoi")

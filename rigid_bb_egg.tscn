@@ -8,10 +8,8 @@ radius = 0.148439
 height = 0.768942
 
 [node name="RigidBBEgg" type="RigidBody3D"]
-axis_lock_linear_x = true
-axis_lock_linear_z = true
-axis_lock_angular_x = true
-axis_lock_angular_z = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.273979, 0)
+collision_layer = 0
 script = ExtResource("1_4pgmg")
 
 [node name="EggWifFootys" parent="." instance=ExtResource("1_xtin3")]
