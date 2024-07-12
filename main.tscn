@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://b8vxq2cwhj6my"]
+[gd_scene load_steps=25 format=3 uid="uid://b8vxq2cwhj6my"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_stx4d"]
 [ext_resource type="PackedScene" uid="uid://brexemdr3tnmy" path="res://player.tscn" id="2_5m2jm"]
@@ -6,11 +6,20 @@
 [ext_resource type="Texture2D" uid="uid://uemja02ule0e" path="res://assets/Textures/dry_mud_field_001_diff_2k.jpg" id="4_4aw08"]
 [ext_resource type="ArrayMesh" uid="uid://csprst6ukc4qy" path="res://deadTreeFixed.tres" id="5_ac1nj"]
 [ext_resource type="Shader" path="res://shaders/VeinsTestClaude.gdshader" id="6_o2b4q"]
-[ext_resource type="PackedScene" path="res://addons/godot-xr-tools/xr/start_xr.tscn" id="6_q2haw"]
+[ext_resource type="PackedScene" uid="uid://clc5dre31iskm" path="res://addons/godot-xr-tools/xr/start_xr.tscn" id="6_q2haw"]
 [ext_resource type="Texture2D" uid="uid://be3qb7qgxks84" path="res://hand_Tex.tres" id="7_7o2h4"]
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_f0qjj"]
+sky_top_color = Color(0.441, 0.548917, 0.7, 1)
+
+[sub_resource type="Sky" id="Sky_8uj8o"]
+sky_material = SubResource("ProceduralSkyMaterial_f0qjj")
+
 [sub_resource type="Environment" id="Environment_wseoi"]
+background_mode = 2
 background_energy_multiplier = 0.5
+sky = SubResource("Sky_8uj8o")
+ambient_light_source = 3
 ambient_light_energy = 0.0
 fog_enabled = true
 fog_light_color = Color(0, 0, 0, 1)
