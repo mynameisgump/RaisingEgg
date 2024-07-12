@@ -42,7 +42,7 @@ filter_enabled = true
 filters = ["Armature/Skeleton3D:Index_Distal_L", "Armature/Skeleton3D:Index_Intermediate_L", "Armature/Skeleton3D:Index_Metacarpal_L", "Armature/Skeleton3D:Index_Proximal_L", "Armature/Skeleton:Index_Distal_L", "Armature/Skeleton:Index_Intermediate_L", "Armature/Skeleton:Index_Proximal_L"]
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_pc8lk"]
-graph_offset = Vector2(-509.681, 21.6255)
+graph_offset = Vector2(-516.826, 42.1968)
 nodes/Animation/node = SubResource("AnimationNodeAnimation_ndhsg")
 nodes/Animation/position = Vector2(60, 300)
 nodes/ClosedHand1/node = SubResource("AnimationNodeAnimation_sr4ho")

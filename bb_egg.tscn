@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://bomamngcgusvn"]
+
+[ext_resource type="PackedScene" uid="uid://ctqt5xq2e8mfj" path="res://gltfImports/egg_wif_footys.tscn" id="1_cm3nj"]
+[ext_resource type="Script" path="res://bb_egg.gd" id="1_gvdc7"]
+
+[sub_resource type="Curve" id="Curve_8ihuo"]
+max_value = 3.0
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 3), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ewd3g"]
+radius = 0.132187
+height = 0.427641
+
+[node name="bb_egg" type="CharacterBody3D" node_paths=PackedStringArray("egg_mesh")]
+collision_layer = 16
+script = ExtResource("1_gvdc7")
+animation_speed_curve = SubResource("Curve_8ihuo")
+egg_mesh = NodePath("EggWifFootys")
+
+[node name="EggWifFootys" parent="." instance=ExtResource("1_cm3nj")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0473263, 0)
+shape = SubResource("CapsuleShape3D_ewd3g")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+path_desired_distance = 0.3
+target_desired_distance = 0.2
