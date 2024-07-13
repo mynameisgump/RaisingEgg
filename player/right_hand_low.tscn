@@ -1,7 +1,7 @@
 [gd_scene load_steps=27 format=3 uid="uid://l2n30mpbkdyw"]
 
 [ext_resource type="PackedScene" uid="uid://crqhsw38vp16p" path="res://addons/godot-xr-tools/hands/animations/right/AnimationPlayer.tscn" id="1"]
-[ext_resource type="Script" path="res://RightHand.gd" id="1_oku0b"]
+[ext_resource type="Script" path="res://player/RightHand.gd" id="1_oku0b"]
 [ext_resource type="PackedScene" uid="uid://dunu03tc5vdbh" path="res://addons/godot-xr-tools/hands/model/Hand_Nails_low_R.gltf" id="2"]
 [ext_resource type="Resource" uid="uid://b4ouhixsji3en" path="res://addons/godot-xr-tools/hands/poses/pose_default_right.tres" id="3_f67ka"]
 [ext_resource type="Shader" path="res://shaders/playstation.gdshader" id="5_8xawr"]

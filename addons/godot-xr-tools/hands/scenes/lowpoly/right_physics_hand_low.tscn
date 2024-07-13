@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://crqhsw38vp16p" path="res://addons/godot-xr-tools/hands/animations/right/AnimationPlayer.tscn" id="1"]
 [ext_resource type="PackedScene" uid="uid://dunu03tc5vdbh" path="res://addons/godot-xr-tools/hands/model/Hand_Nails_low_R.gltf" id="2"]
-[ext_resource type="PackedScene" uid="uid://bifdf7dfe6145" path="res://spike.tscn" id="2_b3in6"]
+[ext_resource type="PackedScene" uid="uid://bifdf7dfe6145" path="res://player/spike.tscn" id="2_b3in6"]
 [ext_resource type="Script" path="res://addons/godot-xr-tools/hands/physics_hand.gd" id="3"]
 [ext_resource type="Resource" uid="uid://b4ouhixsji3en" path="res://addons/godot-xr-tools/hands/poses/pose_default_right.tres" id="3_b86a5"]
 [ext_resource type="Script" path="res://addons/godot-xr-tools/hands/hand_physics_bone.gd" id="4"]

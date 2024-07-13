@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bpjld06r7wl5w"]
 
-[ext_resource type="Script" path="res://rigid_bb_egg.gd" id="1_4pgmg"]
+[ext_resource type="Script" path="res://npcs/rigid_bb_egg.gd" id="1_4pgmg"]
 [ext_resource type="PackedScene" uid="uid://ctqt5xq2e8mfj" path="res://gltfImports/egg_wif_footys.tscn" id="1_xtin3"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_cy32k"]

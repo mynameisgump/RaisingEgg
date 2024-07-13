@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://brexemdr3tnmy"]
 
 [ext_resource type="PackedScene" uid="uid://ftgsmc4yl5i0" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_physics_hand_low.tscn" id="1_0wmyw"]
-[ext_resource type="Script" path="res://player.gd" id="1_xy30f"]
+[ext_resource type="Script" path="res://player/player.gd" id="1_xy30f"]
 [ext_resource type="PackedScene" path="res://addons/godot-xr-tools/misc/vr_common_shader_cache.tscn" id="2_rahno"]
 [ext_resource type="PackedScene" uid="uid://bo4v1rrvsnwgs" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_physics_hand_low.tscn" id="3_iepxb"]
 [ext_resource type="Script" path="res://addons/godot-xr-tools/hands/collision_hand.gd" id="3_vrs5k"]
