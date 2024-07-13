@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bftksx12r6t1t"
-path.s3tc="res://.godot/imported/normal.png-70acd9c8aa72d586a7e1825c35ad61c4.s3tc.ctex"
+uid="uid://cuvx0lsdp4idy"
+path.s3tc="res://.godot/imported/albedo.png-388f07208e90fca06bf22acffa1612dc.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/Textures/normal.png"
-dest_files=["res://.godot/imported/normal.png-70acd9c8aa72d586a7e1825c35ad61c4.s3tc.ctex"]
+source_file="res://assets/Textures/Human Veins Displacement Map/albedo.png"
+dest_files=["res://.godot/imported/albedo.png-388f07208e90fca06bf22acffa1612dc.s3tc.ctex"]
 
 [params]
 
@@ -20,15 +20,15 @@ compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/normal_map=1
+compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=1
-roughness/src_normal="res://assets/Textures/normal.png"
+roughness/mode=0
+roughness/src_normal=""
 process/fix_alpha_border=true
 process/premult_alpha=false
-process/normal_map_invert_y=true
+process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
