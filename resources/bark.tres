@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://d2hh7v80f7uq2"]
+
+[ext_resource type="Texture2D" uid="uid://c8uayvvmvlhi4" path="res://assets/Textures/burnt_bark/burnt_bark_2_albedo_1024x.png" id="1_l04r6"]
+[ext_resource type="Texture2D" uid="uid://cr33io2u30qg6" path="res://assets/Textures/burnt_bark/burnt_bark_2_height_1024x.png" id="2_5e1ii"]
+[ext_resource type="Texture2D" uid="uid://duuppqn87yrov" path="res://assets/Textures/burnt_bark/burnt_bark_2_normal_1024x.png" id="3_2n50w"]
+
+[resource]
+albedo_texture = ExtResource("1_l04r6")
+normal_enabled = true
+normal_scale = 0.43
+normal_texture = ExtResource("3_2n50w")
+heightmap_scale = 14.263
+heightmap_texture = ExtResource("2_5e1ii")
+uv1_scale = Vector3(40, 40, 40)
