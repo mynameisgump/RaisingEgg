@@ -5,8 +5,8 @@
 [ext_resource type="PackedScene" path="res://addons/godot-xr-tools/misc/vr_common_shader_cache.tscn" id="2_rahno"]
 [ext_resource type="PackedScene" uid="uid://bo4v1rrvsnwgs" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_physics_hand_low.tscn" id="3_iepxb"]
 [ext_resource type="Script" path="res://addons/godot-xr-tools/hands/collision_hand.gd" id="3_vrs5k"]
-[ext_resource type="Animation" path="res://addons/godot-xr-tools/hands/animations/right/Grip.res" id="4_7sukn"]
-[ext_resource type="Animation" path="res://addons/godot-xr-tools/hands/animations/left/Grip 5.res" id="5_427o5"]
+[ext_resource type="Animation" uid="uid://ccds2u22gbxn7" path="res://addons/godot-xr-tools/hands/animations/right/Grip.res" id="4_7sukn"]
+[ext_resource type="Animation" uid="uid://bediglpx0rj7i" path="res://addons/godot-xr-tools/hands/animations/left/Grip 5.res" id="5_427o5"]
 [ext_resource type="Script" path="res://addons/godot-xr-tools/hands/poses/hand_pose_settings.gd" id="6_28jol"]
 
 [sub_resource type="Resource" id="Resource_33yth"]

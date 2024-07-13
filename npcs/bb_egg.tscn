@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bomamngcgusvn"]
 
 [ext_resource type="PackedScene" uid="uid://ctqt5xq2e8mfj" path="res://gltfImports/egg_wif_footys.tscn" id="1_cm3nj"]
-[ext_resource type="Script" path="res://bb_egg.gd" id="1_gvdc7"]
+[ext_resource type="Script" path="res://npcs/bb_egg.gd" id="1_gvdc7"]
 
 [sub_resource type="Curve" id="Curve_8ihuo"]
 max_value = 3.0

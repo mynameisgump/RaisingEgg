@@ -1,13 +1,14 @@
-[gd_scene load_steps=24 format=3 uid="uid://b8vxq2cwhj6my"]
+[gd_scene load_steps=25 format=3 uid="uid://b8vxq2cwhj6my"]
 
-[ext_resource type="Script" path="res://main.gd" id="1_stx4d"]
-[ext_resource type="PackedScene" uid="uid://brexemdr3tnmy" path="res://player.tscn" id="2_5m2jm"]
+[ext_resource type="Script" path="res://scenes/main.gd" id="1_stx4d"]
+[ext_resource type="PackedScene" uid="uid://0puxlal7ke2s" path="res://player/player_flat.tscn" id="2_gs86n"]
+[ext_resource type="PackedScene" uid="uid://bomamngcgusvn" path="res://npcs/bb_egg.tscn" id="3_5pidc"]
 [ext_resource type="Texture2D" uid="uid://dxdkmwmuh45a3" path="res://assets/Textures/twigs/twigs_uv.png" id="4_ho4vp"]
 [ext_resource type="Texture2D" uid="uid://cjlvx3hndnkok" path="res://assets/Textures/twigs/twigs_normal.png" id="5_58dpm"]
-[ext_resource type="ArrayMesh" uid="uid://csprst6ukc4qy" path="res://deadTreeFixed.tres" id="5_ac1nj"]
+[ext_resource type="ArrayMesh" uid="uid://csprst6ukc4qy" path="res://resources/deadTreeFixed.tres" id="5_ac1nj"]
 [ext_resource type="Shader" path="res://shaders/VeinsTestClaude.gdshader" id="6_o2b4q"]
 [ext_resource type="PackedScene" uid="uid://clc5dre31iskm" path="res://addons/godot-xr-tools/xr/start_xr.tscn" id="6_q2haw"]
-[ext_resource type="Texture2D" uid="uid://be3qb7qgxks84" path="res://hand_Tex.tres" id="7_7o2h4"]
+[ext_resource type="Texture2D" uid="uid://be3qb7qgxks84" path="res://resources/hand_Tex.tres" id="7_7o2h4"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_f0qjj"]
 sky_top_color = Color(0.441, 0.548917, 0.7, 1)
@@ -137,10 +138,13 @@ size = Vector2(600, 600)
 [node name="Main" type="Node3D"]
 script = ExtResource("1_stx4d")
 
-[node name="Player" parent="." instance=ExtResource("2_5m2jm")]
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_wseoi")
+
+[node name="PlayerFlat" parent="." instance=ExtResource("2_gs86n")]
+
+[node name="bb_egg" parent="." instance=ExtResource("3_5pidc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.504709, -13.1712)
 
 [node name="World" type="Node3D" parent="."]
 

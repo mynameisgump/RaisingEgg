@@ -6,7 +6,7 @@
 [ext_resource type="Resource" uid="uid://b4ouhixsji3en" path="res://addons/godot-xr-tools/hands/poses/pose_default_right.tres" id="3_f67ka"]
 [ext_resource type="Shader" path="res://shaders/playstation.gdshader" id="5_8xawr"]
 [ext_resource type="AnimationNodeBlendTree" uid="uid://dkv7xtff2vr0t" path="res://addons/godot-xr-tools/hands/animations/right/hand_blend_tree.tres" id="6"]
-[ext_resource type="Texture2D" uid="uid://be3qb7qgxks84" path="res://hand_Tex.tres" id="6_v6o3n"]
+[ext_resource type="Texture2D" uid="uid://be3qb7qgxks84" path="res://resources/hand_Tex.tres" id="6_v6o3n"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_31mv3"]
 render_priority = 0
