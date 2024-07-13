@@ -1,8 +1,7 @@
-[gd_scene load_steps=25 format=3 uid="uid://b8vxq2cwhj6my"]
+[gd_scene load_steps=24 format=3 uid="uid://b8vxq2cwhj6my"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_stx4d"]
 [ext_resource type="PackedScene" uid="uid://brexemdr3tnmy" path="res://player.tscn" id="2_5m2jm"]
-[ext_resource type="Texture2D" uid="uid://cnhemdliy4qy6" path="res://assets/Textures/leafy_grass_diff_1k.jpg" id="3_inbci"]
 [ext_resource type="Texture2D" uid="uid://dxdkmwmuh45a3" path="res://assets/Textures/twigs/twigs_uv.png" id="4_ho4vp"]
 [ext_resource type="Texture2D" uid="uid://cjlvx3hndnkok" path="res://assets/Textures/twigs/twigs_normal.png" id="5_58dpm"]
 [ext_resource type="ArrayMesh" uid="uid://csprst6ukc4qy" path="res://deadTreeFixed.tres" id="5_ac1nj"]
@@ -139,11 +138,6 @@ size = Vector2(600, 600)
 script = ExtResource("1_stx4d")
 
 [node name="Player" parent="." instance=ExtResource("2_5m2jm")]
-
-[node name="bb_egg" parent="." instance=ExtResource("3_eo53l")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -9.26386)
-collision_mask = 131073
-input_capture_on_drag = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_wseoi")
