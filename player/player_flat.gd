@@ -13,9 +13,9 @@ func get_camera_position():
 	return position
 
 func _physics_process(delta: float) -> void:
-	# Add the gravity.
-	if not is_on_floor():
-		velocity.y -= gravity * delta
+	## Add the gravity.
+	#if not is_on_floor():
+		#velocity.y -= gravity * delta
 
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():

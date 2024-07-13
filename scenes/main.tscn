@@ -142,9 +142,10 @@ script = ExtResource("1_stx4d")
 environment = SubResource("Environment_wseoi")
 
 [node name="PlayerFlat" parent="." instance=ExtResource("2_gs86n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.108813, 0)
 
 [node name="bb_egg" parent="." instance=ExtResource("3_5pidc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.504709, -13.1712)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.336436, -0.907403)
 
 [node name="World" type="Node3D" parent="."]
 
