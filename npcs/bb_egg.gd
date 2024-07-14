@@ -15,22 +15,6 @@ var footstep_interval = 0.35
 @export var egg_mesh: EggMesh;
 @onready var navigation_agent: NavigationAgent3D = $NavigationAgent3D
 
-# List of footstep sounds
-var footstep_sounds = [
-	preload("res://assets/Sounds/bbegg/footsteps/bbeg_footstep_1.wav"),
-	preload("res://assets/Sounds/bbegg/footsteps/bbeg_footstep_2.wav"),
-	preload("res://assets/Sounds/bbegg/footsteps/bbeg_footstep_3.wav"),
-	preload("res://assets/Sounds/bbegg/footsteps/bbeg_footstep_4.wav"),
-	preload("res://assets/Sounds/bbegg/footsteps/bbeg_footstep_5.wav"),
-	preload("res://assets/Sounds/bbegg/footsteps/bbeg_footstep_6.wav"),
-	preload("res://assets/Sounds/bbegg/footsteps/bbeg_footstep_7.wav"),
-	preload("res://assets/Sounds/bbegg/footsteps/bbeg_footstep_8.wav")
-]
-
-
-# Reference to the AudioStreamPlayer3D node
-@onready var audio_player := $AudioStreamPlayer3D
-
 func _ready():
 	current_movement_speed = 0;
 	call_deferred("actor_setup")
@@ -62,26 +46,3 @@ func _physics_process(delta):
 			current_movement_speed = max_movement_speed;
 		velocity = current_agent_position.direction_to(next_path_position) * current_movement_speed
 		move_and_slide()
-		
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	# Check if the object is moving
-	if current_movement_speed > 0:
-		# Update the footstep timer
-		footstep_timer -= delta
-		if footstep_timer <= 0:
-			# Play a random footstep sound
-			play_random_footstep()
- 			# Reset the timer
-			footstep_timer = footstep_interval
-	else:
-		# Stop the sound if the object is not moving
-		if audio_player != null:
-			audio_player.stop()
-
-func play_random_footstep():
-	# Select a random footstep sound
-	var random_sound = footstep_sounds[randi() % footstep_sounds.size()]
-	if audio_player != null:
-		audio_player.stream = random_sound
-		audio_player.play()

@@ -104,7 +104,7 @@ var _target_overrides := []
 # Current target (controller or override)
 var _target : Node3D
 
-@onready var spike = preload("res://spike.tscn");
+#@onready var spike = preload("res://spike.tscn");
 
 ## Pose-override class
 class PoseOverride:

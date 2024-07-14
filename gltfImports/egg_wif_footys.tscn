@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://ctqt5xq2e8mfj"]
+[gd_scene load_steps=7 format=3 uid="uid://ctqt5xq2e8mfj"]
 
 [ext_resource type="PackedScene" uid="uid://cfhjj6bn1xbuu" path="res://assets/EggWifFootys.glb" id="1_sr0ar"]
 [ext_resource type="Script" path="res://gltfImports/egg_wif_footys.gd" id="2_uf4rh"]
+[ext_resource type="AudioStream" uid="uid://co1at4jmf861u" path="res://assets/Sounds/bbegg/footsteps/bbeg_footstep_1.wav" id="3_e01tj"]
 
 [sub_resource type="Animation" id="Animation_a0ijr"]
 length = 0.001
@@ -69,11 +70,22 @@ tracks/6/keys = {
 "update": 0,
 "values": [Vector3(0, 0, 0)]
 }
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("AudioStreamPlayer3D:playing")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_15sut"]
 resource_name = "Walkin"
 length = 0.6
-loop_mode = 1
 tracks/0/type = "rotation_3d"
 tracks/0/imported = false
 tracks/0/enabled = false
@@ -166,6 +178,18 @@ tracks/10/keys = {
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(0.8849, 0.284481, 0), Vector3(1.81569, 1.23396, 0), Vector3(0, 0, 0)]
 }
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("AudioStreamPlayer3D:playing")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_f11er"]
 _data = {
@@ -185,7 +209,7 @@ transform = Transform3D(1, 0, 0, 0, -3.61999e-06, 1, 0, -1, -3.61999e-06, 0, 0, 
 transform = Transform3D(-1.50966e-06, 0, 34.5371, 0, 34.5371, 0, -34.5371, 0, -1.50966e-06, 2.05678, -8.64198, -1.54418)
 
 [node name="Skeleton3D" parent="Armature_Female" index="0"]
-bones/0/position = Vector3(-0.1, 0.461706, 0.0270286)
+bones/0/position = Vector3(-0.1, 0.45, -0.03)
 bones/0/rotation = Quaternion(0.999198, -0.000182965, -0.000182841, -0.0400373)
 bones/0/scale = Vector3(1, 1, 1)
 bones/1/scale = Vector3(1, 1, 1)
@@ -194,7 +218,7 @@ bones/2/rotation = Quaternion(0.999198, 0.000182965, 0.000182841, -0.0400373)
 bones/2/scale = Vector3(1, 1, 1)
 bones/3/scale = Vector3(1, 1, 1)
 bones/4/position = Vector3(-0.100141, 0.0797179, -0.0597217)
-bones/4/rotation = Quaternion(0.825059, 0.000128992, 0.00018835, 0.565046)
+bones/4/rotation = Quaternion(0.91224, 9.35187e-05, 0.000208252, 0.409656)
 bones/4/scale = Vector3(1, 1, 1)
 bones/19/position = Vector3(0.00575562, 0.0797179, -0.0597217)
 bones/19/rotation = Quaternion(0.91224, -9.35187e-05, -0.000208252, 0.409656)
@@ -204,4 +228,11 @@ bones/19/scale = Vector3(1, 1, 1)
 libraries = {
 "": SubResource("AnimationLibrary_f11er")
 }
-speed_scale = 3.0
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="3"]
+transform = Transform3D(33.3333, 0, -7.26012e-15, 0, 33.3333, 0, 0, 0, 33.3333, 0, 0, 0)
+stream = ExtResource("3_e01tj")
+volume_db = 80.0
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="animation_started" from="AnimationPlayer" to="." method="_on_animation_player_animation_started"]
