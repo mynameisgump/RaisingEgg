@@ -232,7 +232,6 @@ libraries = {
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="3"]
 transform = Transform3D(33.3333, 0, -7.26012e-15, 0, 33.3333, 0, 0, 0, 33.3333, 0, 0, 0)
 stream = ExtResource("3_e01tj")
-volume_db = 80.0
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="animation_started" from="AnimationPlayer" to="." method="_on_animation_player_animation_started"]
