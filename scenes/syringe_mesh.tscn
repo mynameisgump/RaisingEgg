@@ -1,15 +1,15 @@
 [gd_scene load_steps=5 format=3 uid="uid://5el2rid2600a"]
 
-[ext_resource type="PackedScene" uid="uid://cymyjydex5h5e" path="res://assets/Syringe/syringe.glb" id="1_jh8rm"]
-[ext_resource type="Shader" path="res://shaders/liquid.gdshader" id="2_cfwqp"]
+[ext_resource type="PackedScene" uid="uid://cymyjydex5h5e" path="res://assets/Syringe/syringe.glb" id="1_a6s4q"]
+[ext_resource type="Shader" path="res://shaders/liquid.gdshader" id="2_68au1"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3dn1h"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4fm73"]
 transparency = 1
-albedo_color = Color(1, 1, 1, 0.196078)
+albedo_color = Color(1, 1, 1, 0.141176)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_osop5"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1xi2n"]
 render_priority = 0
-shader = ExtResource("2_cfwqp")
+shader = ExtResource("2_68au1")
 shader_parameter/coeff = null
 shader_parameter/vel = null
 shader_parameter/liquid_color = Color(0.7, 0.1, 0.6, 1)
@@ -26,10 +26,10 @@ shader_parameter/BubbleStrength = 0.5
 shader_parameter/BubbleMask = 0.5
 shader_parameter/BubbleSpeed = Vector2(3, 3)
 
-[node name="syringe" instance=ExtResource("1_jh8rm")]
+[node name="SyringeMesh" instance=ExtResource("1_a6s4q")]
 
 [node name="CenterCylinder" parent="." index="1"]
-surface_material_override/0 = SubResource("StandardMaterial3D_3dn1h")
+surface_material_override/0 = SubResource("StandardMaterial3D_4fm73")
 
 [node name="LiquidCenter" parent="." index="4"]
-surface_material_override/0 = SubResource("ShaderMaterial_osop5")
+surface_material_override/0 = SubResource("ShaderMaterial_1xi2n")

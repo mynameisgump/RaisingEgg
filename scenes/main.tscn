@@ -1,6 +1,7 @@
-[gd_scene load_steps=23 format=3 uid="uid://b8vxq2cwhj6my"]
+[gd_scene load_steps=24 format=3 uid="uid://b8vxq2cwhj6my"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_stx4d"]
+[ext_resource type="PackedScene" uid="uid://bli4n0jqkvkak" path="res://scenes/syringe_pickable.tscn" id="2_0t4mi"]
 [ext_resource type="PackedScene" uid="uid://brexemdr3tnmy" path="res://player/player.tscn" id="2_qg4iq"]
 [ext_resource type="PackedScene" uid="uid://bomamngcgusvn" path="res://npcs/bb_egg.tscn" id="3_5pidc"]
 [ext_resource type="Material" uid="uid://ofx8y882ha2n" path="res://resources/twigs.tres" id="4_y6ena"]
@@ -130,6 +131,9 @@ size = Vector2(600, 600)
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_stx4d")
+
+[node name="PickableSyringe" parent="." instance=ExtResource("2_0t4mi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00346696, 1, -0.377599)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_wseoi")
