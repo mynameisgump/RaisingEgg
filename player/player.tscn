@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://brexemdr3tnmy"]
+[gd_scene load_steps=2 format=3 uid="uid://brexemdr3tnmy"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_xy30f"]
-[ext_resource type="PackedScene" path="res://addons/godot-xr-tools/misc/vr_common_shader_cache.tscn" id="2_rahno"]
 
 [node name="Player" type="CharacterBody3D"]
 collision_layer = 0
@@ -20,5 +19,3 @@ tracker = &"right_hand"
 [node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.46923, 0)
 current = true
-
-[node name="VRCommonShaderCache" parent="XROrigin3D/XRCamera3D" instance=ExtResource("2_rahno")]
