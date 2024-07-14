@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c0bs81ah84m63"]
+
+[ext_resource type="PackedScene" uid="uid://csgsp0wuw8ucy" path="res://addons/godot-xr-tools/hands/model/Hand_Glove_low_R.gltf" id="1_2m36v"]
+
+[node name="EggHand" type="Node3D"]
+
+[node name="Hand_Glove_low_R" parent="." instance=ExtResource("1_2m36v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.03, -0.05, 0.15)

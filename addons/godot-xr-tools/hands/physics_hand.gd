@@ -8,7 +8,7 @@ extends Node3D
 ## This script extends from the standard [XRToolsHand] and adds settings to
 ## manage collision and group settings for all [XRToolsHandPhysicsBone] nodes
 ## attached to the hand.
-
+@export var hand_type: String;
 
 # Default hand bone layer of 18:player-hand
 const DEFAULT_LAYER := 0b0000_0000_0000_0010_0000_0000_0000_0000
