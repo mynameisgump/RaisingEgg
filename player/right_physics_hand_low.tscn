@@ -1,12 +1,12 @@
 [gd_scene load_steps=14 format=3 uid="uid://btf05hjpw6k05"]
 
-[ext_resource type="PackedScene" uid="uid://bxipj7hyjwy6f" path="res://addons/godot-xr-tools/hands/animations/right/AnimationPlayer.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://crqhsw38vp16p" path="res://addons/godot-xr-tools/hands/animations/right/AnimationPlayer.tscn" id="1"]
+[ext_resource type="Script" path="res://player/HandsRewrite/EggHand.gd" id="1_f6n81"]
 [ext_resource type="PackedScene" uid="uid://dunu03tc5vdbh" path="res://addons/godot-xr-tools/hands/model/Hand_Nails_low_R.gltf" id="2"]
-[ext_resource type="Script" path="res://addons/godot-xr-tools/hands/physics_hand.gd" id="3"]
-[ext_resource type="Resource" uid="uid://dmpjtk0l8vh6v" path="res://addons/godot-xr-tools/hands/poses/pose_default_right.tres" id="3_b86a5"]
+[ext_resource type="Resource" uid="uid://b4ouhixsji3en" path="res://addons/godot-xr-tools/hands/poses/pose_default_right.tres" id="3_b86a5"]
 [ext_resource type="Script" path="res://addons/godot-xr-tools/hands/hand_physics_bone.gd" id="4"]
-[ext_resource type="Material" uid="uid://dy6nhifvvmm73" path="res://addons/godot-xr-tools/hands/materials/caucasian_hand.tres" id="5"]
-[ext_resource type="AnimationNodeBlendTree" uid="uid://m85b1gogdums" path="res://addons/godot-xr-tools/hands/animations/right/hand_blend_tree.tres" id="7"]
+[ext_resource type="Material" uid="uid://bn8kjg0h47rp0" path="res://addons/godot-xr-tools/hands/materials/caucasian_hand.tres" id="5"]
+[ext_resource type="AnimationNodeBlendTree" uid="uid://dkv7xtff2vr0t" path="res://addons/godot-xr-tools/hands/animations/right/hand_blend_tree.tres" id="7"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_d2moa"]
 animation = &"Grip"
@@ -37,10 +37,10 @@ nodes/OpenHand/node = SubResource("AnimationNodeAnimation_l0mk4")
 nodes/OpenHand/position = Vector2(-600, 100)
 nodes/Trigger/node = SubResource("AnimationNodeBlend2_it0su")
 nodes/Trigger/position = Vector2(-360, 40)
-node_connections = [&"output", 0, &"Grip", &"Grip", 0, &"Trigger", &"Grip", 1, &"ClosedHand2", &"Trigger", 0, &"OpenHand", &"Trigger", 1, &"ClosedHand1"]
+node_connections = [&"Grip", 0, &"Trigger", &"Grip", 1, &"ClosedHand2", &"Trigger", 0, &"OpenHand", &"Trigger", 1, &"ClosedHand1", &"output", 0, &"Grip"]
 
 [node name="RightPhysicsHand" type="Node3D"]
-script = ExtResource("3")
+script = ExtResource("1_f6n81")
 bone_group = "RightHand"
 hand_blend_tree = ExtResource("7")
 default_pose = ExtResource("3_b86a5")
@@ -218,9 +218,9 @@ length = 0.015
 [node name="AnimationPlayer" parent="Hand_Nails_low_R" instance=ExtResource("1")]
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
+root_node = NodePath("../Hand_Nails_low_R")
 tree_root = SubResource("AnimationNodeBlendTree_km4vp")
 anim_player = NodePath("../Hand_Nails_low_R/AnimationPlayer")
-active = true
 parameters/Grip/blend_amount = 0.0
 parameters/Trigger/blend_amount = 0.0
 

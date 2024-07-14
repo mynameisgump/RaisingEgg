@@ -1,21 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://brexemdr3tnmy"]
+[gd_scene load_steps=5 format=3 uid="uid://bd5ll52bftg6o"]
 
-[ext_resource type="PackedScene" uid="uid://ftgsmc4yl5i0" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_physics_hand_low.tscn" id="1_0wmyw"]
 [ext_resource type="Script" path="res://player/player.gd" id="1_xy30f"]
+[ext_resource type="PackedScene" uid="uid://whosykjgflpr" path="res://player/HandsRewrite/syringe_hand.tscn" id="2_ft7q1"]
 [ext_resource type="PackedScene" path="res://addons/godot-xr-tools/misc/vr_common_shader_cache.tscn" id="2_rahno"]
-[ext_resource type="PackedScene" uid="uid://bo4v1rrvsnwgs" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_physics_hand_low.tscn" id="3_iepxb"]
-[ext_resource type="Script" path="res://addons/godot-xr-tools/hands/collision_hand.gd" id="3_vrs5k"]
-[ext_resource type="Animation" uid="uid://ccds2u22gbxn7" path="res://addons/godot-xr-tools/hands/animations/right/Grip.res" id="4_7sukn"]
-[ext_resource type="Animation" uid="uid://bediglpx0rj7i" path="res://addons/godot-xr-tools/hands/animations/left/Grip 5.res" id="5_427o5"]
-[ext_resource type="Script" path="res://addons/godot-xr-tools/hands/poses/hand_pose_settings.gd" id="6_28jol"]
-
-[sub_resource type="Resource" id="Resource_33yth"]
-script = ExtResource("6_28jol")
-open_pose = ExtResource("5_427o5")
-closed_pose = ExtResource("4_7sukn")
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_b03lj"]
-size = Vector3(0.055, 0.165, 0.14)
+[ext_resource type="PackedScene" uid="uid://bjb7j1ah17r31" path="res://player/HandsRewrite/egg_hand.tscn" id="3_8hvp2"]
 
 [node name="Player" type="CharacterBody3D"]
 collision_layer = 0
@@ -27,24 +15,13 @@ script = ExtResource("1_xy30f")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, -0.5)
 tracker = &"left_hand"
 
-[node name="LeftPhysicsHand" parent="XROrigin3D/LeftHand" instance=ExtResource("1_0wmyw")]
+[node name="Node3D" parent="XROrigin3D/LeftHand" instance=ExtResource("2_ft7q1")]
 
 [node name="RightHand" type="XRController3D" parent="XROrigin3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1, -0.5)
 tracker = &"right_hand"
 
-[node name="XRToolsCollisionHand" type="AnimatableBody3D" parent="XROrigin3D/RightHand"]
-script = ExtResource("3_vrs5k")
-
-[node name="RightPhysicsHand" parent="XROrigin3D/RightHand/XRToolsCollisionHand" instance=ExtResource("3_iepxb")]
-margin = 0.004
-default_pose = SubResource("Resource_33yth")
-current_hand = ""
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="XROrigin3D/RightHand/XRToolsCollisionHand"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0301867, -0.0427431, 0.0854864)
-shape = SubResource("BoxShape3D_b03lj")
-disabled = true
+[node name="EggHand" parent="XROrigin3D/RightHand" instance=ExtResource("3_8hvp2")]
 
 [node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.46923, 0)

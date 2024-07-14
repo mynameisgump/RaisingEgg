@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://whosykjgflpr"]
+
+[ext_resource type="PackedScene" uid="uid://dde20eeurdhrt" path="res://player/HandsRewrite/hand_l_mesh.tscn" id="1_htv6o"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="hand_l" parent="." instance=ExtResource("1_htv6o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.03, -0.05, 0.15)

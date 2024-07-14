@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://dde20eeurdhrt"]
+
+[ext_resource type="PackedScene" uid="uid://dhaqth6q5yw4n" path="res://addons/godot-xr-tools/hands/model/hand_l.gltf" id="1_k0k06"]
+
+[node name="hand_l" instance=ExtResource("1_k0k06")]
