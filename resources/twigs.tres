@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://ofx8y882ha2n"]
+
+[ext_resource type="Shader" path="res://shaders/twigs.gdshader" id="1_4ltuh"]
+[ext_resource type="Texture2D" uid="uid://dxdkmwmuh45a3" path="res://assets/Textures/twigs/twigs_uv.png" id="2_5kru0"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_4ltuh")
+shader_parameter/tile_size = Vector2(0.005, 0.005)
+shader_parameter/random_seed = 4.0
+shader_parameter/texture_albedo = ExtResource("2_5kru0")
