@@ -15,6 +15,8 @@ height = 0.427641
 [node name="bb_egg" type="CharacterBody3D" node_paths=PackedStringArray("egg_mesh")]
 collision_layer = 16
 script = ExtResource("1_gvdc7")
+max_movement_speed = null
+added_accel = null
 animation_speed_curve = SubResource("Curve_8ihuo")
 egg_mesh = NodePath("EggWifFootys")
 

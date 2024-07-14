@@ -141,6 +141,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.108813, 0)
 
 [node name="bb_egg" parent="." instance=ExtResource("3_5pidc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.336436, -0.907403)
+max_movement_speed = null
+added_accel = null
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="bb_egg"]
 volume_db = -36.0

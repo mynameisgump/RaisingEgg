@@ -28,6 +28,7 @@ func _physics_process(delta):
 	if navigation_agent.is_navigation_finished():
 		velocity = Vector3(0,0,0);
 		current_movement_speed = 0; 
+		egg_mesh.reset_animations();
 		move_and_slide();
 	else:
 		var current_agent_position: Vector3 = global_position
