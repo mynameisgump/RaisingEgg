@@ -1,8 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://bap6tqlj7bdfg"]
+[gd_scene load_steps=4 format=3 uid="uid://bap6tqlj7bdfg"]
 
+[ext_resource type="PackedScene" uid="uid://b4kad2kuba1yn" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_hand_low.tscn" id="1_qyu07"]
+[ext_resource type="Script" path="res://player/HandsRewrite/syringe_hand.gd" id="1_svusg"]
 [ext_resource type="PackedScene" uid="uid://cymyjydex5h5e" path="res://assets/Syringe/syringe.glb" id="2_oh52l"]
 
 [node name="SyringeHand" type="Node3D"]
+script = ExtResource("1_svusg")
+
+[node name="LeftHand" parent="." instance=ExtResource("1_qyu07")]
+trigger_action = "grip"
 
 [node name="syringe" parent="." instance=ExtResource("2_oh52l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0352701, 0.0786741)
