@@ -1,9 +1,10 @@
 [gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://c30oc8uqjytlq"]
 
-[ext_resource type="Texture2D" uid="uid://bfb0f8j3bjoaa" path="res://assets/Textures/eggshell/albedo.png" id="1_3qfp0"]
-[ext_resource type="Texture2D" uid="uid://ck0o2uv0vrotv" path="res://assets/Textures/Human Veins Displacement Map/albedoAlpha.png" id="2_6rc8b"]
+[ext_resource type="Texture2D" uid="uid://dthynyi8ksex2" path="res://assets/Textures/eggshell/albedo.png" id="1_3qfp0"]
+[ext_resource type="Texture2D" uid="uid://y8pbyggw4bwc" path="res://assets/Textures/eggshell/normal.png" id="2_imnqt"]
 
 [resource]
 albedo_texture = ExtResource("1_3qfp0")
-normal_scale = 0.5
-normal_texture = ExtResource("2_6rc8b")
+normal_enabled = true
+normal_scale = 0.15
+normal_texture = ExtResource("2_imnqt")

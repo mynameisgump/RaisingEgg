@@ -2,7 +2,7 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://y0hp5qswlogq"
+uid="uid://y8pbyggw4bwc"
 path.s3tc="res://.godot/imported/normal.png-0f8e5a070b44495ec326410c8dd173d8.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
@@ -27,7 +27,7 @@ mipmaps/limit=-1
 roughness/mode=1
 roughness/src_normal="res://assets/Textures/eggshell/normal.png"
 process/fix_alpha_border=true
-process/premult_alpha=true
+process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
