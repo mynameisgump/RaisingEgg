@@ -7,12 +7,14 @@ const JUMP_VELOCITY = 4.5
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 
+signal player_death;
 @onready var body = $Body;
 
 func get_camera_position():
 	return position
 
 func _physics_process(delta: float) -> void:
+	
 	## Add the gravity.
 	#if not is_on_floor():
 		#velocity.y -= gravity * delta

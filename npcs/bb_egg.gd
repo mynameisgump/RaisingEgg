@@ -7,10 +7,6 @@ class_name BbEgg
 var current_movement_speed: float;
 var movement_target_position: Vector3 = Vector3(-3.0,0.0,2.0)
 
-# Timer to control footstep interval
-var footstep_timer = 0.0
-var footstep_interval = 0.35
-
 @export var animation_speed_curve: Curve;
 @export var egg_mesh: EggMesh;
 @onready var navigation_agent: NavigationAgent3D = $NavigationAgent3D
