@@ -3,3 +3,23 @@
 [ext_resource type="PackedScene" uid="uid://dhaqth6q5yw4n" path="res://addons/godot-xr-tools/hands/model/hand_l.gltf" id="1_k0k06"]
 
 [node name="hand_l" instance=ExtResource("1_k0k06")]
+
+[node name="Skeleton3D" parent="Armature" index="0"]
+bones/1/rotation = Quaternion(0.256188, 0.161326, -0.220183, 0.927287)
+bones/2/rotation = Quaternion(-0.533975, -0.0992897, -0.0264308, 0.839234)
+bones/3/rotation = Quaternion(-0.590241, 0.0743836, -0.0114771, 0.803711)
+bones/5/rotation = Quaternion(-0.00128455, -0.0116081, -0.0168259, 0.99979)
+bones/6/rotation = Quaternion(0.153982, -0.00919895, 0.117783, 0.980985)
+bones/7/rotation = Quaternion(-0.0164987, -0.00307923, -0.0636289, 0.997832)
+bones/8/rotation = Quaternion(0.014226, -0.0119908, -0.134541, 0.990733)
+bones/10/rotation = Quaternion(-0.0357539, -0.000400032, 0.00636764, 0.99934)
+bones/12/rotation = Quaternion(0.0396177, -0.00463141, 0.0359944, 0.998556)
+bones/13/rotation = Quaternion(-0.0139315, -0.000142422, -0.168612, 0.985584)
+bones/15/rotation = Quaternion(-0.0702656, 0.0101908, -0.0243307, 0.99718)
+bones/16/rotation = Quaternion(-0.0944636, 0.00101824, 0.0420242, 0.99464)
+bones/17/rotation = Quaternion(0.0201961, -0.0058462, 0.0117384, 0.99971)
+bones/18/rotation = Quaternion(-0.0113518, 0.0126214, -0.131984, 0.991107)
+bones/20/rotation = Quaternion(-0.0917369, 0.0203027, -0.010183, 0.995524)
+bones/21/rotation = Quaternion(-0.175963, -0.0231728, 0.0755268, 0.981221)
+bones/22/rotation = Quaternion(0.0507516, -0.00689972, -0.0143101, 0.998585)
+bones/23/rotation = Quaternion(-0.0180548, 0.0114553, -0.107075, 0.994021)
