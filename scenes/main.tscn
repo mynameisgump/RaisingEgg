@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_stx4d"]
 [ext_resource type="PackedScene" uid="uid://0puxlal7ke2s" path="res://player/player_flat.tscn" id="2_gs86n"]
 [ext_resource type="PackedScene" uid="uid://bomamngcgusvn" path="res://npcs/bb_egg.tscn" id="3_5pidc"]
-[ext_resource type="Material" uid="uid://ofx8y882ha2n" path="res://resources/twigs.tres" id="4_y6ena"]
+[ext_resource type="Material" path="res://resources/twigs.tres" id="4_y6ena"]
 [ext_resource type="ArrayMesh" uid="uid://csprst6ukc4qy" path="res://resources/deadTreeFixed.tres" id="5_ac1nj"]
 [ext_resource type="Shader" path="res://shaders/VeinsTestClaude.gdshader" id="6_o2b4q"]
 [ext_resource type="PackedScene" uid="uid://clc5dre31iskm" path="res://addons/godot-xr-tools/xr/start_xr.tscn" id="6_q2haw"]
