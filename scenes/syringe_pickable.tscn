@@ -1,12 +1,32 @@
-[gd_scene load_steps=11 format=3 uid="uid://bli4n0jqkvkak"]
+[gd_scene load_steps=13 format=3 uid="uid://bli4n0jqkvkak"]
 
 [ext_resource type="Script" path="res://addons/godot-xr-tools/objects/pickable.gd" id="1_ahuga"]
 [ext_resource type="PackedScene" uid="uid://da2qgxxwwitl6" path="res://addons/godot-xr-tools/objects/highlight/highlight_ring.tscn" id="2_q84rc"]
 [ext_resource type="PackedScene" uid="uid://5el2rid2600a" path="res://scenes/syringe_mesh.tscn" id="3_y57fr"]
 [ext_resource type="PackedScene" uid="uid://c25yxb0vt53vc" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" id="4_82oju"]
+[ext_resource type="Shader" path="res://shaders/liquid.gdshader" id="4_207c7"]
 [ext_resource type="Animation" uid="uid://dqa0h82y3qn1t" path="res://addons/godot-xr-tools/hands/animations/left/Grip 1.res" id="5_qw0qn"]
 [ext_resource type="Animation" uid="uid://dlxa6f6hwurka" path="res://addons/godot-xr-tools/hands/animations/left/Default pose.res" id="6_bnvwp"]
 [ext_resource type="Script" path="res://addons/godot-xr-tools/hands/poses/hand_pose_settings.gd" id="7_eynh5"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bes4h"]
+render_priority = 0
+shader = ExtResource("4_207c7")
+shader_parameter/coeff = null
+shader_parameter/vel = null
+shader_parameter/liquid_color = Color(0.7, 0.1, 0.6, 1)
+shader_parameter/foam_color = Color(0.9, 0.3, 0.8, 1)
+shader_parameter/foam_line = 0.2
+shader_parameter/fill_amount = 0.0
+shader_parameter/size = Vector2(0.048, 0.033)
+shader_parameter/glass_thickness = 0.0
+shader_parameter/scale = 1.0
+shader_parameter/wave_intensity = 0.05
+shader_parameter/HasBubbles = true
+shader_parameter/AlwaysBubbles = false
+shader_parameter/BubbleStrength = 0.5
+shader_parameter/BubbleMask = 0.5
+shader_parameter/BubbleSpeed = Vector2(3, 3)
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_ni1ua"]
 height = 0.0887906
@@ -28,12 +48,21 @@ gravity_scale = 0.0
 script = ExtResource("1_ahuga")
 
 [node name="HighlightRing" parent="." instance=ExtResource("2_q84rc")]
+visible = false
 skeleton = NodePath("../..")
 
 [node name="SyringeMesh" parent="." instance=ExtResource("3_y57fr")]
 
+[node name="CenterCylinder" parent="SyringeMesh" index="1"]
+visible = false
+
+[node name="LiquidCenter" parent="SyringeMesh" index="4"]
+transform = Transform3D(0.000164403, 0, 0, 0, 0.000511735, -1.81899e-11, 0, 4.36557e-11, 0.000164403, 0, 0, 0)
+surface_material_override/0 = SubResource("ShaderMaterial_bes4h")
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.127926, 0)
+visible = false
 shape = SubResource("CylinderShape3D_ni1ua")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
@@ -43,5 +72,7 @@ shape = SubResource("CylinderShape3D_lvkmx")
 [node name="GrabPointHandLeft" parent="." instance=ExtResource("4_82oju")]
 transform = Transform3D(1, 0, 0, 0, 0.986641, -0.162913, 0, 0.162913, 0.986641, 0, 0.0469445, -0.0780543)
 hand_pose = SubResource("Resource_145w4")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
 [editable path="SyringeMesh"]
