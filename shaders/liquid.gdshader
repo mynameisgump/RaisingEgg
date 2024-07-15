@@ -65,7 +65,6 @@ void fragment() {
 	lowp float wave_noise_2 = texture(waves_noise, (2.0 * pos.xz - 0.5 * TIME * vec2(1.0, 1.0)) * scale).g;
 	lowp float wave = wave_intensity * length(coeff) * (wave_noise_1 - 0.5f + wave_noise_2 - 0.5f) + dot(pos.xz, coeff);
 	wave *= smoothstep(0.05, 0.25, fill_amount);
-	// lowp float liquid_line = (fill_amount * 2.0 - 1.0 + wave) * rot_scale;
 	if (pos.y > liquid_line) discard;// Discard all vertices above the liquid line. */
 
 	if (HasBubbles){
@@ -94,6 +93,7 @@ void fragment() {
 		ALBEDO = mix(liquid_color.xyz, foam_color.xyz, vel);
 		NORMAL = vec3(coeff.x, 1.0, coeff.y);
 	}
+	EMISSION = mix(liquid_color.xyz, foam_color.xyz, vel);
 }
 
 void light() 
