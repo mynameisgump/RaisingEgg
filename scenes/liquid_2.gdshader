@@ -55,6 +55,11 @@ void fragment() {
 	/* Discard all vertices above the liquid line. */
 	if (pos.y > liquid_line) discard;
 	else ALBEDO = liquid_color.rgb;
+	
+	 // Foam logic from Shader 1
+    float foam = smoothstep(liquid_line - 0.2, liquid_line, pos.y);
+    vec3 foam_color = mix(liquid_color.rgb, vec3(0.9, 0.3, 0.8), foam);
+    ALBEDO = foam_color;
 }
 
 void light() {
