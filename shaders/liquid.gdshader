@@ -24,15 +24,35 @@ uniform float BubbleMask    : hint_range(0.0, 1.0, 0.001) = 0.5;
 uniform vec2 BubbleSpeed    = vec2(3.0, 3.0);
 uniform sampler2D bubbles_tex;
 
+uniform float width;
+uniform float height;
+
 varying lowp vec3 pos;
 varying lowp float rot_scale;
 varying lowp vec3 world_vec_up_to_model;
 varying lowp vec3 weights;
+varying float liquid_line;
+
+float lerp(float a, float b, float t) {
+	return b * t + a * (1.0f - t);
+}
 
 void vertex() {
 	VERTEX                -= glass_thickness * NORMAL;
 	/* Position inside container rotated to world. */
 	pos                   = mat3(MODEL_MATRIX)*VERTEX;
+	
+		/* Lerp between height and width depending on world orientation of z axis. */
+	float d = dot(vec3(MODEL_MATRIX[0][1], MODEL_MATRIX[1][1], MODEL_MATRIX[2][1]), vec3(0.0f, 1.0f, 0.0f));
+	float m = lerp(width, height, abs(d));
+	
+		/* Set liquid line to fill amount, add noise waves and incline. */
+	/* This could also be moved to the fragment function as-is for finder results. */
+	liquid_line = (fill_amount - 0.5f) * m
+				  + wave_intensity * length(coeff) * (texture(waves_noise, 2.0*pos.xz + 0.5*TIME * vec2(1.0, 1.0)).r - 0.5f
+											  	      + texture(waves_noise, 2.0*pos.xz - 0.5*TIME * vec2(1.0, 1.0)).g - 0.5f)
+				  + dot(pos.xz, coeff);
+	
 	/* Lerp between height and width depending on world orientation of z axis. */
 	world_vec_up_to_model = vec3(0.0f, 1.0f, 0.0f)* mat3(MODEL_MATRIX);
 	rot_scale             = mix(size.x, size.y, abs(dot(world_vec_up_to_model, vec3(0.0f, 1.0f, 0.0f))));
@@ -45,7 +65,6 @@ void fragment() {
 	lowp float wave_noise_2 = texture(waves_noise, (2.0 * pos.xz - 0.5 * TIME * vec2(1.0, 1.0)) * scale).g;
 	lowp float wave = wave_intensity * length(coeff) * (wave_noise_1 - 0.5f + wave_noise_2 - 0.5f) + dot(pos.xz, coeff);
 	wave *= smoothstep(0.05, 0.25, fill_amount);
-	lowp float liquid_line = (fill_amount * 2.0 - 1.0 + wave) * rot_scale;
 	if (pos.y > liquid_line) discard;// Discard all vertices above the liquid line. */
 
 	if (HasBubbles){
@@ -74,6 +93,7 @@ void fragment() {
 		ALBEDO = mix(liquid_color.xyz, foam_color.xyz, vel);
 		NORMAL = vec3(coeff.x, 1.0, coeff.y);
 	}
+	EMISSION = mix(liquid_color.xyz, foam_color.xyz, vel);
 }
 
 void light() 

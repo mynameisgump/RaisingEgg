@@ -1,4 +1,4 @@
-[gd_resource type="OpenXRActionMap" load_steps=210 format=3 uid="uid://dh01vahw70tpv"]
+[gd_resource type="OpenXRActionMap" load_steps=208 format=3 uid="uid://dh01vahw70tpv"]
 
 [sub_resource type="OpenXRAction" id="OpenXRAction_1gym5"]
 resource_name = "trigger"
@@ -872,14 +872,6 @@ paths = PackedStringArray("/user/vive_tracker_htcx/role/left_foot/output/haptic"
 interaction_profile_path = "/interaction_profiles/htc/vive_tracker_htcx"
 bindings = [SubResource("OpenXRIPBinding_ibeo1"), SubResource("OpenXRIPBinding_rtybl")]
 
-[sub_resource type="OpenXRIPBinding" id="OpenXRIPBinding_dgods"]
-action = SubResource("OpenXRAction_f40ke")
-paths = PackedStringArray("/user/eyes_ext/input/gaze_ext/pose")
-
-[sub_resource type="OpenXRInteractionProfile" id="OpenXRInteractionProfile_8ffac"]
-interaction_profile_path = "/interaction_profiles/ext/eye_gaze_interaction"
-bindings = [SubResource("OpenXRIPBinding_dgods")]
-
 [resource]
 action_sets = [SubResource("OpenXRActionSet_vg3qr")]
-interaction_profiles = [SubResource("OpenXRInteractionProfile_gevkm"), SubResource("OpenXRInteractionProfile_vvgyq"), SubResource("OpenXRInteractionProfile_cq3fj"), SubResource("OpenXRInteractionProfile_47q1h"), SubResource("OpenXRInteractionProfile_nocn3"), SubResource("OpenXRInteractionProfile_lbl3t"), SubResource("OpenXRInteractionProfile_nptfi"), SubResource("OpenXRInteractionProfile_rxjgh"), SubResource("OpenXRInteractionProfile_lmn13"), SubResource("OpenXRInteractionProfile_fig7r"), SubResource("OpenXRInteractionProfile_312md"), SubResource("OpenXRInteractionProfile_2tia8"), SubResource("OpenXRInteractionProfile_8ffac")]
+interaction_profiles = [SubResource("OpenXRInteractionProfile_gevkm"), SubResource("OpenXRInteractionProfile_vvgyq"), SubResource("OpenXRInteractionProfile_cq3fj"), SubResource("OpenXRInteractionProfile_47q1h"), SubResource("OpenXRInteractionProfile_nocn3"), SubResource("OpenXRInteractionProfile_lbl3t"), SubResource("OpenXRInteractionProfile_nptfi"), SubResource("OpenXRInteractionProfile_rxjgh"), SubResource("OpenXRInteractionProfile_lmn13"), SubResource("OpenXRInteractionProfile_fig7r"), SubResource("OpenXRInteractionProfile_312md"), SubResource("OpenXRInteractionProfile_2tia8")]

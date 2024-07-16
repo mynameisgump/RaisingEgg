@@ -33,7 +33,6 @@ signal hand_scale_changed(scale)
 ## Name of the Trigger action in the OpenXR Action Map.
 @export var trigger_action : String = "trigger"
 
-@export var current_hand : String = ""
 
 ## Last world scale (for scaling hands)
 var _last_world_scale : float = 1.0
@@ -74,7 +73,6 @@ var _target_overrides := []
 # Current target (controller or override)
 var _target : Node3D
 
-@onready var spike = preload("res://spike.tscn");
 
 ## Pose-override class
 class PoseOverride:
@@ -164,12 +162,9 @@ func _physics_process(_delta: float) -> void:
 		if _force_grip >= 0.0: grip = _force_grip
 		if _force_trigger >= 0.0: trigger = _force_trigger
 
-		if current_hand == "right":
-			$AnimationTree.set("parameters/Grip/blend_amount", grip)
-			$AnimationTree.set("parameters/Trigger/blend_amount", grip)
-			if grip >= 0.8:
-				if trigger >= 0.8:
-					print("Pew") 
+		$AnimationTree.set("parameters/Grip/blend_amount", grip)
+		$AnimationTree.set("parameters/Trigger/blend_amount", trigger)
+
 	# Move to target
 	global_transform = _target.global_transform * _transform
 	force_update_transform()

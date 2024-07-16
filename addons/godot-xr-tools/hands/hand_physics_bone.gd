@@ -60,7 +60,7 @@ func _ready():
 		return
 
 	# Connect the 'hand_scale_changed' signal
-	var physics_hand := XRToolsPhysicsHand.find_instance(self);
+	var physics_hand := XRToolsHand.find_instance(self) as XRToolsPhysicsHand
 	if physics_hand:
 		physics_hand.hand_scale_changed.connect(_on_hand_scale_changed)
 

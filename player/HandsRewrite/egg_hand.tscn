@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://c0bs81ah84m63"]
+
+[ext_resource type="Script" path="res://player/HandsRewrite/egg_hand.gd" id="1_l0knf"]
+[ext_resource type="PackedScene" uid="uid://l2n30mpbkdyw" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_hand_low.tscn" id="1_o318m"]
+
+[node name="EggHand" type="Node3D"]
+script = ExtResource("1_l0knf")
+
+[node name="RightHand" parent="." instance=ExtResource("1_o318m")]
