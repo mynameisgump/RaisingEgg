@@ -1,6 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://bli4n0jqkvkak"]
+[gd_scene load_steps=21 format=3 uid="uid://bli4n0jqkvkak"]
 
-[ext_resource type="Script" path="res://addons/godot-xr-tools/objects/pickable.gd" id="1_ahuga"]
+[ext_resource type="Script" path="res://syringe_pickable.gd" id="1_j1ag1"]
 [ext_resource type="PackedScene" uid="uid://cymyjydex5h5e" path="res://assets/Syringe/syringe.glb" id="2_byj7u"]
 [ext_resource type="PackedScene" uid="uid://da2qgxxwwitl6" path="res://addons/godot-xr-tools/objects/highlight/highlight_ring.tscn" id="2_q84rc"]
 [ext_resource type="Material" uid="uid://co45h6pxxbhpq" path="res://resources/liquid_mat_2.tres" id="3_ji6n8"]
@@ -8,6 +8,7 @@
 [ext_resource type="Animation" uid="uid://dqa0h82y3qn1t" path="res://addons/godot-xr-tools/hands/animations/left/Grip 1.res" id="5_qw0qn"]
 [ext_resource type="Animation" uid="uid://dlxa6f6hwurka" path="res://addons/godot-xr-tools/hands/animations/left/Default pose.res" id="6_bnvwp"]
 [ext_resource type="Script" path="res://addons/godot-xr-tools/hands/poses/hand_pose_settings.gd" id="7_eynh5"]
+[ext_resource type="AudioStream" uid="uid://qv8n8oxsp5g2" path="res://assets/Sounds/Gumpified/PaintShake.wav" id="9_f2666"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_ni1ua"]
 height = 0.0887906
@@ -22,16 +23,77 @@ script = ExtResource("7_eynh5")
 open_pose = ExtResource("6_bnvwp")
 closed_pose = ExtResource("5_qw0qn")
 
+[sub_resource type="Animation" id="Animation_wqujt"]
+resource_name = "Inject"
+
+[sub_resource type="Animation" id="Animation_43n0t"]
+resource_name = "PlungerDown"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("syringe/Plunger:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-2.65378e-06, 0.0579518, 2.06308e-05)]
+}
+
+[sub_resource type="Animation" id="Animation_k7d5h"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("syringe/Plunger:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-2.65378e-06, 0.0838848, 2.06308e-05)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_okmtq"]
+_data = {
+"Inject": SubResource("Animation_wqujt"),
+"PlungerDown": SubResource("Animation_43n0t"),
+"RESET": SubResource("Animation_k7d5h")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8a37c"]
+animation = &"PlungerDown"
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_ie72e"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_f80u1"]
+animation = &"RESET"
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_x7u3o"]
+graph_offset = Vector2(-431.992, 19.8527)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_8a37c")
+nodes/Animation/position = Vector2(-159.72, 239.035)
+nodes/Blend2/node = SubResource("AnimationNodeBlend2_ie72e")
+nodes/Blend2/position = Vector2(80, 80)
+nodes/Reset/node = SubResource("AnimationNodeAnimation_f80u1")
+nodes/Reset/position = Vector2(-160, 60)
+node_connections = [&"Blend2", 0, &"Reset", &"Blend2", 1, &"Animation", &"output", 0, &"Blend2"]
+
 [node name="PickableSyringe" type="RigidBody3D"]
 collision_layer = 4
 collision_mask = 0
 gravity_scale = 0.0
-script = ExtResource("1_ahuga")
+script = ExtResource("1_j1ag1")
 
 [node name="syringe" parent="." instance=ExtResource("2_byj7u")]
 
 [node name="CenterCylinder" parent="syringe" index="1"]
 visible = false
+
+[node name="Plunger" parent="syringe" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.65378e-06, 0.0838848, 2.06308e-05)
 
 [node name="LiquidCenter" parent="syringe" index="4"]
 surface_material_override/0 = ExtResource("3_ji6n8")
@@ -51,9 +113,32 @@ shape = SubResource("CylinderShape3D_lvkmx")
 
 [node name="GrabPointHandLeft" parent="." instance=ExtResource("4_82oju")]
 transform = Transform3D(1, 0, 0, 0, 0.986641, -0.162913, 0, 0.162913, 0.986641, 0, 0.0469445, -0.0780543)
-visible = true
+snap_hand = false
 hand_pose = SubResource("Resource_145w4")
+drive_aim = 1.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_okmtq")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeBlendTree_x7u3o")
+anim_player = NodePath("../AnimationPlayer")
+parameters/Blend2/blend_amount = 0.0
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("9_f2666")
+
+[node name="EndShakeTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="ShakeTickTimer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
+[connection signal="action_pressed" from="." to="." method="_on_action_pressed"]
+[connection signal="dropped" from="." to="." method="_on_dropped"]
+[connection signal="picked_up" from="." to="." method="_on_picked_up"]
 
 [editable path="syringe"]
