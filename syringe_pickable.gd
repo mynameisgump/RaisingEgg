@@ -10,8 +10,8 @@ var prev_position = Vector3()
 var prev_velocity = Vector3()
 var prev_accelerations: Array = []
 var max_accel_history = 20  # Number of frames to keep track of accelerations
-var acceleration_threshold = 8.0  # Adjust this value based on your needs
-var shake_count_threshold = 5  # Minimum count of significant shakes to consider it a shake
+var acceleration_threshold = 70.0  # Adjust this value based on your needs
+var shake_count_threshold = 15  # Minimum count of significant shakes to consider it a shake
 
 # Timers:
 @onready var shaker_tick_timer = $ShakeTickTimer;
