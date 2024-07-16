@@ -8,10 +8,12 @@ var held = false;
 # Variables to store previous states
 var prev_position = Vector3()
 var prev_velocity = Vector3()
-var prev_accelerations: Array = []
-var max_accel_history = 20  # Number of frames to keep track of accelerations
-var acceleration_threshold = 70.0  # Adjust this value based on your needs
-var shake_count_threshold = 15  # Minimum count of significant shakes to consider it a shake
+var prev_accelerations := [];
+var prev_positions := []
+var max_history = 20  # Number of frames to keep track of history
+var acceleration_threshold = 10.0  # Adjust this value based on your needs
+var position_change_threshold = 0.01  # Adjust based on needs
+var shake_count_threshold = 10  # Minimum count of significant shakes to consider it a shake
 
 # Timers:
 @onready var shaker_tick_timer = $ShakeTickTimer;
@@ -38,8 +40,13 @@ func _process(delta):
 
 		# Store acceleration in history
 		prev_accelerations.append(acceleration.length())
-		if prev_accelerations.size() > max_accel_history:
+		prev_positions.append((current_position - prev_position).length())
+		
+		if prev_accelerations.size() > max_history:
 			prev_accelerations.pop_at(0)
+			
+		if prev_positions.size() > max_history:
+			prev_positions.pop_at(0)
 
 		# Detect shakes
 		if detect_shake():
@@ -54,8 +61,15 @@ func detect_shake() -> bool:
 	for accel in prev_accelerations:
 		if accel > acceleration_threshold:
 			shake_count += 1
+			
+	 # Check for significant position changes
+	var pos_change_count = 0
+	for pos_change in prev_positions:
+		print(pos_change)
+		if pos_change < position_change_threshold:
+			pos_change_count += 1
 
-	return shake_count > shake_count_threshold
+	return shake_count > shake_count_threshold and pos_change_count > shake_count_threshold
 
 func _on_shake_detected():
 	# Handle the shake event (e.g., play sound, particle effects, etc.)
