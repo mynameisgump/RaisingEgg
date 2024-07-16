@@ -13,7 +13,7 @@ var prev_positions := []
 var max_history = 20  # Number of frames to keep track of history
 var acceleration_threshold = 10.0  # Adjust this value based on your needs
 var position_change_threshold = 0.01  # Adjust based on needs
-var shake_count_threshold = 10  # Minimum count of significant shakes to consider it a shake
+var shake_count_threshold = 15  # Minimum count of significant shakes to consider it a shake
 
 # Timers:
 @onready var shaker_tick_timer = $ShakeTickTimer;
@@ -65,7 +65,7 @@ func detect_shake() -> bool:
 	 # Check for significant position changes
 	var pos_change_count = 0
 	for pos_change in prev_positions:
-		print(pos_change)
+
 		if pos_change < position_change_threshold:
 			pos_change_count += 1
 
