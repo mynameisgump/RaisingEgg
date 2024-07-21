@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://4n32w3xh72cu"]
+[gd_scene load_steps=15 format=3 uid="uid://4n32w3xh72cu"]
 
 [ext_resource type="PackedScene" uid="uid://cymyjydex5h5e" path="res://assets/Syringe/syringe.glb" id="1_eor0t"]
 [ext_resource type="Script" path="res://assets/Syringe/FlatSyringe.gd" id="2_we7g4"]
 [ext_resource type="Material" uid="uid://co45h6pxxbhpq" path="res://resources/liquid_mat_2.tres" id="3_1yl3c"]
 [ext_resource type="AudioStream" uid="uid://qv8n8oxsp5g2" path="res://assets/Sounds/Gumpified/PaintShake.wav" id="4_eoqi7"]
+[ext_resource type="AudioStream" uid="uid://ddshtq4ickcwk" path="res://assets/Sounds/syringe/syringe_use_01.wav" id="5_k51sp"]
 
 [sub_resource type="Animation" id="Animation_ner0o"]
 resource_name = "Full"
@@ -34,6 +35,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [1.0]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioSyringeUse:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_u0p2m"]
 resource_name = "Empty"
@@ -50,11 +63,28 @@ tracks/0/keys = {
 "values": [0.0]
 }
 
+[sub_resource type="Animation" id="Animation_owjc4"]
+resource_name = "SyringeSound"
+length = 0.92
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioSyringeUse:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7dt3w"]
 _data = {
 "Empty": SubResource("Animation_u0p2m"),
 "Full": SubResource("Animation_ner0o"),
-"RESET": SubResource("Animation_mv46d")
+"RESET": SubResource("Animation_mv46d"),
+"SyringeSound": SubResource("Animation_owjc4")
 }
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_giwgc"]
@@ -66,14 +96,15 @@ animation = &"Full"
 [sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_vjhty"]
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_taxsb"]
-graph_offset = Vector2(-422.066, 55.9337)
+graph_offset = Vector2(-448.176, 25.857)
 nodes/Empty/node = SubResource("AnimationNodeAnimation_giwgc")
-nodes/Empty/position = Vector2(-120, 280)
+nodes/Empty/position = Vector2(-360, 120)
 nodes/Full/node = SubResource("AnimationNodeAnimation_ael0e")
-nodes/Full/position = Vector2(-160, 120)
+nodes/Full/position = Vector2(-480, 280)
 nodes/Inject/node = SubResource("AnimationNodeBlend2_vjhty")
 nodes/Inject/position = Vector2(60, 140)
-node_connections = [&"Inject", 0, &"Full", &"Inject", 1, &"Empty", &"output", 0, &"Inject"]
+nodes/output/position = Vector2(480, 160)
+node_connections = [&"Inject", 0, &"Empty", &"Inject", 1, &"Full", &"output", 0, &"Inject"]
 
 [node name="FlatSyringe" type="Node3D"]
 script = ExtResource("2_we7g4")
@@ -101,6 +132,11 @@ libraries = {
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeBlendTree_taxsb")
 anim_player = NodePath("../AnimationPlayer")
-parameters/Inject/blend_amount = 0.0
+parameters/Inject/blend_amount = 1.0
+
+[node name="AudioSyringeUse" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("5_k51sp")
+
+[node name="Timer" type="Timer" parent="."]
 
 [editable path="syringe"]

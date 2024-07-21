@@ -27,4 +27,4 @@ shader_parameter/BubbleStrength = 0.5
 shader_parameter/BubbleMask = 0.5
 shader_parameter/BubbleSpeed = Vector2(3, 3)
 shader_parameter/width = 0.033
-shader_parameter/height = 0.102
+shader_parameter/height = 0.13

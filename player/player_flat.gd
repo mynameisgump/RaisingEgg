@@ -39,3 +39,8 @@ func _physics_process(delta: float) -> void:
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
+
+
+func _on_flat_syringe_no_juice():
+	animation_player.stop()
+	pass # Replace with function body.
