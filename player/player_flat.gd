@@ -10,6 +10,9 @@ var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 signal player_death;
 @onready var body = $Body;
 @onready var animation_player := $AnimationPlayer
+@onready var shake_sound := $ShakeSound
+var injecting = false;
+var syringe_pos = "neutral"
 
 func get_camera_position():
 	return position
@@ -26,6 +29,12 @@ func _physics_process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed("inject"):
 		animation_player.play("InjectEgg");
+		injecting = true
+	
+	if Input.is_action_just_pressed("shake_left") and injecting == false:
+		animation_player.play("ShakeLeft");
+		shake_sound.play()
+		
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
