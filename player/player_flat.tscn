@@ -1,9 +1,145 @@
-[gd_scene load_steps=4 format=3 uid="uid://0puxlal7ke2s"]
+[gd_scene load_steps=9 format=3 uid="uid://dijwi1y3wwvyp"]
 
 [ext_resource type="Script" path="res://player/player_flat.gd" id="1_nu7kj"]
 [ext_resource type="Script" path="res://player/Body.gd" id="2_1pwki"]
+[ext_resource type="PackedScene" uid="uid://4n32w3xh72cu" path="res://scenes/flat_syringe.tscn" id="3_p4fih"]
+[ext_resource type="PackedScene" uid="uid://cju7k5vr1h5iq" path="res://assets/egg.glb" id="4_odq37"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_h8y0r"]
+
+[sub_resource type="Animation" id="Animation_cf2o3"]
+resource_name = "InjectEgg"
+length = 0.25
+step = 0.005
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body/FlatSyringe:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.183, 0, -0.203), Vector3(-0.178, 0.132, -0.203), Vector3(0.025, 0.013, -0.203)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/FlatSyringe:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0.623083, 0.349066), Vector3(0, 0.293215, 1.75057), Vector3(0, 0.0279253, 0.668461)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/FlatSyringe:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body/RightHand:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.205, 0.21, 0.215, 0.22, 0.225, 0.23, 0.235, 0.24, 0.245, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.019, -0.031, -0.045), Vector3(-0.019, -0.031, -0.045), Vector3(-0.015, -0.044, -0.045), Vector3(-0.025, -0.044, -0.045), Vector3(-0.009, -0.044, -0.045), Vector3(-0.022, -0.044, -0.045), Vector3(-0.015, -0.044, -0.045), Vector3(-0.024, -0.044, -0.045), Vector3(-0.014, -0.044, -0.045), Vector3(-0.026, -0.044, -0.045), Vector3(-0.018, -0.044, -0.045), Vector3(-0.019, -0.031, -0.045)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body/RightHand:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_mem1m"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body/FlatSyringe:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.183, 0, -0.203)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/FlatSyringe:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.623083, 0.349066)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/FlatSyringe:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body/RightHand:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.019, -0.031, -0.045)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body/RightHand:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4afd5"]
+_data = {
+"InjectEgg": SubResource("Animation_cf2o3"),
+"RESET": SubResource("Animation_mem1m")
+}
 
 [node name="PlayerFlat" type="CharacterBody3D"]
 collision_layer = 128
@@ -16,6 +152,20 @@ script = ExtResource("2_1pwki")
 [node name="Camera3D" type="Camera3D" parent="Body"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
 
+[node name="FlatSyringe" parent="Body" instance=ExtResource("3_p4fih")]
+transform = Transform3D(0.763109, -0.277749, 0.583541, 0.34202, 0.939693, 0, -0.548349, 0.199583, 0.812084, -0.183, 0, -0.203)
+
+[node name="RightHand" type="Node3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.019, -0.031, -0.045)
+
+[node name="Sketchfab_Scene" parent="Body/RightHand" instance=ExtResource("4_odq37")]
+transform = Transform3D(0.00651293, 0.00464562, 0, -0.00464562, 0.00651293, 0, 0, 0, -0.008, 0.138, -0.085, -0.165)
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_h8y0r")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_4afd5")
+}

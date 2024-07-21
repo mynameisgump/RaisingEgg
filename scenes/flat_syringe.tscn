@@ -1,0 +1,106 @@
+[gd_scene load_steps=13 format=3 uid="uid://4n32w3xh72cu"]
+
+[ext_resource type="PackedScene" uid="uid://cymyjydex5h5e" path="res://assets/Syringe/syringe.glb" id="1_eor0t"]
+[ext_resource type="Script" path="res://assets/Syringe/FlatSyringe.gd" id="2_we7g4"]
+[ext_resource type="Material" uid="uid://co45h6pxxbhpq" path="res://resources/liquid_mat_2.tres" id="3_1yl3c"]
+[ext_resource type="AudioStream" uid="uid://qv8n8oxsp5g2" path="res://assets/Sounds/Gumpified/PaintShake.wav" id="4_eoqi7"]
+
+[sub_resource type="Animation" id="Animation_ner0o"]
+resource_name = "Full"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("syringe/LiquidCenter:surface_material_override/0:shader_parameter/fill_amount")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+
+[sub_resource type="Animation" id="Animation_mv46d"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("syringe/LiquidCenter:surface_material_override/0:shader_parameter/fill_amount")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+
+[sub_resource type="Animation" id="Animation_u0p2m"]
+resource_name = "Empty"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("syringe/LiquidCenter:surface_material_override/0:shader_parameter/fill_amount")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7dt3w"]
+_data = {
+"Empty": SubResource("Animation_u0p2m"),
+"Full": SubResource("Animation_ner0o"),
+"RESET": SubResource("Animation_mv46d")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_giwgc"]
+animation = &"Empty"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ael0e"]
+animation = &"Full"
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_vjhty"]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_taxsb"]
+graph_offset = Vector2(-422.066, 55.9337)
+nodes/Empty/node = SubResource("AnimationNodeAnimation_giwgc")
+nodes/Empty/position = Vector2(-120, 280)
+nodes/Full/node = SubResource("AnimationNodeAnimation_ael0e")
+nodes/Full/position = Vector2(-160, 120)
+nodes/Inject/node = SubResource("AnimationNodeBlend2_vjhty")
+nodes/Inject/position = Vector2(60, 140)
+node_connections = [&"Inject", 0, &"Full", &"Inject", 1, &"Empty", &"output", 0, &"Inject"]
+
+[node name="FlatSyringe" type="Node3D"]
+script = ExtResource("2_we7g4")
+
+[node name="syringe" parent="." instance=ExtResource("1_eor0t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="CenterCylinder" parent="syringe" index="1"]
+visible = false
+
+[node name="Plunger" parent="syringe" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.65378e-06, 0.0838848, 2.06308e-05)
+
+[node name="LiquidCenter" parent="syringe" index="4"]
+surface_material_override/0 = ExtResource("3_1yl3c")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_eoqi7")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_7dt3w")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeBlendTree_taxsb")
+anim_player = NodePath("../AnimationPlayer")
+parameters/Inject/blend_amount = 0.0
+
+[editable path="syringe"]
