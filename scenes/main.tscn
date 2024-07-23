@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://b8vxq2cwhj6my"]
+[gd_scene load_steps=25 format=3 uid="uid://b8vxq2cwhj6my"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_stx4d"]
 [ext_resource type="PackedScene" uid="uid://bomamngcgusvn" path="res://npcs/bb_egg.tscn" id="3_5pidc"]
@@ -128,6 +128,11 @@ polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
 [sub_resource type="PlaneMesh" id="PlaneMesh_sbtfa"]
 size = Vector2(600, 600)
 
+[sub_resource type="BoxMesh" id="BoxMesh_r2nsl"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_wovby"]
+points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5)
+
 [node name="Main" type="Node3D"]
 script = ExtResource("1_stx4d")
 
@@ -187,3 +192,14 @@ navigation_mesh = SubResource("NavigationMesh_e8brv")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0800796, 0)
 visible = false
 mesh = SubResource("PlaneMesh_sbtfa")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.951622, -4.38039)
+mesh = SubResource("BoxMesh_r2nsl")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.951622, -4.38039)
+shape = SubResource("ConvexPolygonShape3D_wovby")

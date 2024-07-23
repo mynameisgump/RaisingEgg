@@ -10,12 +10,10 @@ func _ready():
 	set_as_top_level(true);
 
 func _on_body_entered(body):
+	print("Body Entered")
 	if body.is_in_group("Enemy"):
 		body.health -= DAMAGE
 		queue_free()
-	else:
-		queue_free()
+	#else:
+		#queue_free()
 
-
-func _on_lifetime_timeout():
-	queue_free();

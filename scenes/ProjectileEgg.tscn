@@ -20,3 +20,5 @@ shape = SubResource("SphereShape3D_l265o")
 
 [node name="SplatSound" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("3_hc023")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
