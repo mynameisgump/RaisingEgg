@@ -1,8 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://b53k5g8c8q8w6"]
+[gd_scene load_steps=3 format=3 uid="uid://b53k5g8c8q8w6"]
 
 [ext_resource type="PackedScene" uid="uid://cju7k5vr1h5iq" path="res://assets/egg.glb" id="1_5n6b6"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ae3u8"]
+radius = 0.0453748
 
 [node name="ThrowableEgg" type="Node3D"]
 
 [node name="Sketchfab_Scene" parent="." instance=ExtResource("1_5n6b6")]
 transform = Transform3D(0.00651293, 0.00464562, 0, -0.00464562, 0.00651293, 0, 0, 0, -0.008, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_ae3u8")

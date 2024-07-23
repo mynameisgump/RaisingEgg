@@ -365,6 +365,9 @@ script = ExtResource("2_1pwki")
 [node name="Camera3D" type="Camera3D" parent="Body"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
 
+[node name="ThrowPoint" type="Node3D" parent="Body/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.08165e-12, -0.0460954, -0.278255)
+
 [node name="FlatSyringe" parent="Body" instance=ExtResource("3_p4fih")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.183, 0, -0.203)
 

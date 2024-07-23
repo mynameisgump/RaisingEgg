@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://dc52fsgq6hero"]
+
+[ext_resource type="Script" path="res://scenes/ProjectileEgg.gd" id="1_5s6q1"]
+[ext_resource type="PackedScene" uid="uid://cju7k5vr1h5iq" path="res://assets/egg.glb" id="1_t4iea"]
+[ext_resource type="AudioStream" uid="uid://4qb68mllk0mn" path="res://assets/Sounds/syringe/617590__sweet_niche__flarp-handling.wav" id="3_hc023"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_l265o"]
+radius = 0.0450898
+
+[node name="ProjectileEgg" type="RigidBody3D"]
+collision_layer = 32
+collision_mask = 65
+script = ExtResource("1_5s6q1")
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("1_t4iea")]
+transform = Transform3D(-0.008, 0, 0, 0, -0.008, 0, 0, 0, -0.008, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_l265o")
+
+[node name="SplatSound" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_hc023")
