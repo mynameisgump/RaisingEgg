@@ -6,7 +6,7 @@ var fill_amount: float = 1;
 var held = false;
 @export var injecting = false;
 @export var shaking = false;
-signal no_juice;
+signal finished_injection;
 
 # Timers:
 @onready var shaker_tick_timer = $ShakeTickTimer;
@@ -24,24 +24,22 @@ func _process(delta):
 		audio_syringe_use.playing = true;
 	if injecting == false and audio_syringe_use.playing == true:
 		audio_syringe_use.playing = false;
+		
 	
 	if injecting:
 		fill_amount -= 0.004;
 
-	if fill_amount <= 0 and injecting == true:
-		fill_amount = 0 
-		no_juice.emit()
+	if fill_amount < 0 and injecting == true:
 		injecting = false
-	
-	#if shaking == true:
-		#fill_amount += 0.004
-		#if audio_syringe_use.playing == false:
-			#audio_syringe_use.play()
-	#elif audio_syringe_use.playing == true:
-		#audio_syringe_use.stop()
+		fill_amount = 0 
+		print(fill_amount < 0 and injecting == true)
+		finished_injection.emit()
 		#
 func shake():
-	fill_amount += 0.004
+	if fill_amount > 1.0:
+		fill_amount = 1.0
+	else:
+		fill_amount += 0.1
 
 func _on_shake_detected():
 	# Handle the shake event (e.g., play sound, particle effects, etc.)
@@ -51,10 +49,3 @@ func _on_shake_detected():
 	if shaker_tick_timer.is_stopped():
 		shaker_tick_timer.start()
 		fill_amount += 0.01
-
-# Called when the node enters the scene tree for the first time.
-#func _inject() -> void:
-	#print("Injecting")
-#
-#func _on_action_pressed(pickable) -> void:
-	#print("Injectin")

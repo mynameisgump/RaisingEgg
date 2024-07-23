@@ -11,8 +11,9 @@ signal player_death;
 @onready var body = $Body;
 @onready var animation_player := $AnimationPlayer
 @onready var shake_sound := $ShakeSound
+@onready var syringe := $Body/FlatSyringe
 var injecting = false;
-var syringe_pos = "neutral"
+var syringe_pos = "right"
 
 func get_camera_position():
 	return position
@@ -31,14 +32,22 @@ func _physics_process(delta: float) -> void:
 		animation_player.play("InjectEgg");
 		injecting = true
 	
-	if Input.is_action_just_pressed("shake_left") and injecting == false:
+	if Input.is_action_just_pressed("shake_left") and injecting == false and syringe_pos == "right":
+		syringe_pos="left"
 		animation_player.play("ShakeLeft");
 		shake_sound.play()
+		syringe.shake()
 		
+	
+	if Input.is_action_just_pressed("shake_right") and injecting == false and syringe_pos == "left":
+		syringe_pos = "right"
+		animation_player.play("ShakeRight");
+		shake_sound.play()
+		syringe.shake()
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var input_dir := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+	var input_dir := Input.get_vector("left", "right", "forward", "backward")
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
 		velocity.x = direction.x * SPEED
@@ -53,3 +62,9 @@ func _physics_process(delta: float) -> void:
 func _on_flat_syringe_no_juice():
 	animation_player.stop()
 	pass # Replace with function body.
+
+
+func _on_flat_syringe_finished_injection():
+	print("emmittted")
+	injecting = false
+	animation_player.play("FinishInjection")
