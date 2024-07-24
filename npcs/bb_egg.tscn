@@ -2,11 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://ctqt5xq2e8mfj" path="res://gltfImports/egg_wif_footys.tscn" id="1_cm3nj"]
 [ext_resource type="Script" path="res://npcs/bb_egg.gd" id="1_gvdc7"]
-
-[sub_resource type="Curve" id="Curve_8ihuo"]
-max_value = 3.0
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 3), 0.0, 0.0, 0, 0]
-point_count = 2
+[ext_resource type="Curve" uid="uid://5wte5np0v4c3" path="res://npcs/speed_curve.tres" id="2_52o5d"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ewd3g"]
 radius = 0.132187
@@ -17,7 +13,7 @@ collision_layer = 16
 script = ExtResource("1_gvdc7")
 max_movement_speed = null
 added_accel = null
-animation_speed_curve = SubResource("Curve_8ihuo")
+animation_speed_curve = ExtResource("2_52o5d")
 egg_mesh = NodePath("EggWifFootys")
 
 [node name="EggWifFootys" parent="." instance=ExtResource("1_cm3nj")]

@@ -27,6 +27,8 @@ height = 0.2
 [node name="ProjectileEgg" type="RigidBody3D"]
 collision_layer = 32
 collision_mask = 65
+max_contacts_reported = 1
+contact_monitor = true
 script = ExtResource("1_5s6q1")
 
 [node name="Sketchfab_Scene" parent="." instance=ExtResource("1_t4iea")]

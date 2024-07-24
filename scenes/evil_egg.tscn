@@ -1,0 +1,106 @@
+[gd_scene load_steps=8 format=3 uid="uid://cysq37kng625j"]
+
+[ext_resource type="Script" path="res://scenes/evil_egg.gd" id="1_diebe"]
+[ext_resource type="PackedScene" uid="uid://d2v4tm6exo340" path="res://assets/Enemies/EvilEgg/EggMa.glb" id="1_rxnk0"]
+[ext_resource type="Curve" uid="uid://5wte5np0v4c3" path="res://npcs/speed_curve.tres" id="2_8ehv6"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_uv5bp"]
+radius = 0.337735
+height = 1.58844
+
+[sub_resource type="Animation" id="Animation_1ya1j"]
+resource_name = "Runnin"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("EggMa/Armature:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-1.08635, -3.73856, 0)]
+}
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("EggMa/Armature/Skeleton3D:Bone")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, -0.238187, -0.353342, -3.2943e-08, 0.904664, 0.1, 1, 0.282759, 0.419464, -8.63725e-08, 0.862611, 0.5, 1, 0.282759, 0.419464, -8.63725e-08, 0.862611, 0.6, 1, -0.238187, -0.353342, -3.2943e-08, 0.904664)
+tracks/2/type = "rotation_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("EggMa/Armature_001/Skeleton3D:Bone")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 0.297265, 0.440983, -5.27875e-08, 0.846857, 0.1, 1, -0.145032, -0.21515, -8.10054e-08, 0.965752, 0.5, 1, -0.145032, -0.21515, -8.10054e-08, 0.965752, 0.6, 1, 0.297265, 0.440983, -5.27875e-08, 0.846857)
+
+[sub_resource type="Animation" id="Animation_yk84h"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("EggMa/Armature:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-1.08635, -3.73856, 0)]
+}
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("EggMa/Armature/Skeleton3D:Bone")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 4.6593e-08, 1.00425e-07, -1.49012e-08, 1)
+tracks/2/type = "rotation_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("EggMa/Armature_001/Skeleton3D:Bone")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 4.6593e-08, 1.00425e-07, -1.49012e-08, 1)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lcrl7"]
+_data = {
+"RESET": SubResource("Animation_yk84h"),
+"Runnin": SubResource("Animation_1ya1j")
+}
+
+[node name="EvilEgg" type="CharacterBody3D"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+collision_layer = 16
+script = ExtResource("1_diebe")
+animation_speed_curve = ExtResource("2_8ehv6")
+
+[node name="EggMa" parent="." instance=ExtResource("1_rxnk0")]
+transform = Transform3D(-0.075, 0, 6.55671e-09, 0, 0.075, 0, -6.55671e-09, 0, -0.075, 0, 0, 0)
+
+[node name="Skeleton3D" parent="EggMa/Armature" index="0"]
+transform = Transform3D(1, -5.96046e-08, 0, 5.96046e-08, 1, 0, 0, 0, 1, 0, 0, 0)
+rotation_edit_mode = 1
+bones/0/position = Vector3(0.0543966, 0.369194, -0.258215)
+bones/0/scale = Vector3(1, 1, 1)
+
+[node name="Skeleton3D" parent="EggMa/Armature_001" index="0"]
+bones/0/position = Vector3(0.0543967, 0.369194, -0.233367)
+bones/0/scale = Vector3(1, 0.999999, 1)
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0356476, 0)
+shape = SubResource("CapsuleShape3D_uv5bp")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_lcrl7")
+}
+
+[editable path="EggMa"]
