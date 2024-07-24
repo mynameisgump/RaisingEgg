@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dijwi1y3wwvyp"]
+[gd_scene load_steps=16 format=3 uid="uid://dijwi1y3wwvyp"]
 
 [ext_resource type="Script" path="res://player/player_flat.gd" id="1_nu7kj"]
 [ext_resource type="Script" path="res://player/Body.gd" id="2_1pwki"]
@@ -9,6 +9,95 @@
 [ext_resource type="AudioStream" uid="uid://b65lujnu8r4no" path="res://assets/Sounds/generic/pop_02.wav" id="7_kc72e"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_h8y0r"]
+
+[sub_resource type="Animation" id="Animation_sx32r"]
+resource_name = "FinishInjection"
+length = 0.25
+step = 0.005
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body/FlatSyringe:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.025, 0.013, -0.203), Vector3(-0.178, 0.132, -0.203), Vector3(-0.183, 0, -0.203)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/FlatSyringe:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0.0279253, 0.668461), Vector3(0, 0.293215, 1.75057), Vector3(0, 0.623083, 0.349066)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/FlatSyringe:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body/RightHand:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.005, 0.01, 0.015, 0.02, 0.025, 0.03, 0.035, 0.04, 0.045, 0.05, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.117, -0.118, -0.205), Vector3(0.11, -0.118, -0.205), Vector3(0.13, -0.118, -0.205), Vector3(0.11, -0.118, -0.205), Vector3(0.13, -0.118, -0.205), Vector3(0.11, -0.118, -0.205), Vector3(0.13, -0.118, -0.205), Vector3(0.11, -0.118, -0.205), Vector3(0.13, -0.118, -0.205), Vector3(0.11, -0.118, -0.205), Vector3(0.117, -0.118, -0.205), Vector3(0.117, -0.118, -0.205)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body/RightHand:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Body/FlatSyringe:injecting")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("PopSound:playing")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_cf2o3"]
 resource_name = "InjectEgg"
@@ -197,6 +286,30 @@ tracks/7/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Body/RightHand/ThrowableEgg:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.023595, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Body/RightHand/ThrowableEgg:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_yb5s6"]
 resource_name = "ShakeLeft"
@@ -256,93 +369,47 @@ tracks/1/keys = {
 "values": [Vector3(0, 0, -0.872665), Vector3(0, 0, 0), Vector3(0, 0, -0.872665), Vector3(0, 0, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_sx32r"]
-resource_name = "FinishInjection"
-length = 0.25
-step = 0.005
+[sub_resource type="Animation" id="Animation_xh8s2"]
+resource_name = "ThrowEgg"
+length = 0.05
+step = 0.025
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Body/FlatSyringe:position")
-tracks/0/interp = 1
+tracks/0/path = NodePath("Body/RightHand/ThrowableEgg:position")
+tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
+"times": PackedFloat32Array(0, 0.025, 0.05),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(0.025, 0.013, -0.203), Vector3(-0.178, 0.132, -0.203), Vector3(-0.183, 0, -0.203)]
+"values": [Vector3(0, 0.023595, 0), Vector3(-0.116407, 0.0442638, 0.0299694), Vector3(-0.116723, 0.0649326, -0.0662482)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Body/FlatSyringe:rotation")
+tracks/1/path = NodePath("Body/RightHand/ThrowableEgg:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 0.0279253, 0.668461), Vector3(0, 0.293215, 1.75057), Vector3(0, 0.623083, 0.349066)]
+"times": PackedFloat32Array(0, 0.05),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
 }
-tracks/2/type = "value"
+tracks/2/type = "method"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Body/FlatSyringe:scale")
+tracks/2/path = NodePath(".")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(1, 1, 1), Vector3(1, 1, 1)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Body/RightHand:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.005, 0.01, 0.015, 0.02, 0.025, 0.03, 0.035, 0.04, 0.045, 0.05, 0.25),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0.117, -0.118, -0.205), Vector3(0.11, -0.118, -0.205), Vector3(0.13, -0.118, -0.205), Vector3(0.11, -0.118, -0.205), Vector3(0.13, -0.118, -0.205), Vector3(0.11, -0.118, -0.205), Vector3(0.13, -0.118, -0.205), Vector3(0.11, -0.118, -0.205), Vector3(0.13, -0.118, -0.205), Vector3(0.11, -0.118, -0.205), Vector3(0.117, -0.118, -0.205), Vector3(0.117, -0.118, -0.205)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Body/RightHand:rotation")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 0, 0)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Body/FlatSyringe:injecting")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(0.05),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("PopSound:playing")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
+"values": [{
+"args": [],
+"method": &"throw_that_egg"
+}]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4afd5"]
@@ -351,7 +418,8 @@ _data = {
 "InjectEgg": SubResource("Animation_cf2o3"),
 "RESET": SubResource("Animation_mem1m"),
 "ShakeLeft": SubResource("Animation_yb5s6"),
-"ShakeRight": SubResource("Animation_kq3yy")
+"ShakeRight": SubResource("Animation_kq3yy"),
+"ThrowEgg": SubResource("Animation_xh8s2")
 }
 
 [node name="PlayerFlat" type="CharacterBody3D"]
@@ -375,6 +443,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.183, 0, -0.203)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.117, -0.118, -0.205)
 
 [node name="ThrowableEgg" parent="Body/RightHand" instance=ExtResource("4_bxnx4")]
+transform = Transform3D(0.809017, -0.587785, 0, 0.587785, 0.809017, 0, 0, 0, 1, 0, 0.023595, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -396,3 +465,4 @@ stream = ExtResource("6_7pl8b")
 stream = ExtResource("7_kc72e")
 
 [connection signal="finished_injection" from="Body/FlatSyringe" to="." method="_on_flat_syringe_finished_injection"]
+[connection signal="injection_tick" from="Body/FlatSyringe" to="Body/RightHand/ThrowableEgg" method="_on_flat_syringe_injection_tick"]

@@ -1,0 +1,20 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://biels1lltww4g"]
+
+[ext_resource type="Shader" path="res://shaders/VeinsTestClaude.gdshader" id="1_2phmn"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_2phmn")
+shader_parameter/vein_r = 0.0
+shader_parameter/vein_g = 0.0
+shader_parameter/vein_b = 0.0
+shader_parameter/base_r = 0.0
+shader_parameter/base_g = 0.0
+shader_parameter/base_b = 0.0
+shader_parameter/base_color = Color(1, 1, 1, 1)
+shader_parameter/vein_width = 0.01
+shader_parameter/vein_scale = 50.0
+shader_parameter/glow_intensity = 2.0
+shader_parameter/smoothness = 0.0
+shader_parameter/enable_movement = true
+shader_parameter/movement_speed = 2.567

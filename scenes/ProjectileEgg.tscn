@@ -5,16 +5,15 @@
 [ext_resource type="AudioStream" uid="uid://4qb68mllk0mn" path="res://assets/Sounds/syringe/617590__sweet_niche__flarp-handling.wav" id="3_hc023"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_l265o"]
-radius = 0.0450898
+radius = 0.138131
 
 [node name="ProjectileEgg" type="RigidBody3D"]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
 collision_layer = 32
 collision_mask = 65
 script = ExtResource("1_5s6q1")
 
 [node name="Sketchfab_Scene" parent="." instance=ExtResource("1_t4iea")]
-transform = Transform3D(-0.008, 0, 0, 0, -0.008, 0, 0, 0, -0.008, 0, 0, 0)
+transform = Transform3D(-0.024, 0, 0, 0, -0.024, 0, 0, 0, -0.024, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_l265o")
@@ -23,3 +22,5 @@ shape = SubResource("SphereShape3D_l265o")
 stream = ExtResource("3_hc023")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+
+[editable path="Sketchfab_Scene"]

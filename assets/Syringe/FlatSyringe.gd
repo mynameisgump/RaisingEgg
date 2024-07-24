@@ -7,7 +7,8 @@ var held = false;
 @export var injecting = false;
 @export var shaking = false;
 signal finished_injection;
-signal injection_tick;
+signal injection_tick(type: String);
+
 
 # Timers:
 @onready var shaker_tick_timer = $ShakeTickTimer;
@@ -29,7 +30,7 @@ func _process(delta):
 	
 	if injecting:
 		fill_amount -= 0.004;
-		injection_tick.emit()
+		injection_tick.emit("green")
 		
 	if fill_amount < 0 and injecting == true:
 		injecting = false

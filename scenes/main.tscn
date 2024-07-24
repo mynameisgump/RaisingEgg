@@ -108,7 +108,12 @@ shadow_mesh = SubResource("ArrayMesh_bsly4")
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_174ea"]
 render_priority = 0
 shader = ExtResource("6_o2b4q")
-shader_parameter/vein_color = Color(0, 1, 0.5, 1)
+shader_parameter/vein_r = 0.0
+shader_parameter/vein_g = 0.0
+shader_parameter/vein_b = 0.0
+shader_parameter/base_r = 0.0
+shader_parameter/base_g = 0.0
+shader_parameter/base_b = 0.0
 shader_parameter/base_color = Color(0.1, 0.1, 0.1, 1)
 shader_parameter/vein_width = 0.065
 shader_parameter/vein_scale = 5.196

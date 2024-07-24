@@ -19,9 +19,17 @@ var syringe_pos = "right"
 @onready var ThrowPoint = $Body/Camera3D/ThrowPoint
 var egg_speed = 20;
 
+@onready var hand_egg = $Body/RightHand/ThrowableEgg
 
 func get_camera_position():
 	return position
+
+func throw_that_egg():
+	var new_egg = projectile_egg.instantiate();
+	add_child(new_egg);
+	new_egg.set_egg_mat(hand_egg.get_egg_mat());
+	new_egg.transform = ThrowPoint.global_transform;
+	new_egg.linear_velocity = -new_egg.transform.basis.z*egg_speed;
 
 func _physics_process(delta: float) -> void:
 	
@@ -38,10 +46,7 @@ func _physics_process(delta: float) -> void:
 		injecting = true
 	
 	if Input.is_action_just_pressed("throw egg"):
-		var new_egg = projectile_egg.instantiate();
-		add_child(new_egg);
-		new_egg.transform = ThrowPoint.global_transform
-		new_egg.linear_velocity = -new_egg.transform.basis.z*egg_speed;
+		animation_player.play("ThrowEgg")
 	
 	if Input.is_action_just_pressed("shake_left") and injecting == false and syringe_pos == "right":
 		syringe_pos="left"
