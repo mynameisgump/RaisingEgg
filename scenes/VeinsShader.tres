@@ -3,6 +3,7 @@
 [ext_resource type="Shader" path="res://shaders/VeinsTestClaude.gdshader" id="1_2phmn"]
 
 [resource]
+resource_local_to_scene = true
 render_priority = 0
 shader = ExtResource("1_2phmn")
 shader_parameter/vein_r = 0.0

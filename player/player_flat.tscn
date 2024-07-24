@@ -1,11 +1,14 @@
-[gd_scene load_steps=16 format=3 uid="uid://dijwi1y3wwvyp"]
+[gd_scene load_steps=19 format=3 uid="uid://dijwi1y3wwvyp"]
 
 [ext_resource type="Script" path="res://player/player_flat.gd" id="1_nu7kj"]
 [ext_resource type="Script" path="res://player/Body.gd" id="2_1pwki"]
 [ext_resource type="PackedScene" uid="uid://4n32w3xh72cu" path="res://scenes/flat_syringe.tscn" id="3_p4fih"]
 [ext_resource type="PackedScene" uid="uid://b53k5g8c8q8w6" path="res://scenes/throwable_egg.tscn" id="4_bxnx4"]
+[ext_resource type="AudioStream" uid="uid://dhbqyhek6v0b6" path="res://assets/Sounds/Reload.wav" id="5_foqbs"]
 [ext_resource type="AudioStream" uid="uid://buh87nvfwkh2w" path="res://assets/Sounds/syringe/syringe_insertion_01.wav" id="5_t8phm"]
 [ext_resource type="AudioStream" uid="uid://qv8n8oxsp5g2" path="res://assets/Sounds/Gumpified/PaintShake.wav" id="6_7pl8b"]
+[ext_resource type="Animation" uid="uid://dnyoepr0j3kgo" path="res://ShakeLeft.res" id="6_447pb"]
+[ext_resource type="Animation" uid="uid://d10p4r5xxx146" path="res://ShakeRight.res" id="7_3cp06"]
 [ext_resource type="AudioStream" uid="uid://b65lujnu8r4no" path="res://assets/Sounds/generic/pop_02.wav" id="7_kc72e"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_h8y0r"]
@@ -97,6 +100,17 @@ tracks/6/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
+}
+tracks/7/type = "method"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Body/RightHand/ThrowableEgg")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"values": []
 }
 
 [sub_resource type="Animation" id="Animation_cf2o3"]
@@ -310,63 +324,17 @@ tracks/9/keys = {
 "update": 1,
 "values": [true]
 }
-
-[sub_resource type="Animation" id="Animation_yb5s6"]
-resource_name = "ShakeLeft"
-length = 0.18
-step = 0.005
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Body/FlatSyringe:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Body/RightHand/ThrowableEgg/EggReloadSound:playing")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(-0.183, 0, -0.203)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Body/FlatSyringe:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.09, 0.18, 0.325),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0.872665), Vector3(0, 0, 0), Vector3(0, 0, 0.872665), Vector3(0, 0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_kq3yy"]
-resource_name = "ShakeRight"
-length = 0.18
-step = 0.005
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Body/FlatSyringe:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(-0.183, 0, -0.203)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Body/FlatSyringe:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.09, 0.18, 0.325),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 0, -0.872665), Vector3(0, 0, 0), Vector3(0, 0, -0.872665), Vector3(0, 0, 0)]
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_xh8s2"]
@@ -412,14 +380,76 @@ tracks/2/keys = {
 }]
 }
 
+[sub_resource type="Animation" id="Animation_qte3l"]
+resource_name = "ReloadEgg"
+length = 0.6
+step = 0.025
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body/RightHand/ThrowableEgg:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/RightHand/ThrowableEgg:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.127, 0.005, 0.124), Vector3(-0.127, 0.065, -0.011), Vector3(0, 0.023595, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/RightHand/ThrowableEgg/EggReloadSound:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body/RightHand/ThrowableEgg")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"reset_egg_mat"
+}]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4afd5"]
 _data = {
 "FinishInjection": SubResource("Animation_sx32r"),
 "InjectEgg": SubResource("Animation_cf2o3"),
 "RESET": SubResource("Animation_mem1m"),
-"ShakeLeft": SubResource("Animation_yb5s6"),
-"ShakeRight": SubResource("Animation_kq3yy"),
+"ReloadEgg": SubResource("Animation_qte3l"),
+"ShakeLeft": ExtResource("6_447pb"),
+"ShakeRight": ExtResource("7_3cp06"),
 "ThrowEgg": SubResource("Animation_xh8s2")
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_md7ce"]
+_data = {
+"ShakeLeft": ExtResource("6_447pb"),
+"ShakeRight": ExtResource("7_3cp06")
 }
 
 [node name="PlayerFlat" type="CharacterBody3D"]
@@ -445,6 +475,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.117, -0.118, -0.205)
 [node name="ThrowableEgg" parent="Body/RightHand" instance=ExtResource("4_bxnx4")]
 transform = Transform3D(0.809017, -0.587785, 0, 0.587785, 0.809017, 0, 0, 0, 1, 0, 0.023595, 0)
 
+[node name="EggReloadSound" type="AudioStreamPlayer3D" parent="Body/RightHand/ThrowableEgg"]
+transform = Transform3D(0.809017, 0.587785, 0, -0.587785, 0.809017, 0, 0, 0, 1, 0, 0, 0)
+stream = ExtResource("5_foqbs")
+max_polyphony = 5
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_h8y0r")
@@ -453,6 +488,13 @@ shape = SubResource("CapsuleShape3D_h8y0r")
 libraries = {
 "": SubResource("AnimationLibrary_4afd5")
 }
+
+[node name="SyringeShaker" type="AnimationPlayer" parent="."]
+libraries = {
+"syringestuff": SubResource("AnimationLibrary_md7ce")
+}
+next/syringestuff/ShakeLeft = &""
+blend_times = [&"syringestuff/ShakeLeft", &"syringestuff/ShakeRight", 50.0]
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.110693, 1.40431, -0.215415)
@@ -463,6 +505,9 @@ stream = ExtResource("6_7pl8b")
 
 [node name="PopSound" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("7_kc72e")
+
+[node name="EggReloadTimer" type="Timer" parent="."]
+one_shot = true
 
 [connection signal="finished_injection" from="Body/FlatSyringe" to="." method="_on_flat_syringe_finished_injection"]
 [connection signal="injection_tick" from="Body/FlatSyringe" to="Body/RightHand/ThrowableEgg" method="_on_flat_syringe_injection_tick"]

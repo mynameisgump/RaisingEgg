@@ -32,5 +32,12 @@ func injection_tick(type: String) -> void:
 func _on_flat_syringe_injection_tick(type: String):
 	injection_tick(type)
 
+func reset_egg_mat():
+	print("???")
+	injection_amount = 0.0
+	g_total = 0.0
+	animation_tree.set("parameters/VeinsAmount/blend_amount", 0.0);
+	animation_tree.set("parameters/GreenAmount/add_amount", 0.0);
+
 func get_egg_mat():
 	return egg_mat.get_surface_override_material(0);

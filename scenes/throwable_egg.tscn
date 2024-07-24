@@ -201,7 +201,7 @@ animation = &"Veins"
 [sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_qfj5f"]
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_07uei"]
-graph_offset = Vector2(-235.369, 125.035)
+graph_offset = Vector2(-255.369, 60.0353)
 nodes/Animation/node = SubResource("AnimationNodeAnimation_12cl2")
 nodes/Animation/position = Vector2(200, 440)
 "nodes/Animation 2/node" = SubResource("AnimationNodeAnimation_ypjta")

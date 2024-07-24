@@ -10,6 +10,7 @@ var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 signal player_death;
 @onready var body = $Body;
 @onready var animation_player := $AnimationPlayer
+@onready var animation_player_syringe := $SyringeShaker
 @onready var shake_sound := $ShakeSound
 @onready var syringe := $Body/FlatSyringe
 var injecting = false;
@@ -20,6 +21,9 @@ var syringe_pos = "right"
 var egg_speed = 20;
 
 @onready var hand_egg = $Body/RightHand/ThrowableEgg
+@onready var egg_reload_timer: Timer = $EggReloadTimer
+
+var holding_egg = false;
 
 func get_camera_position():
 	return position
@@ -27,15 +31,22 @@ func get_camera_position():
 func throw_that_egg():
 	var new_egg = projectile_egg.instantiate();
 	add_child(new_egg);
-	new_egg.set_egg_mat(hand_egg.get_egg_mat());
+	var new_mat = hand_egg.get_egg_mat().duplicate()
+	new_egg.set_egg_mat(new_mat);
 	new_egg.transform = ThrowPoint.global_transform;
 	new_egg.linear_velocity = -new_egg.transform.basis.z*egg_speed;
 
+func _process(delta):
+	if holding_egg == false and egg_reload_timer.is_stopped():
+		holding_egg = true
+		animation_player.play("ReloadEgg")
+		pass
 func _physics_process(delta: float) -> void:
 	
 	## Add the gravity.
 	#if not is_on_floor():
 		#velocity.y -= gravity * delta
+	
 
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
@@ -45,8 +56,11 @@ func _physics_process(delta: float) -> void:
 		animation_player.play("InjectEgg");
 		injecting = true
 	
-	if Input.is_action_just_pressed("throw egg"):
-		animation_player.play("ThrowEgg")
+	if Input.is_action_just_pressed("throw egg") and holding_egg == true:
+		animation_player.play("ThrowEgg");
+		egg_reload_timer.start();
+		holding_egg = false
+		
 	
 	if Input.is_action_just_pressed("shake_left") and injecting == false and syringe_pos == "right":
 		syringe_pos="left"
