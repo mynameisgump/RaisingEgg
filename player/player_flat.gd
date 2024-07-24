@@ -62,14 +62,14 @@ func _physics_process(delta: float) -> void:
 		holding_egg = false
 		
 	
-	if Input.is_action_just_pressed("shake_left") and injecting == false and syringe_pos == "right":
+	if Input.is_action_just_pressed("shake_left") and injecting == false and syringe_pos == "right" and not (animation_player.is_playing() and animation_player.current_animation == "ReloadEgg"):
 		syringe_pos="left"
 		animation_player.play("ShakeLeft");
 		shake_sound.play()
 		syringe.shake()
 		
 	
-	if Input.is_action_just_pressed("shake_right") and injecting == false and syringe_pos == "left":
+	if Input.is_action_just_pressed("shake_right") and injecting == false and syringe_pos == "left" and not (animation_player.is_playing() and animation_player.current_animation == "ReloadEgg"):
 		syringe_pos = "right"
 		animation_player.play("ShakeRight");
 		shake_sound.play()
