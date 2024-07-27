@@ -212,7 +212,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.951622, -4.38039)
 shape = SubResource("ConvexPolygonShape3D_wovby")
 
 [node name="EvilEgg" parent="." instance=ExtResource("9_dlnba")]
-transform = Transform3D(-0.185804, 0, 0.982587, 0, 1, 0, -0.982587, 0, -0.185804, -3.71758, 0.935745, 0)
+transform = Transform3D(-0.185804, 0, 0.982587, 0, 1, 0, -0.982587, 0, -0.185804, -8.56633, 0.935745, 0)
 
 [node name="ProjectileEgg" parent="." instance=ExtResource("10_8xh5r")]
 

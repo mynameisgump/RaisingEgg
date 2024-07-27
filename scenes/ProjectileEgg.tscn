@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dc52fsgq6hero"]
+[gd_scene load_steps=13 format=3 uid="uid://dc52fsgq6hero"]
 
 [ext_resource type="Script" path="res://scenes/ProjectileEgg.gd" id="1_5s6q1"]
 [ext_resource type="PackedScene" uid="uid://cju7k5vr1h5iq" path="res://assets/egg.glb" id="1_t4iea"]
@@ -10,6 +10,7 @@ radius = 0.138131
 
 [sub_resource type="Animation" id="Animation_hy0bi"]
 resource_name = "Explode"
+length = 5.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -48,6 +49,42 @@ tracks/2/keys = {
 "method": &"egg_explode"
 }]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:freeze")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CollisionShape3D:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Sketchfab_Scene:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_5vy62"]
 length = 0.001
@@ -75,6 +112,42 @@ tracks/1/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:freeze")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CollisionShape3D:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sketchfab_Scene:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4viob"]
 _data = {
@@ -98,6 +171,9 @@ albedo_color = Color(0.0942616, 1, 0.0215643, 1)
 material = SubResource("StandardMaterial3D_t7o2r")
 radius = 0.1
 height = 0.2
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_7wvp8"]
+radius = 1.0
 
 [node name="ProjectileEgg" type="RigidBody3D"]
 collision_layer = 32
@@ -133,6 +209,12 @@ draw_pass_1 = SubResource("SphereMesh_5sl8b")
 visible = false
 texture_albedo = ExtResource("4_iemo3")
 cull_mask = 1048573
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.86269, 0)
+shape = SubResource("CylinderShape3D_7wvp8")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 

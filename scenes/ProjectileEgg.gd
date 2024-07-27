@@ -17,6 +17,7 @@ var b_total = 0;
 @onready var splat_particles := $GPUParticles3D;
 @onready var decal := $Decal
 @onready var animation_player = $AnimationPlayer
+@onready var splash_zone = $Area3D
 
 func _ready():
 	set_as_top_level(true);
@@ -24,8 +25,10 @@ func _ready():
 func egg_explode():
 	decal.set_as_top_level(true);
 	splat_particles.set_as_top_level(true);
+	splash_zone.set_as_top_level(true);
 	decal.rotation = Vector3(0,0,0);
 	splat_particles.rotation = Vector3(0,0,0);
+	splash_zone.rotation = Vector3(0,0,0);
 	
 
 func _on_body_entered(body):
