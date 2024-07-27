@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://cysq37kng625j"]
+[gd_scene load_steps=60 format=3 uid="uid://cysq37kng625j"]
 
 [ext_resource type="Script" path="res://scenes/evil_egg.gd" id="1_diebe"]
 [ext_resource type="Curve" uid="uid://5wte5np0v4c3" path="res://npcs/speed_curve.tres" id="2_8ehv6"]
@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://ca146e0cp23am" path="res://assets/Enemies/EvilEgg/EggMa_arms.png" id="12_ev227"]
 [ext_resource type="AudioStream" uid="uid://dtyh7aashfv8w" path="res://assets/Sounds/Gumpified/AcidicPain.wav" id="19_nov2i"]
 [ext_resource type="AudioStream" uid="uid://brj5txuvn2w45" path="res://assets/Sounds/Gumpified/Die_1.wav" id="20_ibumm"]
+[ext_resource type="AudioStream" uid="uid://cyplw4goqvimt" path="res://assets/Sounds/Gumpified/Charging.wav" id="21_hawsh"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c5hwd"]
 resource_name = "Tongue"
@@ -1138,6 +1139,18 @@ tracks/28/keys = {
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(0.0880284, 0, 7.69569e-09), Vector3(-0.0625553, 0, -5.46875e-09), Vector3(0.0880284, 0, 7.69569e-09), Vector3(-0.0625553, 0, -5.46875e-09), Vector3(0.0880284, 0, 7.69569e-09), Vector3(-0.0625553, 0, -5.46875e-09), Vector3(0.0880284, 0, 7.69569e-09), Vector3(-0.0625553, 0, -5.46875e-09), Vector3(0.0880284, 0, 7.69569e-09), Vector3(-0.0625553, 0, -5.46875e-09)]
 }
+tracks/29/type = "value"
+tracks/29/imported = false
+tracks/29/enabled = true
+tracks/29/path = NodePath("Eatin:playing")
+tracks/29/interp = 1
+tracks/29/loop_wrap = true
+tracks/29/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_yk84h"]
 resource_local_to_scene = true
@@ -1694,6 +1707,54 @@ tracks/60/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/61/type = "value"
+tracks/61/imported = false
+tracks/61/enabled = true
+tracks/61/path = NodePath("Eatin:playing")
+tracks/61/interp = 1
+tracks/61/loop_wrap = true
+tracks/61/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/62/type = "value"
+tracks/62/imported = false
+tracks/62/enabled = true
+tracks/62/path = NodePath("EggMa/Armature_001:rotation_edit_mode")
+tracks/62/interp = 1
+tracks/62/loop_wrap = true
+tracks/62/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/63/type = "value"
+tracks/63/imported = false
+tracks/63/enabled = true
+tracks/63/path = NodePath("EggMa/Armature:quaternion")
+tracks/63/interp = 1
+tracks/63/loop_wrap = true
+tracks/63/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Quaternion(6.09884e-23, -7.39626e-22, 0.292236, 0.956346)]
+}
+tracks/64/type = "value"
+tracks/64/imported = false
+tracks/64/enabled = true
+tracks/64/path = NodePath("EggMa/Armature_001:quaternion")
+tracks/64/interp = 1
+tracks/64/loop_wrap = true
+tracks/64/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Quaternion(0.956346, -0.292236, -2.35368e-06, 6.73521e-07)]
+}
 
 [sub_resource type="Animation" id="Animation_1ya1j"]
 resource_local_to_scene = true
@@ -1976,11 +2037,186 @@ tracks/1/keys = {
 "values": [Vector3(0, 3.14159, 0), Vector3(3.48787e-16, 9.58186, 3.48787e-16)]
 }
 
+[sub_resource type="Animation" id="Animation_ejth4"]
+resource_name = "Prayer"
+length = 0.5
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("EggMa/EggTop:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -0.0155099, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("EggMa/RightEye:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.5381, 3.12199, 2.69017)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("EggMa/LeftEye:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-1.64434, 3.67109, 2.55787)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("EggMa/Armature:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-1.9909, -3.73856, 0.360394)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("EggMa/Armature_001:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.43096, -3.73856, 0.176559)]
+}
+tracks/5/type = "position_3d"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("EggMa/Armature/Skeleton3D:Bone")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = PackedFloat32Array(0, 1, 0.0543966, 0.369194, -0.258215)
+tracks/6/type = "rotation_3d"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("EggMa/Armature/Skeleton3D:Bone")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = PackedFloat32Array(0, 1, 4.6593e-08, 1.00425e-07, -1.49012e-08, 1)
+tracks/7/type = "position_3d"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("EggMa/Armature/Skeleton3D:Bone.001")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = PackedFloat32Array(0, 1, -1.46343e-07, 1.3312, -1.51792e-08)
+tracks/8/type = "rotation_3d"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("EggMa/Armature/Skeleton3D:Bone.001")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = PackedFloat32Array(0, 1, -1.21865e-07, 8.88281e-08, 0.86191, 0.507062)
+tracks/9/type = "position_3d"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("EggMa/Armature/Skeleton3D:Bone.002")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = PackedFloat32Array(0, 1, 2.07923e-07, 3.11032, -5.99568e-08)
+tracks/10/type = "rotation_3d"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("EggMa/Armature/Skeleton3D:Bone.002")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = PackedFloat32Array(0, 1, 8.87139e-09, 2.51854e-08, 0.0142119, 0.999899)
+tracks/11/type = "position_3d"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("EggMa/Armature_001/Skeleton3D:Bone")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = PackedFloat32Array(0, 1, 0.0543965, 0.369194, -0.233367)
+tracks/12/type = "rotation_3d"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("EggMa/Armature_001/Skeleton3D:Bone")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = PackedFloat32Array(0, 1, 4.6593e-08, 1.00425e-07, -1.49012e-08, 1)
+tracks/13/type = "position_3d"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("EggMa/Armature_001/Skeleton3D:Bone.001")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = PackedFloat32Array(0, 1, -1.0956e-07, 1.3312, 8.65542e-09)
+tracks/14/type = "rotation_3d"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("EggMa/Armature_001/Skeleton3D:Bone.001")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = PackedFloat32Array(0, 1, -1.21865e-07, 8.88281e-08, 0.86191, 0.507062)
+tracks/15/type = "position_3d"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("EggMa/Armature_001/Skeleton3D:Bone.002")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = PackedFloat32Array(0, 1, 6.1244e-09, 3.11032, 2.95509e-08)
+tracks/16/type = "rotation_3d"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("EggMa/Armature_001/Skeleton3D:Bone.002")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = PackedFloat32Array(0, 1, 5.96107e-08, -8.22095e-08, 0.0461436, 0.998935)
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("EggMa/Armature:quaternion")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Quaternion(-0.483616, 0.515864, 0.515864, 0.483616), Quaternion(-0.618382, 0.659614, 0.311672, 0.292188), Quaternion(-0.483616, 0.515864, 0.515864, 0.483616)]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("EggMa/Armature_001:quaternion")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Quaternion(0.501956, -0.498036, 0.498036, 0.501956), Quaternion(0.30244, -0.300078, 0.637208, 0.642222), Quaternion(0.501956, -0.498036, 0.498036, 0.501956)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lcrl7"]
 _data = {
 "Acidic": SubResource("Animation_j22d2"),
 "EatEgg": SubResource("Animation_hl3nh"),
 "Munchin": SubResource("Animation_i6cmo"),
+"Prayer": SubResource("Animation_ejth4"),
 "RESET": SubResource("Animation_yk84h"),
 "Runnin": SubResource("Animation_1ya1j"),
 "RunninAway": SubResource("Animation_b4vi8"),
@@ -2315,6 +2551,7 @@ skeleton = NodePath("")
 
 [node name="Armature" type="Node3D" parent="EggMa"]
 transform = Transform3D(3.33746, -2.24977, -5.55051e-21, 2.24977, 3.33746, -2.20946e-21, 5.83745e-21, -1.27043e-21, 4.02494, -1.08635, -3.73856, 0)
+rotation_edit_mode = 1
 
 [node name="Skeleton3D" type="Skeleton3D" parent="EggMa/Armature"]
 transform = Transform3D(1, -6.24802e-08, 2.53776e-15, 6.24802e-08, 1, -8.27836e-15, -2.53776e-15, 8.27836e-15, 1, 0, 0, 0)
@@ -2346,7 +2583,8 @@ mesh = SubResource("ArrayMesh_bxn5x")
 skin = SubResource("Skin_5lghi")
 
 [node name="Armature_001" type="Node3D" parent="EggMa"]
-transform = Transform3D(-3.33745, 2.24978, -1.0204e-05, 2.24978, 3.33745, -3.39467e-07, -8.2713e-06, 5.98509e-06, 4.02494, 1.38682, -3.73856, 0)
+transform = Transform3D(-3.33746, 2.24977, 1.97042e-05, 2.24977, 3.33746, -3.51871e-07, 1.65353e-05, -1.0722e-05, 4.02494, 1.38682, -3.73856, 0)
+rotation_edit_mode = 1
 
 [node name="Skeleton3D" type="Skeleton3D" parent="EggMa/Armature_001"]
 bones/0/name = "Bone"
@@ -2674,5 +2912,8 @@ volume_db = -5.0
 
 [node name="AudioDeath" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("20_ibumm")
+
+[node name="Eatin" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("21_hawsh")
 
 [connection signal="body_entered" from="EatZone" to="." method="_on_eat_zone_body_entered"]

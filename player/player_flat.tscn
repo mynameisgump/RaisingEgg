@@ -482,6 +482,7 @@ script = ExtResource("1_nu7kj")
 
 [node name="Body" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5202, 0)
+visible = false
 script = ExtResource("2_1pwki")
 
 [node name="Camera3D" type="Camera3D" parent="Body"]

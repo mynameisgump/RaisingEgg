@@ -25,13 +25,16 @@ var acidic = false
 var someone_eating_egg = false;
 
 func _on_someone_eat_egg():
-	animation_player.play("RESET")
+	animation_player.play("Prayer")
 	scuttle = false
 	someone_eating_egg = true;
 	pass
 	
 func _on_someone_drop_egg():
 	someone_eating_egg = false;
+	animation_player.play("RESET");
+	animation_player.queue("Runnin");
+	scuttle = true
 	pass
 	
 func _ready():

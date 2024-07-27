@@ -25,6 +25,10 @@ var egg_speed = 20;
 
 var holding_egg = false;
 
+func begin_fight():
+	body.visible = true;
+	animation_player.play("ReloadEgg")
+
 func get_camera_position():
 	return position
 
