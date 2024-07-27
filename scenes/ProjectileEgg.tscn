@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://scenes/ProjectileEgg.gd" id="1_5s6q1"]
 [ext_resource type="PackedScene" uid="uid://cju7k5vr1h5iq" path="res://assets/egg.glb" id="1_t4iea"]
-[ext_resource type="AudioStream" uid="uid://ccuqmab8q31bq" path="res://assets/Sounds/Splat.wav" id="3_35ck5"]
-[ext_resource type="Texture2D" uid="uid://duax3k2utra34" path="res://assets/watercolor-abstract-background-free-png.png" id="4_iemo3"]
+[ext_resource type="AudioStream" uid="uid://ywxrltll8t5f" path="res://assets/Sounds/Splat.wav" id="3_35ck5"]
+[ext_resource type="Texture2D" uid="uid://bd68dnhiop82u" path="res://assets/watercolor-abstract-background-free-png.png" id="4_iemo3"]
 
 [sub_resource type="Curve" id="Curve_2o7ev"]
 max_value = 5.0
@@ -12,6 +12,9 @@ point_count = 2
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_l265o"]
 radius = 0.138131
+
+[sub_resource type="Animation" id="Animation_vd8bc"]
+resource_name = "Dissolve"
 
 [sub_resource type="Animation" id="Animation_hy0bi"]
 resource_name = "Explode"
@@ -180,9 +183,6 @@ tracks/5/keys = {
 "update": 1,
 "values": [true]
 }
-
-[sub_resource type="Animation" id="Animation_vd8bc"]
-resource_name = "Dissolve"
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4viob"]
 _data = {

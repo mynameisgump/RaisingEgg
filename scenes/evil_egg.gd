@@ -24,7 +24,16 @@ var holding_egg = false
 var acidic = false
 var someone_eating_egg = false;
 
-
+func _on_someone_eat_egg():
+	animation_player.play("RESET")
+	scuttle = false
+	someone_eating_egg = true;
+	pass
+	
+func _on_someone_drop_egg():
+	someone_eating_egg = false;
+	pass
+	
 func _ready():
 	current_movement_speed = 0;
 	call_deferred("actor_setup")

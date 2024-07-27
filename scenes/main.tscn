@@ -1,11 +1,12 @@
-[gd_scene load_steps=20 format=3 uid="uid://b8vxq2cwhj6my"]
+[gd_scene load_steps=21 format=3 uid="uid://b8vxq2cwhj6my"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_stx4d"]
 [ext_resource type="PackedScene" uid="uid://bomamngcgusvn" path="res://npcs/bb_egg.tscn" id="3_5pidc"]
 [ext_resource type="PackedScene" uid="uid://dijwi1y3wwvyp" path="res://player/player_flat.tscn" id="3_13gr6"]
-[ext_resource type="Material" path="res://resources/twigs.tres" id="4_y6ena"]
+[ext_resource type="Material" uid="uid://ofx8y882ha2n" path="res://resources/twigs.tres" id="4_y6ena"]
 [ext_resource type="ArrayMesh" uid="uid://csprst6ukc4qy" path="res://resources/deadTreeFixed.tres" id="5_ac1nj"]
-[ext_resource type="Texture2D" uid="uid://bwnsuqj8f46fx" path="res://assets/Nest.png" id="9_aidyc"]
+[ext_resource type="AudioStream" uid="uid://xeeywyyly0mb" path="res://assets/Sounds/Gumpified/Music_Track_2.wav" id="8_augl6"]
+[ext_resource type="Texture2D" uid="uid://b7atx3mhkanll" path="res://assets/Nest.png" id="9_aidyc"]
 [ext_resource type="PackedScene" uid="uid://cysq37kng625j" path="res://scenes/evil_egg.tscn" id="9_dlnba"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_f0qjj"]
@@ -178,6 +179,12 @@ one_shot = true
 
 [node name="Enemies" type="Node3D" parent="."]
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_augl6")
+volume_db = 10.0
+
 [connection signal="bb_egg_location" from="." to="EvilEgg" method="_on_main_bb_egg_location"]
+[connection signal="dropped_signal" from="bb_egg" to="." method="_on_bb_egg_dropped_signal"]
+[connection signal="eaten_signal" from="bb_egg" to="." method="_on_bb_egg_eaten_signal"]
 [connection signal="drop_egg" from="EvilEgg" to="bb_egg" method="_on_evil_egg_drop_egg"]
 [connection signal="eat_egg" from="EvilEgg" to="bb_egg" method="_on_evil_egg_eat_egg"]

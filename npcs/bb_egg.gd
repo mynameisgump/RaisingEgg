@@ -14,6 +14,8 @@ var movement_target_position: Vector3 = Vector3(-3.0,0.0,2.0)
 
 @onready var collision_shape = $CollisionShape3D;
 var being_eaten = false;
+signal eaten_signal;
+signal dropped_signal;
 
 func _ready():
 	current_movement_speed = 0;
@@ -26,12 +28,14 @@ func dropped(drop_position: Vector3) -> void:
 	position.x = drop_position.x
 	position.z = drop_position.z
 	set_collision_layer_value(5, true)
+	dropped_signal.emit()
 	
 func eated():
 	egg_mesh.visible = false;
 	collision_shape.disabled = true
 	set_collision_layer_value(5, false)
 	being_eaten = true;
+	eaten_signal.emit()
 	
 func actor_setup():
 	await get_tree().physics_frame
