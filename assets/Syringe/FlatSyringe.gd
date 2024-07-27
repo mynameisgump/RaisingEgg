@@ -29,7 +29,7 @@ func _process(delta):
 		
 	
 	if injecting:
-		fill_amount -= 0.004;
+		fill_amount -= 0.02;
 		injection_tick.emit("green")
 		
 	if fill_amount < 0 and injecting == true:

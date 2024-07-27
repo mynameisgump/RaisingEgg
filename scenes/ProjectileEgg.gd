@@ -19,8 +19,15 @@ var b_total = 0;
 @onready var animation_player = $AnimationPlayer
 @onready var splash_zone = $Area3D
 
+@export var power_curve: Curve;
+var power_level = 1
+
 func _ready():
 	set_as_top_level(true);
+
+func set_egg_power(power: float) -> void:
+	print("Setting Egg Power:", power)
+	power_level = int(power_curve.sample(power));
 	
 func egg_explode():
 	decal.set_as_top_level(true);
@@ -29,6 +36,10 @@ func egg_explode():
 	decal.rotation = Vector3(0,0,0);
 	splat_particles.rotation = Vector3(0,0,0);
 	splash_zone.rotation = Vector3(0,0,0);
+	
+	decal.scale = Vector3(power_level,power_level,power_level)
+	splat_particles.scale = Vector3(power_level,power_level,power_level)
+	splash_zone.scale = Vector3(power_level,power_level,power_level)
 	
 
 func _on_body_entered(body):

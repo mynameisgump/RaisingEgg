@@ -31,6 +31,7 @@ func get_camera_position():
 func throw_that_egg():
 	var new_egg = projectile_egg.instantiate();
 	add_child(new_egg);
+	new_egg.set_egg_power(hand_egg.get_hand_power());
 	var new_mat = hand_egg.get_egg_mat().duplicate()
 	new_egg.set_egg_mat(new_mat);
 	new_egg.transform = ThrowPoint.global_transform;
@@ -40,14 +41,9 @@ func _process(delta):
 	if holding_egg == false and egg_reload_timer.is_stopped():
 		holding_egg = true
 		animation_player.play("ReloadEgg")
-		pass
+
 func _physics_process(delta: float) -> void:
 	
-	## Add the gravity.
-	#if not is_on_floor():
-		#velocity.y -= gravity * delta
-	
-
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
