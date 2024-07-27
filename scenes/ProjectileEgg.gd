@@ -46,5 +46,5 @@ func set_egg_mat(material: ShaderMaterial):
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	print("Hit:", body)
 	if body.is_in_group("enemy"):
-		body.queue_free()
-	pass # Replace with function body.
+		body.acid_hit();
+

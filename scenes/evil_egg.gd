@@ -14,15 +14,22 @@ var movement_target_position: Vector3 = Vector3(-3.0,0.0,2.0)
 @onready var animation_player := $AnimationPlayer;
 @onready var EatZone := $EatZone
 
+var health = 100;
+
 signal eat_egg;
 
 var scuttle = false
 var holding_egg = false
+var acidic = false
 
 func _ready():
 	current_movement_speed = 0;
 	call_deferred("actor_setup")
 	animation_player.play("Runnin")
+
+func acid_hit():
+	acidic = true;
+	animation_player.play("Acidic")
 
 func actor_setup():
 	await get_tree().physics_frame
@@ -41,6 +48,12 @@ func disable_scuttle():
 	scuttle = false
 	pass
 
+func _process(delta: float) -> void:
+	if acidic:
+		health -= 0.05;
+	if health < 0:
+		queue_free()
+		
 func _physics_process(delta):
 	if navigation_agent.is_navigation_finished():
 		velocity = Vector3(0,0,0);
@@ -55,7 +68,10 @@ func _physics_process(delta):
 			var animation_speed = animation_speed_curve.sample(current_movement_speed/max_movement_speed);
 			if current_movement_speed > max_movement_speed:
 				current_movement_speed = max_movement_speed;
-			velocity = current_agent_position.direction_to(next_path_position) * movement_multiplier
+			if acidic: 
+				velocity = current_agent_position.direction_to(next_path_position) * movement_multiplier
+			else:
+							velocity = current_agent_position.direction_to(next_path_position) * movement_multiplier/2
 			move_and_slide()
 
 

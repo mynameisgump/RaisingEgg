@@ -15,6 +15,104 @@ height = 1.58844
 
 [sub_resource type="Animation" id="Animation_j22d2"]
 resource_name = "Acidic"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("EggMa/Armature:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-6.49586e-08, 3.14159, -1.81499), Vector3(0.364111, 3.14159, -1.81499), Vector3(0.240442, 3.07267, -2.09712), Vector3(-0.366286, 3.09301, -1.97833), Vector3(-0.381438, 2.96163, -1.50002)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("EggMa/Armature_001:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-1.2117e-07, 2.45642e-08, 1.1788), Vector3(0.464931, -0.0946122, 0.970224), Vector3(-0.232734, -0.0868922, 1.03283), Vector3(-0.189943, -0.16066, 1.38102), Vector3(0.351598, -0.16812, 1.29204)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("EggMa/Armature_001:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(2.41826, -1.59625, 6.10737e-15)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("EggMa/Armature:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-2.51594, -1.71751, -8.46491e-15)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("EggMa/EggTop:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-1.5708, -1.86829e-21, 0), Vector3(-0.796935, 3.14159, -3.14159), Vector3(-1.16625, 1.74353, -1.66942), Vector3(-0.980603, -2.70502, 2.86019), Vector3(-1.11364, 1.06189, -0.972461)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("EggMa/EggTop:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 2.19247, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("EggMa/LeftEye:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.342761, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.600723, -1.13194, 7.22544e-08), Vector3(-0.600393, 5.15047, 3.48787e-16)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("EggMa/RightEye:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.600723, 0.55573, -5.41908e-08), Vector3(-0.600393, 6.8382, 3.48787e-16)]
+}
 
 [sub_resource type="Animation" id="Animation_yk84h"]
 length = 0.001
@@ -1670,7 +1768,7 @@ bones/11/scale = Vector3(1, 0.999999, 1)
 bones/12/scale = Vector3(1, 0.999997, 1)
 
 [node name="EggTop" parent="EggMa" index="1"]
-transform = Transform3D(0.0439945, 4.24897e-23, 2.40996e-30, 0, -1.92306e-09, 0.057086, 4.24897e-23, -0.0439945, -2.49531e-09, 0, 3.42072, 0)
+transform = Transform3D(0.0439944, 4.24897e-23, 2.40996e-30, 0, -1.92306e-09, 0.057086, 4.24897e-23, -0.0439944, -2.49531e-09, 0, 3.42072, 0)
 
 [node name="RightEye" parent="EggMa" index="2"]
 transform = Transform3D(0.177239, -0.062215, 0.0907986, -9.32673e-09, 0.172109, 0.117929, -0.110068, -0.100183, 0.14621, 1.5381, 6.87495, 2.69017)
@@ -1685,7 +1783,7 @@ transform = Transform3D(0.0439944, 2.48432e-23, 1.40907e-30, 0, -1.92306e-09, 0.
 transform = Transform3D(32.0365, 0, -4.49503e-20, 0, 16.2999, 0, 8.58533e-20, 0, 32.0365, 0, 1.18272, -2.06864)
 
 [node name="Armature" parent="EggMa" index="6"]
-transform = Transform3D(3.33746, -2.24977, -5.5505e-21, 2.24977, 3.33746, -2.20946e-21, 5.83745e-21, -1.27042e-21, 4.02494, -1.08635, -3.73856, 0)
+transform = Transform3D(3.33746, -2.24977, -5.5505e-21, 2.24977, 3.33746, -2.20946e-21, 5.83744e-21, -1.27042e-21, 4.02494, -1.08635, -3.73856, 0)
 
 [node name="Skeleton3D" parent="EggMa/Armature" index="0"]
 transform = Transform3D(1, -6.24802e-08, 2.53776e-15, 6.24802e-08, 1, -8.27836e-15, -2.53776e-15, 8.27835e-15, 1, 0, 0, 0)
@@ -1698,7 +1796,7 @@ bones/2/rotation = Quaternion(9.57863e-08, -7.09358e-08, -0.471315, 0.881965)
 bones/2/scale = Vector3(1, 1, 1)
 
 [node name="Armature_001" parent="EggMa" index="7"]
-transform = Transform3D(-3.33746, 2.24977, -6.07749e-07, 2.24977, 3.33746, -3.39467e-07, -3.14195e-07, 6.21191e-07, 4.02494, 1.38682, -3.73856, 0)
+transform = Transform3D(-3.33746, 2.24977, -6.07749e-07, 2.24977, 3.33746, -3.39467e-07, -3.14195e-07, 6.2119e-07, 4.02494, 1.38682, -3.73856, 0)
 
 [node name="Skeleton3D" parent="EggMa/Armature_001" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
