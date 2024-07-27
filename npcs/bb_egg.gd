@@ -12,10 +12,15 @@ var movement_target_position: Vector3 = Vector3(-3.0,0.0,2.0)
 @export var egg_mesh: EggMesh;
 @onready var navigation_agent: NavigationAgent3D = $NavigationAgent3D
 
+var being_eaten = true;
+
 func _ready():
 	current_movement_speed = 0;
 	call_deferred("actor_setup")
 
+func eated():
+	egg_mesh.visible = false;
+	
 func actor_setup():
 	await get_tree().physics_frame
 	set_movement_target(movement_target_position)
