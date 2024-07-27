@@ -3,7 +3,7 @@ class_name BbEgg
 
 #@export var base_movement_speed: float = 0.5;
 #@export var max_movement_speed: float = 5;
-@export var max_movement_speed: float = 0.5;
+@export var max_movement_speed: float = 3;
 @export var added_accel: float = 0.05;
 var current_movement_speed: float;
 var movement_target_position: Vector3 = Vector3(-3.0,0.0,2.0)
@@ -12,14 +12,22 @@ var movement_target_position: Vector3 = Vector3(-3.0,0.0,2.0)
 @export var egg_mesh: EggMesh;
 @onready var navigation_agent: NavigationAgent3D = $NavigationAgent3D
 
-var being_eaten = true;
+var being_eaten = false;
 
 func _ready():
 	current_movement_speed = 0;
 	call_deferred("actor_setup")
 
+func dropped(drop_position: Vector3) -> void:
+	print("Droppp ed")
+	being_eaten = false
+	egg_mesh.visible = true
+	position.x = drop_position.x
+	position.z = drop_position.z
+	
 func eated():
 	egg_mesh.visible = false;
+	being_eaten = true;
 	
 func actor_setup():
 	await get_tree().physics_frame
@@ -49,3 +57,12 @@ func _physics_process(delta):
 			current_movement_speed = max_movement_speed;
 		velocity = current_agent_position.direction_to(next_path_position) * current_movement_speed
 		move_and_slide()
+
+
+func _on_evil_egg_drop_egg(pos: Vector3) -> void:
+	print("Dropping egg")
+	dropped(pos);
+
+
+func _on_evil_egg_eat_egg() -> void:
+	eated()

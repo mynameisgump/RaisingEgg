@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dc52fsgq6hero"]
+[gd_scene load_steps=15 format=3 uid="uid://dc52fsgq6hero"]
 
 [ext_resource type="Script" path="res://scenes/ProjectileEgg.gd" id="1_5s6q1"]
 [ext_resource type="PackedScene" uid="uid://cju7k5vr1h5iq" path="res://assets/egg.glb" id="1_t4iea"]
@@ -7,7 +7,7 @@
 
 [sub_resource type="Curve" id="Curve_2o7ev"]
 max_value = 5.0
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 5), 0.0, 0.0, 0, 0]
+_data = [Vector2(0, 1), 0.0, 2.14461, 0, 1, Vector2(1, 3.14461), 2.14461, 0.0, 1, 0]
 point_count = 2
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_l265o"]
@@ -15,7 +15,7 @@ radius = 0.138131
 
 [sub_resource type="Animation" id="Animation_hy0bi"]
 resource_name = "Explode"
-length = 5.0
+length = 7.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -47,11 +47,14 @@ tracks/2/path = NodePath(".")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 7),
+"transitions": PackedFloat32Array(1, 1),
 "values": [{
 "args": [],
 "method": &"egg_explode"
+}, {
+"args": [],
+"method": &"remove_splat"
 }]
 }
 tracks/3/type = "value"
@@ -178,8 +181,12 @@ tracks/5/keys = {
 "values": [true]
 }
 
+[sub_resource type="Animation" id="Animation_vd8bc"]
+resource_name = "Dissolve"
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4viob"]
 _data = {
+"Dissolve": SubResource("Animation_vd8bc"),
 "Explode": SubResource("Animation_hy0bi"),
 "RESET": SubResource("Animation_5vy62")
 }

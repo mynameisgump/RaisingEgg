@@ -22,12 +22,14 @@ var b_total = 0;
 @export var power_curve: Curve;
 var power_level = 1
 
+func remove_splat():
+	queue_free()
 func _ready():
 	set_as_top_level(true);
 
 func set_egg_power(power: float) -> void:
 	print("Setting Egg Power:", power)
-	power_level = int(power_curve.sample(power));
+	power_level = power_curve.sample(power);
 	
 func egg_explode():
 	decal.set_as_top_level(true);
