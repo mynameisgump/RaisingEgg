@@ -8,11 +8,9 @@
 radius = 0.132187
 height = 0.427641
 
-[node name="bb_egg" type="CharacterBody3D" node_paths=PackedStringArray("egg_mesh")]
+[node name="bb_egg" type="CharacterBody3D" node_paths=PackedStringArray("egg_mesh") groups=["bbegg"]]
 collision_layer = 16
 script = ExtResource("1_gvdc7")
-max_movement_speed = null
-added_accel = null
 animation_speed_curve = ExtResource("2_52o5d")
 egg_mesh = NodePath("EggWifFootys")
 

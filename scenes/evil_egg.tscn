@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cysq37kng625j"]
+[gd_scene load_steps=24 format=3 uid="uid://cysq37kng625j"]
 
 [ext_resource type="Script" path="res://scenes/evil_egg.gd" id="1_diebe"]
 [ext_resource type="PackedScene" uid="uid://b8fus7cw6e2t8" path="res://assets/Enemies/EvilEgg/EggMa.glb" id="1_rxnk0"]
@@ -384,6 +384,156 @@ tracks/42/keys = {
 "update": 0,
 "values": [Vector3(0, 1.18272, -2.06864)]
 }
+tracks/43/type = "value"
+tracks/43/imported = false
+tracks/43/enabled = true
+tracks/43/path = NodePath("EggMa/EggBottom:position")
+tracks/43/interp = 1
+tracks/43/loop_wrap = true
+tracks/43/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/44/type = "value"
+tracks/44/imported = false
+tracks/44/enabled = true
+tracks/44/path = NodePath("EggMa/Armature_001:position")
+tracks/44/interp = 1
+tracks/44/loop_wrap = true
+tracks/44/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.38682, -3.73856, 0)]
+}
+tracks/45/type = "value"
+tracks/45/imported = false
+tracks/45/enabled = true
+tracks/45/path = NodePath("EggMa/Armature_001:rotation")
+tracks/45/interp = 1
+tracks/45/loop_wrap = true
+tracks/45/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-8.43408e-08, 3.14159, -2.54846)]
+}
+tracks/46/type = "value"
+tracks/46/imported = false
+tracks/46/enabled = true
+tracks/46/path = NodePath("EggMa/Armature:rotation")
+tracks/46/interp = 1
+tracks/46/loop_wrap = true
+tracks/46/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(5.48943e-22, -1.37903e-21, 0.593129)]
+}
+tracks/47/type = "value"
+tracks/47/imported = false
+tracks/47/enabled = true
+tracks/47/path = NodePath("EggMa/Armature_001/Skeleton3D:position")
+tracks/47/interp = 1
+tracks/47/loop_wrap = true
+tracks/47/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/48/type = "value"
+tracks/48/imported = false
+tracks/48/enabled = true
+tracks/48/path = NodePath("EggMa/Armature_001/Skeleton3D:rotation")
+tracks/48/interp = 1
+tracks/48/loop_wrap = true
+tracks/48/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/49/type = "value"
+tracks/49/imported = false
+tracks/49/enabled = true
+tracks/49/path = NodePath("EggMa/Armature/Skeleton3D:position")
+tracks/49/interp = 1
+tracks/49/loop_wrap = true
+tracks/49/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/50/type = "value"
+tracks/50/imported = false
+tracks/50/enabled = true
+tracks/50/path = NodePath("EggMa/Armature/Skeleton3D:quaternion")
+tracks/50/interp = 1
+tracks/50/loop_wrap = true
+tracks/50/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Quaternion(4.13918e-15, 1.26888e-15, 3.12401e-08, 1)]
+}
+tracks/51/type = "position_3d"
+tracks/51/imported = false
+tracks/51/enabled = true
+tracks/51/path = NodePath("EggMa/Armature/Skeleton3D:Bone.001")
+tracks/51/interp = 1
+tracks/51/loop_wrap = true
+tracks/51/keys = PackedFloat32Array(0, 1, -1.46343e-07, 1.3312, -1.51792e-08)
+tracks/52/type = "rotation_3d"
+tracks/52/imported = false
+tracks/52/enabled = true
+tracks/52/path = NodePath("EggMa/Armature/Skeleton3D:Bone.001")
+tracks/52/interp = 1
+tracks/52/loop_wrap = true
+tracks/52/keys = PackedFloat32Array(0, 1, -1.21865e-07, 8.88281e-08, 0.86191, 0.507062)
+tracks/53/type = "position_3d"
+tracks/53/imported = false
+tracks/53/enabled = true
+tracks/53/path = NodePath("EggMa/Armature/Skeleton3D:Bone.002")
+tracks/53/interp = 1
+tracks/53/loop_wrap = true
+tracks/53/keys = PackedFloat32Array(0, 1, 4.00055e-08, 3.11032, 2.94502e-08)
+tracks/54/type = "rotation_3d"
+tracks/54/imported = false
+tracks/54/enabled = true
+tracks/54/path = NodePath("EggMa/Armature/Skeleton3D:Bone.002")
+tracks/54/interp = 1
+tracks/54/loop_wrap = true
+tracks/54/keys = PackedFloat32Array(0, 1, 9.57863e-08, -7.09358e-08, -0.471315, 0.881965)
+tracks/55/type = "rotation_3d"
+tracks/55/imported = false
+tracks/55/enabled = true
+tracks/55/path = NodePath("EggMa/Armature_001/Skeleton3D:Bone.001")
+tracks/55/interp = 1
+tracks/55/loop_wrap = true
+tracks/55/keys = PackedFloat32Array(0, 1, -1.21865e-07, 8.88281e-08, 0.86191, 0.507062)
+tracks/56/type = "rotation_3d"
+tracks/56/imported = false
+tracks/56/enabled = true
+tracks/56/path = NodePath("EggMa/Armature_001/Skeleton3D:Bone.002")
+tracks/56/interp = 1
+tracks/56/loop_wrap = true
+tracks/56/keys = PackedFloat32Array(0, 1, 4.8273e-08, -1.73907e-07, -0.471315, 0.881965)
+tracks/57/type = "value"
+tracks/57/imported = false
+tracks/57/enabled = true
+tracks/57/path = NodePath("EggMa:position")
+tracks/57/interp = 1
+tracks/57/loop_wrap = true
+tracks/57/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_1ya1j"]
 resource_name = "Runnin"
@@ -522,9 +672,59 @@ tracks/10/keys = {
 "update": 0,
 "values": [Vector3(1, 1, 1), Vector3(0.9, 0.9, 0.9), Vector3(1, 1, 1)]
 }
+tracks/11/type = "position_3d"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("EggMa/Armature/Skeleton3D:Bone")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = PackedFloat32Array(0, 1, 0.0543966, 0.369194, -0.258215)
+tracks/12/type = "position_3d"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("EggMa/Armature/Skeleton3D:Bone.001")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = PackedFloat32Array(0, 1, -1.46343e-07, 1.3312, -1.51792e-08)
+tracks/13/type = "rotation_3d"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("EggMa/Armature/Skeleton3D:Bone.001")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = PackedFloat32Array(0, 1, -1.21865e-07, 8.88281e-08, 0.86191, 0.507062)
+tracks/14/type = "position_3d"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("EggMa/Armature/Skeleton3D:Bone.002")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = PackedFloat32Array(0, 1, 4.00055e-08, 3.11032, 2.94502e-08)
+tracks/15/type = "rotation_3d"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("EggMa/Armature/Skeleton3D:Bone.002")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = PackedFloat32Array(0, 1, 9.57863e-08, -7.09358e-08, -0.471315, 0.881965)
+tracks/16/type = "rotation_3d"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("EggMa/Armature_001/Skeleton3D:Bone.001")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = PackedFloat32Array(0, 1, -1.21865e-07, 8.88281e-08, 0.86191, 0.507062)
+tracks/17/type = "rotation_3d"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("EggMa/Armature_001/Skeleton3D:Bone.002")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = PackedFloat32Array(0, 1, 4.8273e-08, -1.73907e-07, -0.471315, 0.881965)
 
 [sub_resource type="Animation" id="Animation_hl3nh"]
 resource_name = "EatEgg"
+length = 0.7
 tracks/0/type = "position_3d"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -841,13 +1041,403 @@ tracks/37/keys = {
 "update": 0,
 "values": [Vector3(0, 1.18272, -2.06864), Vector3(0, 1.18272, -2.06864), Vector3(1.11312e-21, 3.63693, -2.06864), Vector3(0, 1.18272, -2.06864)]
 }
+tracks/38/type = "rotation_3d"
+tracks/38/imported = false
+tracks/38/enabled = true
+tracks/38/path = NodePath("EggMa/Armature_001/Skeleton3D:Bone")
+tracks/38/interp = 1
+tracks/38/loop_wrap = true
+tracks/38/keys = PackedFloat32Array(0, 1, 4.6593e-08, 1.00425e-07, -1.49012e-08, 1)
+tracks/39/type = "rotation_3d"
+tracks/39/imported = false
+tracks/39/enabled = true
+tracks/39/path = NodePath("EggMa/Armature_001/Skeleton3D:Bone.001")
+tracks/39/interp = 1
+tracks/39/loop_wrap = true
+tracks/39/keys = PackedFloat32Array(0, 1, -1.21865e-07, 8.88281e-08, 0.86191, 0.507062)
+tracks/40/type = "rotation_3d"
+tracks/40/imported = false
+tracks/40/enabled = true
+tracks/40/path = NodePath("EggMa/Armature_001/Skeleton3D:Bone.002")
+tracks/40/interp = 1
+tracks/40/loop_wrap = true
+tracks/40/keys = PackedFloat32Array(0, 1, 4.8273e-08, -1.73907e-07, -0.471315, 0.881965)
+tracks/41/type = "rotation_3d"
+tracks/41/imported = false
+tracks/41/enabled = true
+tracks/41/path = NodePath("EggMa/Armature/Skeleton3D:Bone")
+tracks/41/interp = 1
+tracks/41/loop_wrap = true
+tracks/41/keys = PackedFloat32Array(0, 1, 4.6593e-08, 1.00425e-07, -1.49012e-08, 1)
+tracks/42/type = "rotation_3d"
+tracks/42/imported = false
+tracks/42/enabled = true
+tracks/42/path = NodePath("EggMa/Armature/Skeleton3D:Bone.001")
+tracks/42/interp = 1
+tracks/42/loop_wrap = true
+tracks/42/keys = PackedFloat32Array(0, 1, -1.21865e-07, 8.88281e-08, 0.86191, 0.507062)
+tracks/43/type = "rotation_3d"
+tracks/43/imported = false
+tracks/43/enabled = true
+tracks/43/path = NodePath("EggMa/Armature/Skeleton3D:Bone.002")
+tracks/43/interp = 1
+tracks/43/loop_wrap = true
+tracks/43/keys = PackedFloat32Array(0, 1, 9.57863e-08, -7.09358e-08, -0.471315, 0.881965)
+
+[sub_resource type="Animation" id="Animation_b4vi8"]
+resource_name = "RunninAway"
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("EggMa/Armature:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-1.08635, -3.73856, 0)]
+}
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("EggMa/Armature/Skeleton3D:Bone")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, -0.238187, -0.353342, -3.2943e-08, 0.904664, 0.1, 1, 0.282759, 0.419464, -8.63725e-08, 0.862611, 0.5, 1, 0.282759, 0.419464, -8.63725e-08, 0.862611, 0.6, 1, -0.238187, -0.353342, -3.2943e-08, 0.904664)
+tracks/2/type = "rotation_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("EggMa/Armature_001/Skeleton3D:Bone")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 0.297265, 0.440983, -5.27875e-08, 0.846857, 0.1, 1, -0.145032, -0.21515, -8.10054e-08, 0.965752, 0.5, 1, -0.145032, -0.21515, -8.10054e-08, 0.965752, 0.6, 1, 0.297265, 0.440983, -5.27875e-08, 0.846857)
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"values": [{
+"args": [],
+"method": &"start_scuttle"
+}, {
+"args": [],
+"method": &"disable_scuttle"
+}, {
+"args": [],
+"method": &"start_scuttle"
+}, {
+"args": [],
+"method": &"disable_scuttle"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_i6cmo"]
+resource_name = "Munchin"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("EggMa/EggTop:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.0183718, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("EggMa/EggTop:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-1.5708, -9.65796e-22, 0), Vector3(-1.5708, 6.28319, 3.48787e-16)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("EggMa/RightEye:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.5381, 3.37051, 2.69017)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("EggMa/RightEye:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.513223, -2.35117, -1.01281)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("EggMa/LeftEye:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-1.64434, 3.29826, 2.55787)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("EggMa/LeftEye:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.129166, 2.10845, 2.11745)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("EggMa/EggBottom:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("EggMa/EggBottom:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-1.5708, -5.64689e-22, 0), Vector3(-1.5708, -6.28319, 3.48787e-16)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("EggMa/Armature:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-1.08635, -3.73856, -2.02517e-21)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("EggMa/Armature:rotation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(5.48943e-22, -1.37903e-21, 0.593129)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("EggMa/Armature_001:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.38682, -3.73856, 7.83124e-22)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("EggMa/Armature_001:rotation")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-8.43408e-08, 3.14159, -2.54846)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("EggMa/Armature_001/Skeleton3D:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.566821, 0.84086, -8.55273e-08)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("EggMa/Armature_001/Skeleton3D:rotation")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(3.05322e-07, 3.14159, -0.974949)]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("EggMa/Armature/Skeleton3D:position")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.302954, 1.04779, -1.9804e-15)]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("EggMa/Armature/Skeleton3D:quaternion")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Quaternion(-0.470854, 0.882211, 2.04717e-08, -3.86212e-08)]
+}
+tracks/16/type = "position_3d"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("EggMa/Armature/Skeleton3D:Bone")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = PackedFloat32Array(0, 1, 0.0543966, 0.369194, -0.258215)
+tracks/17/type = "rotation_3d"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("EggMa/Armature/Skeleton3D:Bone")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = PackedFloat32Array(0, 1, 4.6593e-08, 1.00425e-07, -1.49012e-08, 1)
+tracks/18/type = "position_3d"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("EggMa/Armature/Skeleton3D:Bone.001")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = PackedFloat32Array(0, 1, -0.00541625, 3.23228, -1.46068e-08)
+tracks/19/type = "rotation_3d"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("EggMa/Armature/Skeleton3D:Bone.001")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = PackedFloat32Array(0, 1, -1.96531e-07, 1.2553e-07, 0.99719, 0.0749149)
+tracks/20/type = "position_3d"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("EggMa/Armature/Skeleton3D:Bone.002")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = PackedFloat32Array(0, 1, 4.00055e-08, 3.11032, 2.94502e-08)
+tracks/21/type = "rotation_3d"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("EggMa/Armature/Skeleton3D:Bone.002")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = PackedFloat32Array(0, 1, 9.57863e-08, -7.09358e-08, -0.471315, 0.881965)
+tracks/22/type = "position_3d"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("EggMa/Armature_001/Skeleton3D:Bone")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = PackedFloat32Array(0, 1, 0.0543967, 0.369194, -0.233367)
+tracks/23/type = "rotation_3d"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("EggMa/Armature_001/Skeleton3D:Bone")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = PackedFloat32Array(0, 1, 4.6593e-08, 1.00425e-07, -1.49012e-08, 1)
+tracks/24/type = "position_3d"
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/path = NodePath("EggMa/Armature_001/Skeleton3D:Bone.001")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/keys = PackedFloat32Array(0, 1, 0.00527524, 3.27102, -2.60456e-07)
+tracks/25/type = "rotation_3d"
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/path = NodePath("EggMa/Armature_001/Skeleton3D:Bone.001")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/keys = PackedFloat32Array(0, 1, -1.55063e-07, 1.88551e-07, 0.996696, 0.0812223)
+tracks/26/type = "position_3d"
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/path = NodePath("EggMa/Armature_001/Skeleton3D:Bone.002")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/keys = PackedFloat32Array(0, 1, 3.21742e-08, 3.11032, -1.51526e-08)
+tracks/27/type = "rotation_3d"
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/path = NodePath("EggMa/Armature_001/Skeleton3D:Bone.002")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/keys = PackedFloat32Array(0, 1, 4.8273e-08, -1.73907e-07, -0.471315, 0.881965)
+tracks/28/type = "value"
+tracks/28/imported = false
+tracks/28/enabled = true
+tracks/28/path = NodePath("EggMa:position")
+tracks/28/interp = 1
+tracks/28/loop_wrap = true
+tracks/28/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.0880284, 0, 7.69569e-09), Vector3(-0.0625553, 0, -5.46875e-09), Vector3(0.0880284, 0, 7.69569e-09), Vector3(-0.0625553, 0, -5.46875e-09), Vector3(0.0880284, 0, 7.69569e-09), Vector3(-0.0625553, 0, -5.46875e-09), Vector3(0.0880284, 0, 7.69569e-09), Vector3(-0.0625553, 0, -5.46875e-09), Vector3(0.0880284, 0, 7.69569e-09), Vector3(-0.0625553, 0, -5.46875e-09)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lcrl7"]
 _data = {
 "Acidic": SubResource("Animation_j22d2"),
 "EatEgg": SubResource("Animation_hl3nh"),
+"Munchin": SubResource("Animation_i6cmo"),
 "RESET": SubResource("Animation_yk84h"),
-"Runnin": SubResource("Animation_1ya1j")
+"Runnin": SubResource("Animation_1ya1j"),
+"RunninAway": SubResource("Animation_b4vi8")
 }
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_waccq"]
@@ -1030,8 +1620,12 @@ bind/33/name = &"Leg_Foot_#Form.L_end"
 bind/33/bone = -1
 bind/33/pose = Transform3D(0.0272563, 1.11775e-06, -0.00976978, -0.00973697, -0.00236771, -0.0271651, -0.000799961, 0.0288574, -0.00222848, -0.112838, -0.0678183, 0.227031)
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_orfe6"]
+radius = 1.26469
+height = 2.81436
+
 [node name="EvilEgg" type="CharacterBody3D"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.142236, 0, 0)
 collision_layer = 16
 script = ExtResource("1_diebe")
 animation_speed_curve = ExtResource("2_8ehv6")
@@ -1091,19 +1685,31 @@ transform = Transform3D(0.0439944, 2.48432e-23, 1.40907e-30, 0, -1.92306e-09, 0.
 transform = Transform3D(32.0365, 0, -4.49503e-20, 0, 16.2999, 0, 8.58533e-20, 0, 32.0365, 0, 1.18272, -2.06864)
 
 [node name="Armature" parent="EggMa" index="6"]
-transform = Transform3D(3.33746, -2.24977, 0, 2.24977, 3.33746, 0, 0, 0, 4.02494, -1.08635, -3.73856, 0)
+transform = Transform3D(3.33746, -2.24977, -5.5505e-21, 2.24977, 3.33746, -2.20946e-21, 5.83745e-21, -1.27042e-21, 4.02494, -1.08635, -3.73856, 0)
 
 [node name="Skeleton3D" parent="EggMa/Armature" index="0"]
-transform = Transform3D(1, -5.96046e-08, 0, 5.96046e-08, 1, 0, 0, 0, 1, 0, 0, 0)
+transform = Transform3D(1, -6.24802e-08, 2.53776e-15, 6.24802e-08, 1, -8.27836e-15, -2.53776e-15, 8.27835e-15, 1, 0, 0, 0)
 rotation_edit_mode = 1
-bones/0/position = Vector3(0.0543966, 0.369194, -0.258215)
 bones/0/rotation = Quaternion(4.6593e-08, 1.00425e-07, -1.49012e-08, 1)
 bones/0/scale = Vector3(1, 1, 1)
+bones/1/rotation = Quaternion(-1.21865e-07, 8.88281e-08, 0.86191, 0.507062)
+bones/1/scale = Vector3(1, 1, 1)
+bones/2/rotation = Quaternion(9.57863e-08, -7.09358e-08, -0.471315, 0.881965)
+bones/2/scale = Vector3(1, 1, 1)
+
+[node name="Armature_001" parent="EggMa" index="7"]
+transform = Transform3D(-3.33746, 2.24977, -6.07749e-07, 2.24977, 3.33746, -3.39467e-07, -3.14195e-07, 6.21191e-07, 4.02494, 1.38682, -3.73856, 0)
 
 [node name="Skeleton3D" parent="EggMa/Armature_001" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 bones/0/position = Vector3(0.0543967, 0.369194, -0.233367)
 bones/0/rotation = Quaternion(4.6593e-08, 1.00425e-07, -1.49012e-08, 1)
 bones/0/scale = Vector3(1, 0.999999, 1)
+bones/1/position = Vector3(0.00527524, 3.27102, -2.60456e-07)
+bones/1/rotation = Quaternion(-1.21865e-07, 8.88281e-08, 0.86191, 0.507062)
+bones/1/scale = Vector3(0.999999, 1, 1)
+bones/2/rotation = Quaternion(4.8273e-08, -1.73907e-07, -0.471315, 0.881965)
+bones/2/scale = Vector3(1, 0.999999, 1)
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 
@@ -1382,5 +1988,17 @@ bones/33/scale = Vector3(1, 1, 1)
 [node name="Female_Foot" type="MeshInstance3D" parent="FakeBBEgg/Armature_Female/Skeleton3D"]
 mesh = SubResource("ArrayMesh_qirer")
 skin = SubResource("Skin_owm2b")
+
+[node name="EatZone" type="Area3D" parent="."]
+collision_mask = 17
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="EatZone"]
+shape = SubResource("CapsuleShape3D_orfe6")
+
+[node name="DeathTimer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
+[connection signal="body_entered" from="EatZone" to="." method="_on_eat_zone_body_entered"]
 
 [editable path="EggMa"]

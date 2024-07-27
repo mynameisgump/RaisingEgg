@@ -2,7 +2,8 @@ extends CharacterBody3D
 class_name BbEgg
 
 #@export var base_movement_speed: float = 0.5;
-@export var max_movement_speed: float = 5;
+#@export var max_movement_speed: float = 5;
+@export var max_movement_speed: float = 0.5;
 @export var added_accel: float = 0.05;
 var current_movement_speed: float;
 var movement_target_position: Vector3 = Vector3(-3.0,0.0,2.0)
