@@ -10,6 +10,7 @@ signal bb_egg_location(location: Vector3)
 @onready var evil_egg = preload("res://scenes/evil_egg.tscn");
 @onready var enemies = $Enemies
 
+
 func _ready():
 	pass # Replace with function body.
 
@@ -24,8 +25,8 @@ func _process(delta):
 		spawn_timer.start()
 		spawn_random_enemy()
 
+
 func spawn_random_enemy():
-	print("Spawning")
 	var angle = randf()*PI*2;
 	var x = cos(angle)*50;
 	var z = sin(angle)*50;
@@ -35,4 +36,5 @@ func spawn_random_enemy():
 	new_enemy.position = Vector3(x,y,z);
 	new_enemy.connect("drop_egg", bb_egg._on_evil_egg_drop_egg);
 	new_enemy.connect("eat_egg", bb_egg._on_evil_egg_eat_egg);
+	
 	bb_egg_location.connect(new_enemy._on_main_bb_egg_location)

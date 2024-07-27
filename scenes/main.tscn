@@ -174,7 +174,6 @@ texture_albedo = ExtResource("9_aidyc")
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.77292, 0.943148, -12.4508)
 
 [node name="SpawnTimer" type="Timer" parent="."]
-wait_time = 10.0
 one_shot = true
 
 [node name="Enemies" type="Node3D" parent="."]

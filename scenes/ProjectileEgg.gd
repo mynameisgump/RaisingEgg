@@ -47,9 +47,8 @@ func egg_explode():
 func _on_body_entered(body):
 	splat_sound.play();
 	animation_player.play("Explode");
-	if body.is_in_group("Enemy"):
-		body.health -= DAMAGE
-		queue_free()
+	if body.is_in_group("enemy"):
+		body.health -= 10*power_level
 	
 
 func set_egg_mat(material: ShaderMaterial):
@@ -60,4 +59,4 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 	print("Hit:", body)
 	if body.is_in_group("enemy"):
 		body.acid_hit();
-
+	

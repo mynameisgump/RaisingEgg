@@ -22,9 +22,8 @@ signal drop_egg(pos: Vector3);
 var scuttle = false
 var holding_egg = false
 var acidic = false
+var someone_eating_egg = false;
 
-
-	
 
 func _ready():
 	current_movement_speed = 0;
@@ -53,13 +52,16 @@ func disable_scuttle():
 	scuttle = false
 	pass
 
+func health_tick():
+	health -= 5
+
 func _process(delta: float) -> void:
 	if holding_egg and acidic:
 		print("Dropping egg in evil egg")
 		drop_egg.emit(global_position);
 		holding_egg = false
 	if acidic:
-		health -= 0.05;
+		health -= 0.1;
 	if health < 0:
 		queue_free()
 		
@@ -92,8 +94,8 @@ func _on_main_bb_egg_location(location):
 func _on_eat_zone_body_entered(body: Node3D) -> void:
 	print("Body Entered: ", body)
 	if body.is_in_group("bbegg") and not acidic:
-		eat_egg.emit()
-		animation_player.play("EatEgg");
-		animation_player.queue("Munchin")
-		holding_egg = true
-	pass # Replace with function body.
+		if body.being_eaten == false:
+			eat_egg.emit()
+			animation_player.play("EatEgg");
+			animation_player.queue("Munchin")
+			holding_egg = true

@@ -25,10 +25,12 @@ func dropped(drop_position: Vector3) -> void:
 	egg_mesh.visible = true
 	position.x = drop_position.x
 	position.z = drop_position.z
+	set_collision_layer_value(5, true)
 	
 func eated():
 	egg_mesh.visible = false;
 	collision_shape.disabled = true
+	set_collision_layer_value(5, false)
 	being_eaten = true;
 	
 func actor_setup():
@@ -46,7 +48,7 @@ func _physics_process(delta):
 		current_movement_speed = 0; 
 		egg_mesh.reset_animations();
 		move_and_slide();
-	else:
+	elif being_eaten == false:
 		var current_agent_position: Vector3 = global_position
 		var next_path_position: Vector3 = navigation_agent.get_next_path_position()
 		current_movement_speed += added_accel;
