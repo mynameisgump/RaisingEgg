@@ -1,14 +1,15 @@
-[gd_scene load_steps=26 format=3 uid="uid://b8vxq2cwhj6my"]
+[gd_scene load_steps=27 format=3 uid="uid://b8vxq2cwhj6my"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_stx4d"]
 [ext_resource type="PackedScene" uid="uid://bomamngcgusvn" path="res://npcs/bb_egg.tscn" id="3_5pidc"]
 [ext_resource type="PackedScene" uid="uid://dijwi1y3wwvyp" path="res://player/player_flat.tscn" id="3_13gr6"]
-[ext_resource type="Material" uid="uid://ofx8y882ha2n" path="res://resources/twigs.tres" id="4_y6ena"]
+[ext_resource type="Material" path="res://resources/twigs.tres" id="4_y6ena"]
 [ext_resource type="ArrayMesh" uid="uid://csprst6ukc4qy" path="res://resources/deadTreeFixed.tres" id="5_ac1nj"]
 [ext_resource type="Shader" path="res://shaders/VeinsTestClaude.gdshader" id="6_o2b4q"]
 [ext_resource type="PackedScene" uid="uid://clc5dre31iskm" path="res://addons/godot-xr-tools/xr/start_xr.tscn" id="6_q2haw"]
 [ext_resource type="Texture2D" uid="uid://be3qb7qgxks84" path="res://resources/hand_Tex.tres" id="7_7o2h4"]
 [ext_resource type="PackedScene" uid="uid://cysq37kng625j" path="res://scenes/evil_egg.tscn" id="9_dlnba"]
+[ext_resource type="PackedScene" uid="uid://dc52fsgq6hero" path="res://scenes/ProjectileEgg.tscn" id="10_8xh5r"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_f0qjj"]
 sky_top_color = Color(0.441, 0.548917, 0.7, 1)
@@ -212,5 +213,7 @@ shape = SubResource("ConvexPolygonShape3D_wovby")
 
 [node name="EvilEgg" parent="." instance=ExtResource("9_dlnba")]
 transform = Transform3D(-0.185804, 0, 0.982587, 0, 1, 0, -0.982587, 0, -0.185804, -3.71758, 0.935745, 0)
+
+[node name="ProjectileEgg" parent="." instance=ExtResource("10_8xh5r")]
 
 [connection signal="bb_egg_location" from="." to="EvilEgg" method="_on_main_bb_egg_location"]

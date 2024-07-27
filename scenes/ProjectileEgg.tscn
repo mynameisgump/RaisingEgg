@@ -1,11 +1,86 @@
-[gd_scene load_steps=8 format=3 uid="uid://dc52fsgq6hero"]
+[gd_scene load_steps=12 format=3 uid="uid://dc52fsgq6hero"]
 
 [ext_resource type="Script" path="res://scenes/ProjectileEgg.gd" id="1_5s6q1"]
 [ext_resource type="PackedScene" uid="uid://cju7k5vr1h5iq" path="res://assets/egg.glb" id="1_t4iea"]
-[ext_resource type="AudioStream" uid="uid://ywxrltll8t5f" path="res://assets/Sounds/Splat.wav" id="3_35ck5"]
+[ext_resource type="AudioStream" uid="uid://ccuqmab8q31bq" path="res://assets/Sounds/Splat.wav" id="3_35ck5"]
+[ext_resource type="Texture2D" uid="uid://duax3k2utra34" path="res://assets/watercolor-abstract-background-free-png.png" id="4_iemo3"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_l265o"]
 radius = 0.138131
+
+[sub_resource type="Animation" id="Animation_hy0bi"]
+resource_name = "Explode"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GPUParticles3D:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Decal:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"egg_explode"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_5vy62"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GPUParticles3D:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Decal:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4viob"]
+_data = {
+"Explode": SubResource("Animation_hy0bi"),
+"RESET": SubResource("Animation_5vy62")
+}
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_d6ulc"]
 direction = Vector3(0, 1, 0)
@@ -34,6 +109,9 @@ script = ExtResource("1_5s6q1")
 [node name="Sketchfab_Scene" parent="." instance=ExtResource("1_t4iea")]
 transform = Transform3D(-0.024, 0, 0, 0, -0.024, 0, 0, 0, -0.024, 0, 0, 0)
 
+[node name="Sphere_DefaultMaterial_0" parent="Sketchfab_Scene/Sketchfab_model/egg_fbx/RootNode/Sphere" index="0"]
+layers = 2
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_l265o")
 
@@ -41,11 +119,20 @@ shape = SubResource("SphereShape3D_l265o")
 stream = ExtResource("3_35ck5")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_4viob")
+}
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+emitting = false
 amount = 103
 process_material = SubResource("ParticleProcessMaterial_d6ulc")
 draw_pass_1 = SubResource("SphereMesh_5sl8b")
+
+[node name="Decal" type="Decal" parent="."]
+visible = false
+texture_albedo = ExtResource("4_iemo3")
+cull_mask = 1048573
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 
