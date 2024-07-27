@@ -1,6 +1,8 @@
 extends Node3D
 
 
+@export var spawning_enemies = false;
+
 @onready var bb_egg := $bb_egg
 #@onready var player := $Player
 @onready var player := $PlayerFlat
@@ -27,7 +29,7 @@ func _process(delta):
 	camera_pos.y = 0;
 	bb_egg.set_movement_target(camera_pos);
 	bb_egg_location.emit(bb_egg.position);
-	if spawn_timer.is_stopped() and egg_being_eaten == false:
+	if spawn_timer.is_stopped() and egg_being_eaten == false and spawning_enemies == true:
 		spawn_timer.start()
 		spawn_random_enemy()
 
