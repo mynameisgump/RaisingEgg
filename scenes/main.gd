@@ -25,6 +25,7 @@ var enemies_left = 5;
 @onready var wave_timer = $WaveTimer;
 var first_wave = true;
 var enemies_alive = 0;
+var max_speed_diff = 1.5
 
 func _ready():
 	#track_1.playing = true;
@@ -40,6 +41,7 @@ func begin():
 		first_wave = false
 	else:
 		spawning_enemies = true;
+		max_speed_diff *= 1.5
 		wave_total *= 2
 		enemies_left = wave_total
 		spawn_timer.wait_time *= 0.9
@@ -73,6 +75,7 @@ func spawn_random_enemy():
 	var y = 0.943
 	var new_enemy = evil_egg.instantiate();
 	enemies.add_child(new_enemy)
+	new_enemy.randomize_speed(max_speed_diff)
 	new_enemy.position = Vector3(x,y,z);
 	new_enemy.connect("drop_egg", bb_egg._on_evil_egg_drop_egg);
 	new_enemy.connect("eat_egg", bb_egg._on_evil_egg_eat_egg);

@@ -2,17 +2,19 @@ extends CharacterBody3D
 class_name EvilEgg
 
 #@export var base_movement_speed: float = 0.5;
-@export var max_movement_speed: float = 10;
+@export var max_movement_speed: float = 30;
 @export var added_accel: float = 0.05;
 var current_movement_speed: float;
 @export var movement_multiplier: float = 20;
 var movement_target_position: Vector3 = Vector3(-3.0,0.0,2.0)
+@export var animation_speed = 1;
 
 @export var animation_speed_curve: Curve;
 #@export var egg_mesh: EggMesh;
 @onready var navigation_agent: NavigationAgent3D = $NavigationAgent3D
 @onready var animation_player := $AnimationPlayer;
 @onready var EatZone := $EatZone
+
 
 var invincible = false;
 var health = 100;
@@ -25,6 +27,7 @@ var holding_egg = false
 var acidic = false
 var someone_eating_egg = false;
 
+var rng = RandomNumberGenerator.new()
 func set_invincible():
 	invincible = true;
 
@@ -40,6 +43,11 @@ func _on_someone_drop_egg():
 	animation_player.queue("Runnin");
 	scuttle = true
 	pass
+
+func randomize_speed(speed_dif: float):
+	var random_speed = rng.randf_range(1, speed_dif)
+	movement_multiplier *= random_speed
+	animation_player.speed_scale *= random_speed
 	
 func _ready():
 	current_movement_speed = 0;
@@ -99,7 +107,7 @@ func _physics_process(delta):
 			if acidic: 
 				velocity = current_agent_position.direction_to(next_path_position) * movement_multiplier
 			else:
-							velocity = current_agent_position.direction_to(next_path_position) * movement_multiplier/2
+				velocity = current_agent_position.direction_to(next_path_position) * movement_multiplier/2
 			move_and_slide()
 
 
