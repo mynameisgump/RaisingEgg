@@ -86,7 +86,7 @@ func _process(delta: float) -> void:
 		drop_egg.emit(global_position);
 		holding_egg = false
 	if acidic:
-		health -= 0.1;
+		health -= 1;
 	if health < 0:
 		queue_free()
 		

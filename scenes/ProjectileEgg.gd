@@ -40,7 +40,8 @@ func egg_explode():
 	splash_zone.rotation = Vector3(0,0,0);
 	
 	decal.scale = Vector3(power_level,power_level,power_level)
-	splat_particles.scale = Vector3(power_level,power_level,power_level)
+	#splat_particles.scale = Vector3(power_level,power_level,power_level)
+	splat_particles.amount = splat_particles.amount *power_level
 	splash_zone.scale = Vector3(power_level,power_level,power_level)
 	
 

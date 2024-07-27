@@ -1,19 +1,19 @@
 [gd_scene load_steps=37 format=3 uid="uid://b8vxq2cwhj6my"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_stx4d"]
-[ext_resource type="PackedScene" uid="uid://b2e7gn0p700s" path="res://assets/OuterRim.glb" id="2_5m5xp"]
+[ext_resource type="PackedScene" uid="uid://c5ylsf3i86ur5" path="res://assets/OuterRim.glb" id="2_5m5xp"]
 [ext_resource type="PackedScene" uid="uid://bomamngcgusvn" path="res://npcs/bb_egg.tscn" id="3_5pidc"]
 [ext_resource type="PackedScene" uid="uid://dijwi1y3wwvyp" path="res://player/player_flat.tscn" id="3_13gr6"]
-[ext_resource type="Material" uid="uid://ofx8y882ha2n" path="res://resources/twigs.tres" id="4_y6ena"]
+[ext_resource type="Material" path="res://resources/twigs.tres" id="4_y6ena"]
 [ext_resource type="ArrayMesh" uid="uid://csprst6ukc4qy" path="res://resources/deadTreeFixed.tres" id="5_ac1nj"]
-[ext_resource type="AudioStream" uid="uid://xeeywyyly0mb" path="res://assets/Sounds/Gumpified/Music_Track_2.wav" id="8_augl6"]
-[ext_resource type="Texture2D" uid="uid://b7atx3mhkanll" path="res://assets/Nest.png" id="9_aidyc"]
-[ext_resource type="AudioStream" uid="uid://cul6n2ib1kvco" path="res://assets/Sounds/syringe/birds-chirping-75156.mp3" id="9_qwtg8"]
-[ext_resource type="AudioStream" uid="uid://i7itbaaqdtom" path="res://assets/Sounds/Gumpified/Background_hiss.wav" id="10_0tv67"]
-[ext_resource type="AudioStream" uid="uid://c2uhccr6jmyp" path="res://assets/Sounds/Gumpified/StartingGong.wav" id="11_xoeov"]
-[ext_resource type="AudioStream" uid="uid://btj4muau7olqn" path="res://assets/Sounds/Gumpified/Protec.wav" id="12_dsiyt"]
-[ext_resource type="AudioStream" uid="uid://cprgqi4fyqy4j" path="res://assets/Sounds/Gumpified/Kill.wav" id="13_0xvus"]
-[ext_resource type="AudioStream" uid="uid://d4csltv53v4tk" path="res://assets/Sounds/Gumpified/Deathfdsfa.wav" id="14_fs3pt"]
+[ext_resource type="AudioStream" uid="uid://cxh6lmoeceygl" path="res://assets/Sounds/Gumpified/Music_Track_2.wav" id="8_augl6"]
+[ext_resource type="Texture2D" uid="uid://bwnsuqj8f46fx" path="res://assets/Nest.png" id="9_aidyc"]
+[ext_resource type="AudioStream" uid="uid://cph1b8ncw7jqa" path="res://assets/Sounds/syringe/birds-chirping-75156.mp3" id="9_qwtg8"]
+[ext_resource type="AudioStream" uid="uid://bcnk0uq7wrou5" path="res://assets/Sounds/Gumpified/Background_hiss.wav" id="10_0tv67"]
+[ext_resource type="AudioStream" uid="uid://b0ukuwtyiif4y" path="res://assets/Sounds/Gumpified/StartingGong.wav" id="11_xoeov"]
+[ext_resource type="AudioStream" uid="uid://bavk00q7lrkom" path="res://assets/Sounds/Gumpified/Protec.wav" id="12_dsiyt"]
+[ext_resource type="AudioStream" uid="uid://dwwa3f63cjp2r" path="res://assets/Sounds/Gumpified/Kill.wav" id="13_0xvus"]
+[ext_resource type="AudioStream" uid="uid://cwry17n1io5k4" path="res://assets/Sounds/Gumpified/Deathfdsfa.wav" id="14_fs3pt"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_ittvl"]
 data = PackedVector3Array(0, -1, -1, 0.1951, 1, -0.9808, 0.1951, -1, -0.9808, 0, -1, -1, 0, 1, -1, 0.1951, 1, -0.9808, 0.1951, -1, -0.9808, 0.3827, 1, -0.9239, 0.3827, -1, -0.9239, 0.1951, -1, -0.9808, 0.1951, 1, -0.9808, 0.3827, 1, -0.9239, 0.3827, -1, -0.9239, 0.5556, 1, -0.8315, 0.5556, -1, -0.8315, 0.3827, -1, -0.9239, 0.3827, 1, -0.9239, 0.5556, 1, -0.8315, 0.5556, -1, -0.8315, 0.7071, 1, -0.7071, 0.7071, -1, -0.7071, 0.5556, -1, -0.8315, 0.5556, 1, -0.8315, 0.7071, 1, -0.7071, 0.7071, -1, -0.7071, 0.8314, 1, -0.5556, 0.8314, -1, -0.5556, 0.7071, -1, -0.7071, 0.7071, 1, -0.7071, 0.8314, 1, -0.5556, 0.8314, -1, -0.5556, 0.9239, 1, -0.3827, 0.9239, -1, -0.3827, 0.8314, -1, -0.5556, 0.8314, 1, -0.5556, 0.9239, 1, -0.3827, 0.9239, -1, -0.3827, 0.9808, 1, -0.1951, 0.9808, -1, -0.1951, 0.9239, -1, -0.3827, 0.9239, 1, -0.3827, 0.9808, 1, -0.1951, 0.9808, -1, -0.1951, 1, 1, 0, 1, -1, 0, 0.9808, -1, -0.1951, 0.9808, 1, -0.1951, 1, 1, 0, 1, -1, 0, 0.9808, 1, 0.1951, 0.9808, -1, 0.1951, 1, -1, 0, 1, 1, 0, 0.9808, 1, 0.1951, 0.9808, -1, 0.1951, 0.9239, 1, 0.3827, 0.9239, -1, 0.3827, 0.9808, -1, 0.1951, 0.9808, 1, 0.1951, 0.9239, 1, 0.3827, 0.9239, -1, 0.3827, 0.8314, 1, 0.5556, 0.8314, -1, 0.5556, 0.9239, -1, 0.3827, 0.9239, 1, 0.3827, 0.8314, 1, 0.5556, 0.8314, -1, 0.5556, 0.7071, 1, 0.7071, 0.7071, -1, 0.7071, 0.8314, -1, 0.5556, 0.8314, 1, 0.5556, 0.7071, 1, 0.7071, 0.7071, -1, 0.7071, 0.5556, 1, 0.8314, 0.5556, -1, 0.8314, 0.7071, -1, 0.7071, 0.7071, 1, 0.7071, 0.5556, 1, 0.8314, 0.5556, -1, 0.8314, 0.3827, 1, 0.9239, 0.3827, -1, 0.9239, 0.5556, -1, 0.8314, 0.5556, 1, 0.8314, 0.3827, 1, 0.9239, 0.3827, -1, 0.9239, 0.1951, 1, 0.9808, 0.1951, -1, 0.9808, 0.3827, -1, 0.9239, 0.3827, 1, 0.9239, 0.1951, 1, 0.9808, 0.1951, -1, 0.9808, 0, 1, 1, 0, -1, 1, 0.1951, -1, 0.9808, 0.1951, 1, 0.9808, 0, 1, 1, 0, -1, 1, -0.1951, 1, 0.9808, -0.1951, -1, 0.9808, 0, -1, 1, 0, 1, 1, -0.1951, 1, 0.9808, -0.1951, -1, 0.9808, -0.3827, 1, 0.9239, -0.3827, -1, 0.9239, -0.1951, -1, 0.9808, -0.1951, 1, 0.9808, -0.3827, 1, 0.9239, -0.3827, -1, 0.9239, -0.5556, 1, 0.8314, -0.5556, -1, 0.8314, -0.3827, -1, 0.9239, -0.3827, 1, 0.9239, -0.5556, 1, 0.8314, -0.5556, -1, 0.8314, -0.7071, 1, 0.7071, -0.7071, -1, 0.7071, -0.5556, -1, 0.8314, -0.5556, 1, 0.8314, -0.7071, 1, 0.7071, -0.7071, -1, 0.7071, -0.8315, 1, 0.5556, -0.8315, -1, 0.5556, -0.7071, -1, 0.7071, -0.7071, 1, 0.7071, -0.8315, 1, 0.5556, -0.8315, -1, 0.5556, -0.9239, 1, 0.3827, -0.9239, -1, 0.3827, -0.8315, -1, 0.5556, -0.8315, 1, 0.5556, -0.9239, 1, 0.3827, -0.9239, -1, 0.3827, -0.9808, 1, 0.1951, -0.9808, -1, 0.1951, -0.9239, -1, 0.3827, -0.9239, 1, 0.3827, -0.9808, 1, 0.1951, -0.9808, -1, 0.1951, -1, 1, 0, -1, -1, 0, -0.9808, -1, 0.1951, -0.9808, 1, 0.1951, -1, 1, 0, -1, -1, 0, -0.9808, 1, -0.1951, -0.9808, -1, -0.1951, -1, -1, 0, -1, 1, 0, -0.9808, 1, -0.1951, -0.9808, -1, -0.1951, -0.9239, 1, -0.3827, -0.9239, -1, -0.3827, -0.9808, -1, -0.1951, -0.9808, 1, -0.1951, -0.9239, 1, -0.3827, -0.9239, -1, -0.3827, -0.8315, 1, -0.5556, -0.8315, -1, -0.5556, -0.9239, -1, -0.3827, -0.9239, 1, -0.3827, -0.8315, 1, -0.5556, -0.8315, -1, -0.5556, -0.7071, 1, -0.7071, -0.7071, -1, -0.7071, -0.8315, -1, -0.5556, -0.8315, 1, -0.5556, -0.7071, 1, -0.7071, -0.7071, -1, -0.7071, -0.5556, 1, -0.8315, -0.5556, -1, -0.8315, -0.7071, -1, -0.7071, -0.7071, 1, -0.7071, -0.5556, 1, -0.8315, -0.5556, -1, -0.8315, -0.3827, 1, -0.9239, -0.3827, -1, -0.9239, -0.5556, -1, -0.8315, -0.5556, 1, -0.8315, -0.3827, 1, -0.9239, -0.3827, -1, -0.9239, -0.1951, 1, -0.9808, -0.1951, -1, -0.9808, -0.3827, -1, -0.9239, -0.3827, 1, -0.9239, -0.1951, 1, -0.9808, -0.1951, -1, -0.9808, 0, 1, -1, 0, -1, -1, -0.1951, -1, -0.9808, -0.1951, 1, -0.9808, 0, 1, -1, -0.1487, -1, -0.7477, 0, 1, -0.7624, -0.1487, 1, -0.7477, -0.1487, -1, -0.7477, 0, -1, -0.7624, 0, 1, -0.7624, -0.4235, -1, -0.6339, -0.2918, 1, -0.7043, -0.4235, 1, -0.6339, -0.4235, -1, -0.6339, -0.2918, -1, -0.7043, -0.2918, 1, -0.7043, -0.5391, -1, -0.5391, -0.4235, 1, -0.6339, -0.5391, 1, -0.5391, -0.5391, -1, -0.5391, -0.4235, -1, -0.6339, -0.4235, 1, -0.6339, -0.6339, -1, -0.4235, -0.5391, 1, -0.5391, -0.6339, 1, -0.4235, -0.6339, -1, -0.4235, -0.5391, -1, -0.5391, -0.5391, 1, -0.5391, -0.7043, -1, -0.2918, -0.6339, 1, -0.4235, -0.7043, 1, -0.2918, -0.7043, -1, -0.2918, -0.6339, -1, -0.4235, -0.6339, 1, -0.4235, -0.7477, -1, -0.1487, -0.7043, 1, -0.2918, -0.7477, 1, -0.1487, -0.7477, -1, -0.1487, -0.7043, -1, -0.2918, -0.7043, 1, -0.2918, -0.7624, -1, 0, -0.7477, 1, -0.1487, -0.7624, 1, 0, -0.7624, -1, 0, -0.7477, -1, -0.1487, -0.7477, 1, -0.1487, -0.7477, -1, 0.1487, -0.7624, 1, 0, -0.7477, 1, 0.1487, -0.7477, -1, 0.1487, -0.7624, -1, 0, -0.7624, 1, 0, -0.7043, -1, 0.2917, -0.7477, 1, 0.1487, -0.7043, 1, 0.2917, -0.7043, -1, 0.2917, -0.7477, -1, 0.1487, -0.7477, 1, 0.1487, -0.6339, -1, 0.4235, -0.7043, 1, 0.2917, -0.6339, 1, 0.4235, -0.6339, -1, 0.4235, -0.7043, -1, 0.2917, -0.7043, 1, 0.2917, -0.5391, -1, 0.5391, -0.6339, 1, 0.4235, -0.5391, 1, 0.5391, -0.5391, -1, 0.5391, -0.6339, -1, 0.4235, -0.6339, 1, 0.4235, -0.4235, -1, 0.6338, -0.5391, 1, 0.5391, -0.4235, 1, 0.6338, -0.4235, -1, 0.6338, -0.5391, -1, 0.5391, -0.5391, 1, 0.5391, -0.2918, -1, 0.7043, -0.4235, 1, 0.6338, -0.2918, 1, 0.7043, -0.2918, -1, 0.7043, -0.4235, -1, 0.6338, -0.4235, 1, 0.6338, -0.1487, -1, 0.7477, -0.2918, 1, 0.7043, -0.1487, 1, 0.7477, -0.1487, -1, 0.7477, -0.2918, -1, 0.7043, -0.2918, 1, 0.7043, 0, -1, 0.7623, -0.1487, 1, 0.7477, 0, 1, 0.7623, 0, -1, 0.7623, -0.1487, -1, 0.7477, -0.1487, 1, 0.7477, 0.1487, -1, 0.7477, 0, 1, 0.7623, 0.1487, 1, 0.7477, 0.1487, -1, 0.7477, 0, -1, 0.7623, 0, 1, 0.7623, 0.2917, -1, 0.7043, 0.1487, 1, 0.7477, 0.2917, 1, 0.7043, 0.2917, -1, 0.7043, 0.1487, -1, 0.7477, 0.1487, 1, 0.7477, 0.4235, -1, 0.6338, 0.2917, 1, 0.7043, 0.4235, 1, 0.6338, 0.4235, -1, 0.6338, 0.2917, -1, 0.7043, 0.2917, 1, 0.7043, 0.5391, -1, 0.5391, 0.4235, 1, 0.6338, 0.5391, 1, 0.5391, 0.5391, -1, 0.5391, 0.4235, -1, 0.6338, 0.4235, 1, 0.6338, 0.6338, -1, 0.4235, 0.5391, 1, 0.5391, 0.6338, 1, 0.4235, 0.6338, -1, 0.4235, 0.5391, -1, 0.5391, 0.5391, 1, 0.5391, 0.7043, -1, 0.2917, 0.6338, 1, 0.4235, 0.7043, 1, 0.2917, 0.7043, -1, 0.2917, 0.6338, -1, 0.4235, 0.6338, 1, 0.4235, 0.7477, -1, 0.1487, 0.7043, 1, 0.2917, 0.7477, 1, 0.1487, 0.7477, -1, 0.1487, 0.7043, -1, 0.2917, 0.7043, 1, 0.2917, 0.7623, -1, 0, 0.7477, 1, 0.1487, 0.7623, 1, 0, 0.7623, -1, 0, 0.7477, -1, 0.1487, 0.7477, 1, 0.1487, 0.7477, -1, -0.1487, 0.7623, 1, 0, 0.7477, 1, -0.1487, 0.7477, -1, -0.1487, 0.7623, -1, 0, 0.7623, 1, 0, 0.7043, -1, -0.2918, 0.7477, 1, -0.1487, 0.7043, 1, -0.2918, 0.7043, -1, -0.2918, 0.7477, -1, -0.1487, 0.7477, 1, -0.1487, 0.6338, -1, -0.4235, 0.7043, 1, -0.2918, 0.6338, 1, -0.4235, 0.6338, -1, -0.4235, 0.7043, -1, -0.2918, 0.7043, 1, -0.2918, 0.5391, -1, -0.5391, 0.6338, 1, -0.4235, 0.5391, 1, -0.5391, 0.5391, -1, -0.5391, 0.6338, -1, -0.4235, 0.6338, 1, -0.4235, 0.4235, -1, -0.6339, 0.5391, 1, -0.5391, 0.4235, 1, -0.6339, 0.4235, -1, -0.6339, 0.5391, -1, -0.5391, 0.5391, 1, -0.5391, 0.2917, -1, -0.7043, 0.4235, 1, -0.6339, 0.2917, 1, -0.7043, 0.2917, -1, -0.7043, 0.4235, -1, -0.6339, 0.4235, 1, -0.6339, 0.1487, -1, -0.7477, 0.2917, 1, -0.7043, 0.1487, 1, -0.7477, 0.1487, -1, -0.7477, 0.2917, -1, -0.7043, 0.2917, 1, -0.7043, 0, -1, -0.7624, 0.1487, 1, -0.7477, 0, 1, -0.7624, 0, -1, -0.7624, 0.1487, -1, -0.7477, 0.1487, 1, -0.7477, -0.2918, -1, -0.7043, -0.1487, 1, -0.7477, -0.2918, 1, -0.7043, -0.2918, -1, -0.7043, -0.1487, -1, -0.7477, -0.1487, 1, -0.7477, -0.1951, -1, -0.9808, -0.2918, -1, -0.7043, -0.3827, -1, -0.9239, -0.1951, -1, -0.9808, -0.1487, -1, -0.7477, -0.2918, -1, -0.7043, -0.8315, 1, 0.5556, -0.7043, 1, 0.2917, -0.9239, 1, 0.3827, -0.8315, 1, 0.5556, -0.6339, 1, 0.4235, -0.7043, 1, 0.2917, 0.8314, -1, -0.5556, 0.5391, -1, -0.5391, 0.7071, -1, -0.7071, 0.8314, -1, -0.5556, 0.6338, -1, -0.4235, 0.5391, -1, -0.5391, -0.3827, 1, -0.9239, -0.1487, 1, -0.7477, -0.1951, 1, -0.9808, -0.3827, 1, -0.9239, -0.2918, 1, -0.7043, -0.1487, 1, -0.7477, 0.3827, -1, 0.9239, 0.4235, -1, 0.6338, 0.5556, -1, 0.8314, 0.3827, -1, 0.9239, 0.2917, -1, 0.7043, 0.4235, -1, 0.6338, 0.7071, 1, -0.7071, 0.6338, 1, -0.4235, 0.8314, 1, -0.5556, 0.7071, 1, -0.7071, 0.5391, 1, -0.5391, 0.6338, 1, -0.4235, -0.9808, -1, 0.1951, -0.7043, -1, 0.2917, -0.9239, -1, 0.3827, -0.9808, -1, 0.1951, -0.7477, -1, 0.1487, -0.7043, -1, 0.2917, 0.5556, 1, 0.8314, 0.2917, 1, 0.7043, 0.3827, 1, 0.9239, 0.5556, 1, 0.8314, 0.4235, 1, 0.6338, 0.2917, 1, 0.7043, 0, -1, -1, -0.1487, -1, -0.7477, -0.1951, -1, -0.9808, 0, -1, -1, 0, -1, -0.7624, -0.1487, -1, -0.7477, -0.9239, 1, 0.3827, -0.7477, 1, 0.1487, -0.9808, 1, 0.1951, -0.9239, 1, 0.3827, -0.7043, 1, 0.2917, -0.7477, 1, 0.1487, 0.9239, -1, -0.3827, 0.6338, -1, -0.4235, 0.8314, -1, -0.5556, 0.9239, -1, -0.3827, 0.7043, -1, -0.2918, 0.6338, -1, -0.4235, -0.1951, 1, -0.9808, 0, 1, -0.7624, 0, 1, -1, -0.1951, 1, -0.9808, -0.1487, 1, -0.7477, 0, 1, -0.7624, 0.1951, -1, 0.9808, 0.2917, -1, 0.7043, 0.3827, -1, 0.9239, 0.1951, -1, 0.9808, 0.1487, -1, 0.7477, 0.2917, -1, 0.7043, 0.8314, 1, -0.5556, 0.7043, 1, -0.2918, 0.9239, 1, -0.3827, 0.8314, 1, -0.5556, 0.6338, 1, -0.4235, 0.7043, 1, -0.2918, -1, -1, 0, -0.7477, -1, 0.1487, -0.9808, -1, 0.1951, -1, -1, 0, -0.7624, -1, 0, -0.7477, -1, 0.1487, 0.3827, 1, 0.9239, 0.1487, 1, 0.7477, 0.1951, 1, 0.9808, 0.3827, 1, 0.9239, 0.2917, 1, 0.7043, 0.1487, 1, 0.7477, -0.9808, 1, 0.1951, -0.7624, 1, 0, -1, 1, 0, -0.9808, 1, 0.1951, -0.7477, 1, 0.1487, -0.7624, 1, 0, 0.9808, -1, -0.1951, 0.7043, -1, -0.2918, 0.9239, -1, -0.3827, 0.9808, -1, -0.1951, 0.7477, -1, -0.1487, 0.7043, -1, -0.2918, 0, -1, 1, 0.1487, -1, 0.7477, 0.1951, -1, 0.9808, 0, -1, 1, 0, -1, 0.7623, 0.1487, -1, 0.7477, 0.9239, 1, -0.3827, 0.7477, 1, -0.1487, 0.9808, 1, -0.1951, 0.9239, 1, -0.3827, 0.7043, 1, -0.2918, 0.7477, 1, -0.1487, -0.9808, -1, -0.1951, -0.7624, -1, 0, -1, -1, 0, -0.9808, -1, -0.1951, -0.7477, -1, -0.1487, -0.7624, -1, 0, 0.1951, 1, 0.9808, 0, 1, 0.7623, 0, 1, 1, 0.1951, 1, 0.9808, 0.1487, 1, 0.7477, 0, 1, 0.7623, -1, 1, 0, -0.7477, 1, -0.1487, -0.9808, 1, -0.1951, -1, 1, 0, -0.7624, 1, 0, -0.7477, 1, -0.1487, 1, -1, 0, 0.7477, -1, -0.1487, 0.9808, -1, -0.1951, 1, -1, 0, 0.7623, -1, 0, 0.7477, -1, -0.1487, -0.1951, -1, 0.9808, 0, -1, 0.7623, 0, -1, 1, -0.1951, -1, 0.9808, -0.1487, -1, 0.7477, 0, -1, 0.7623, 0.9808, 1, -0.1951, 0.7623, 1, 0, 1, 1, 0, 0.9808, 1, -0.1951, 0.7477, 1, -0.1487, 0.7623, 1, 0, -0.9239, -1, -0.3827, -0.7477, -1, -0.1487, -0.9808, -1, -0.1951, -0.9239, -1, -0.3827, -0.7043, -1, -0.2918, -0.7477, -1, -0.1487, 0, 1, 1, -0.1487, 1, 0.7477, -0.1951, 1, 0.9808, 0, 1, 1, 0, 1, 0.7623, -0.1487, 1, 0.7477, -0.9808, 1, -0.1951, -0.7043, 1, -0.2918, -0.9239, 1, -0.3827, -0.9808, 1, -0.1951, -0.7477, 1, -0.1487, -0.7043, 1, -0.2918, 0.9808, -1, 0.1951, 0.7623, -1, 0, 1, -1, 0, 0.9808, -1, 0.1951, 0.7477, -1, 0.1487, 0.7623, -1, 0, -0.3827, -1, 0.9239, -0.1487, -1, 0.7477, -0.1951, -1, 0.9808, -0.3827, -1, 0.9239, -0.2918, -1, 0.7043, -0.1487, -1, 0.7477, 1, 1, 0, 0.7477, 1, 0.1487, 0.9808, 1, 0.1951, 1, 1, 0, 0.7623, 1, 0, 0.7477, 1, 0.1487, 0.1951, -1, -0.9808, 0, -1, -0.7624, 0, -1, -1, 0.1951, -1, -0.9808, 0.1487, -1, -0.7477, 0, -1, -0.7624, -0.8315, -1, -0.5556, -0.7043, -1, -0.2918, -0.9239, -1, -0.3827, -0.8315, -1, -0.5556, -0.6339, -1, -0.4235, -0.7043, -1, -0.2918, -0.1951, 1, 0.9808, -0.2918, 1, 0.7043, -0.3827, 1, 0.9239, -0.1951, 1, 0.9808, -0.1487, 1, 0.7477, -0.2918, 1, 0.7043, 0, 1, -1, 0.1487, 1, -0.7477, 0.1951, 1, -0.9808, 0, 1, -1, 0, 1, -0.7624, 0.1487, 1, -0.7477, -0.9239, 1, -0.3827, -0.6339, 1, -0.4235, -0.8315, 1, -0.5556, -0.9239, 1, -0.3827, -0.7043, 1, -0.2918, -0.6339, 1, -0.4235, 0.9239, -1, 0.3827, 0.7477, -1, 0.1487, 0.9808, -1, 0.1951, 0.9239, -1, 0.3827, 0.7043, -1, 0.2917, 0.7477, -1, 0.1487, -0.5556, -1, 0.8314, -0.2918, -1, 0.7043, -0.3827, -1, 0.9239, -0.5556, -1, 0.8314, -0.4235, -1, 0.6338, -0.2918, -1, 0.7043, 0.9808, 1, 0.1951, 0.7043, 1, 0.2917, 0.9239, 1, 0.3827, 0.9808, 1, 0.1951, 0.7477, 1, 0.1487, 0.7043, 1, 0.2917, -0.7071, -1, -0.7071, -0.6339, -1, -0.4235, -0.8315, -1, -0.5556, -0.7071, -1, -0.7071, -0.5391, -1, -0.5391, -0.6339, -1, -0.4235, -0.3827, 1, 0.9239, -0.4235, 1, 0.6338, -0.5556, 1, 0.8314, -0.3827, 1, 0.9239, -0.2918, 1, 0.7043, -0.4235, 1, 0.6338, 0.3827, -1, -0.9239, 0.1487, -1, -0.7477, 0.1951, -1, -0.9808, 0.3827, -1, -0.9239, 0.2917, -1, -0.7043, 0.1487, -1, -0.7477, -0.8315, 1, -0.5556, -0.5391, 1, -0.5391, -0.7071, 1, -0.7071, -0.8315, 1, -0.5556, -0.6339, 1, -0.4235, -0.5391, 1, -0.5391, 0.8314, -1, 0.5556, 0.7043, -1, 0.2917, 0.9239, -1, 0.3827, 0.8314, -1, 0.5556, 0.6338, -1, 0.4235, 0.7043, -1, 0.2917, 0.1951, 1, -0.9808, 0.2917, 1, -0.7043, 0.3827, 1, -0.9239, 0.1951, 1, -0.9808, 0.1487, 1, -0.7477, 0.2917, 1, -0.7043, -0.7071, -1, 0.7071, -0.4235, -1, 0.6338, -0.5556, -1, 0.8314, -0.7071, -1, 0.7071, -0.5391, -1, 0.5391, -0.4235, -1, 0.6338, 0.9239, 1, 0.3827, 0.6338, 1, 0.4235, 0.8314, 1, 0.5556, 0.9239, 1, 0.3827, 0.7043, 1, 0.2917, 0.6338, 1, 0.4235, -0.5556, -1, -0.8315, -0.5391, -1, -0.5391, -0.7071, -1, -0.7071, -0.5556, -1, -0.8315, -0.4235, -1, -0.6339, -0.5391, -1, -0.5391, -0.5556, 1, 0.8314, -0.5391, 1, 0.5391, -0.7071, 1, 0.7071, -0.5556, 1, 0.8314, -0.4235, 1, 0.6338, -0.5391, 1, 0.5391, 0.5556, -1, -0.8315, 0.2917, -1, -0.7043, 0.3827, -1, -0.9239, 0.5556, -1, -0.8315, 0.4235, -1, -0.6339, 0.2917, -1, -0.7043, -0.7071, 1, -0.7071, -0.4235, 1, -0.6339, -0.5556, 1, -0.8315, -0.7071, 1, -0.7071, -0.5391, 1, -0.5391, -0.4235, 1, -0.6339, 0.7071, -1, 0.7071, 0.6338, -1, 0.4235, 0.8314, -1, 0.5556, 0.7071, -1, 0.7071, 0.5391, -1, 0.5391, 0.6338, -1, 0.4235, 0.3827, 1, -0.9239, 0.4235, 1, -0.6339, 0.5556, 1, -0.8315, 0.3827, 1, -0.9239, 0.2917, 1, -0.7043, 0.4235, 1, -0.6339, -0.8315, -1, 0.5556, -0.5391, -1, 0.5391, -0.7071, -1, 0.7071, -0.8315, -1, 0.5556, -0.6339, -1, 0.4235, -0.5391, -1, 0.5391, 0.8314, 1, 0.5556, 0.5391, 1, 0.5391, 0.7071, 1, 0.7071, 0.8314, 1, 0.5556, 0.6338, 1, 0.4235, 0.5391, 1, 0.5391, -0.3827, -1, -0.9239, -0.4235, -1, -0.6339, -0.5556, -1, -0.8315, -0.3827, -1, -0.9239, -0.2918, -1, -0.7043, -0.4235, -1, -0.6339, -0.7071, 1, 0.7071, -0.6339, 1, 0.4235, -0.8315, 1, 0.5556, -0.7071, 1, 0.7071, -0.5391, 1, 0.5391, -0.6339, 1, 0.4235, 0.7071, -1, -0.7071, 0.4235, -1, -0.6339, 0.5556, -1, -0.8315, 0.7071, -1, -0.7071, 0.5391, -1, -0.5391, 0.4235, -1, -0.6339, -0.5556, 1, -0.8315, -0.2918, 1, -0.7043, -0.3827, 1, -0.9239, -0.5556, 1, -0.8315, -0.4235, 1, -0.6339, -0.2918, 1, -0.7043, 0.5556, -1, 0.8314, 0.5391, -1, 0.5391, 0.7071, -1, 0.7071, 0.5556, -1, 0.8314, 0.4235, -1, 0.6338, 0.5391, -1, 0.5391, 0.5556, 1, -0.8315, 0.5391, 1, -0.5391, 0.7071, 1, -0.7071, 0.5556, 1, -0.8315, 0.4235, 1, -0.6339, 0.5391, 1, -0.5391, -0.9239, -1, 0.3827, -0.6339, -1, 0.4235, -0.8315, -1, 0.5556, -0.9239, -1, 0.3827, -0.7043, -1, 0.2917, -0.6339, -1, 0.4235, 0.7071, 1, 0.7071, 0.4235, 1, 0.6338, 0.5556, 1, 0.8314, 0.7071, 1, 0.7071, 0.5391, 1, 0.5391, 0.4235, 1, 0.6338)
@@ -150,6 +150,309 @@ polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_sbtfa"]
 size = Vector2(600, 600)
+
+[sub_resource type="Animation" id="Animation_5yda1"]
+resource_name = "LowerFog"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WorldEnvironment:environment:fog_height")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [78.17, -5.0]
+}
+
+[sub_resource type="Animation" id="Animation_0l8wb"]
+resource_name = "NewWave"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("StartingGong:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.6),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"begin"
+}]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("KillEgg:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.8),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_7wtl7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WorldEnvironment:environment:sky:sky_material:sky_energy_multiplier")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("WorldEnvironment:environment:sky:sky_material:ground_energy_multiplier")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [64.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("WorldEnvironment:environment:sky:sky_material:sky_curve")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.000193286]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = false
+tracks/3/path = NodePath("BirdsChirping:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("WorldEnvironment:environment:sky:sky_material:sky_top_color")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.385, 0.454, 0.55, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("WorldEnvironment:environment:fog_enabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("WorldEnvironment:environment:fog_light_energy")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("WorldEnvironment:environment:fog_density")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("WorldEnvironment:environment:fog_height")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [78.17]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("WorldEnvironment:environment:fog_height_density")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.2028]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("WorldEnvironment:environment:fog_light_color")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("WorldEnvironment:environment:fog_aerial_perspective")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("WorldEnvironment:environment:fog_sky_affect")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("AudioStreamPlayer:playing")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("AudioStreamPlayer:volume_db")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [10.0]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("StartingGong:playing")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("WorldEnvironment:environment:volumetric_fog_density")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("Protec:playing")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("KillEgg:playing")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_gafjm"]
+resource_name = "RaiseFog"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WorldEnvironment:environment:fog_height")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [78.17]
+}
 
 [sub_resource type="Animation" id="Animation_peg1f"]
 resource_name = "StartingWave"
@@ -399,309 +702,6 @@ tracks/19/keys = {
 "values": [true]
 }
 
-[sub_resource type="Animation" id="Animation_7wtl7"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("WorldEnvironment:environment:sky:sky_material:sky_energy_multiplier")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [1.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("WorldEnvironment:environment:sky:sky_material:ground_energy_multiplier")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [64.0]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("WorldEnvironment:environment:sky:sky_material:sky_curve")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.000193286]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = false
-tracks/3/path = NodePath("BirdsChirping:playing")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("WorldEnvironment:environment:sky:sky_material:sky_top_color")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0.385, 0.454, 0.55, 1)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("WorldEnvironment:environment:fog_enabled")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("WorldEnvironment:environment:fog_light_energy")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("WorldEnvironment:environment:fog_density")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("WorldEnvironment:environment:fog_height")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [78.17]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("WorldEnvironment:environment:fog_height_density")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [-0.2028]
-}
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("WorldEnvironment:environment:fog_light_color")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0, 0, 0, 1)]
-}
-tracks/11/type = "value"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("WorldEnvironment:environment:fog_aerial_perspective")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [1.0]
-}
-tracks/12/type = "value"
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/path = NodePath("WorldEnvironment:environment:fog_sky_affect")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/13/type = "value"
-tracks/13/imported = false
-tracks/13/enabled = true
-tracks/13/path = NodePath("AudioStreamPlayer:playing")
-tracks/13/interp = 1
-tracks/13/loop_wrap = true
-tracks/13/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/14/type = "value"
-tracks/14/imported = false
-tracks/14/enabled = true
-tracks/14/path = NodePath("AudioStreamPlayer:volume_db")
-tracks/14/interp = 1
-tracks/14/loop_wrap = true
-tracks/14/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [10.0]
-}
-tracks/15/type = "value"
-tracks/15/imported = false
-tracks/15/enabled = true
-tracks/15/path = NodePath("StartingGong:playing")
-tracks/15/interp = 1
-tracks/15/loop_wrap = true
-tracks/15/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/16/type = "value"
-tracks/16/imported = false
-tracks/16/enabled = true
-tracks/16/path = NodePath("WorldEnvironment:environment:volumetric_fog_density")
-tracks/16/interp = 1
-tracks/16/loop_wrap = true
-tracks/16/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/17/type = "value"
-tracks/17/imported = false
-tracks/17/enabled = true
-tracks/17/path = NodePath("Protec:playing")
-tracks/17/interp = 1
-tracks/17/loop_wrap = true
-tracks/17/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/18/type = "value"
-tracks/18/imported = false
-tracks/18/enabled = true
-tracks/18/path = NodePath("KillEgg:playing")
-tracks/18/interp = 1
-tracks/18/loop_wrap = true
-tracks/18/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-
-[sub_resource type="Animation" id="Animation_0l8wb"]
-resource_name = "NewWave"
-length = 10.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("StartingGong:playing")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/1/type = "method"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.6),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"begin"
-}]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("KillEgg:playing")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(1.8),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-
-[sub_resource type="Animation" id="Animation_5yda1"]
-resource_name = "LowerFog"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("WorldEnvironment:environment:fog_height")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [78.17, -5.0]
-}
-
-[sub_resource type="Animation" id="Animation_gafjm"]
-resource_name = "RaiseFog"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("WorldEnvironment:environment:fog_height")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [78.17]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wcy05"]
 _data = {
 "LowerFog": SubResource("Animation_5yda1"),
@@ -713,6 +713,7 @@ _data = {
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_stx4d")
+spawning_enemies = true
 
 [node name="OuterRim" parent="." instance=ExtResource("2_5m5xp")]
 transform = Transform3D(121.095, 0, 0, 0, 121.095, 0, 0, 0, 121.095, -3.21667, 0, 4.45225)
