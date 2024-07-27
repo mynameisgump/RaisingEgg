@@ -33,6 +33,7 @@ func _ready():
 		#animation_player.queue("LowerFog")
 	pass # Replace with function body.
 
+
 func begin():
 	if first_wave:
 		spawning_enemies = true;

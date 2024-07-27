@@ -200,11 +200,11 @@ gravity = Vector3(0, 0, 0)
 damping_min = 12.593
 damping_max = 25.926
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t7o2r"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dgfcy"]
 albedo_color = Color(0.0942616, 1, 0.0215643, 1)
 
 [sub_resource type="SphereMesh" id="SphereMesh_5sl8b"]
-material = SubResource("StandardMaterial3D_t7o2r")
+material = SubResource("StandardMaterial3D_dgfcy")
 radius = 0.1
 height = 0.2
 

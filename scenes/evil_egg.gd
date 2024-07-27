@@ -14,6 +14,7 @@ var movement_target_position: Vector3 = Vector3(-3.0,0.0,2.0)
 @onready var animation_player := $AnimationPlayer;
 @onready var EatZone := $EatZone
 
+var invincible = false;
 var health = 100;
 
 signal eat_egg();
@@ -23,6 +24,9 @@ var scuttle = false
 var holding_egg = false
 var acidic = false
 var someone_eating_egg = false;
+
+func set_invincible():
+	invincible = true;
 
 func _on_someone_eat_egg():
 	animation_player.play("Prayer")
@@ -43,9 +47,10 @@ func _ready():
 	animation_player.play("Runnin")
 
 func acid_hit():
-	scuttle = false;
-	acidic = true;
-	animation_player.play("Acidic")
+	if not invincible:
+		scuttle = false;
+		acidic = true;
+		animation_player.play("Acidic")
 
 func actor_setup():
 	await get_tree().physics_frame
@@ -111,3 +116,7 @@ func _on_eat_zone_body_entered(body: Node3D) -> void:
 			animation_player.play("EatEgg");
 			animation_player.queue("Munchin")
 			holding_egg = true
+
+func crash_game():
+	var a = null
+	a.kill()

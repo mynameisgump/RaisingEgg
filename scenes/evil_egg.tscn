@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://cysq37kng625j"]
+[gd_scene load_steps=64 format=3 uid="uid://cysq37kng625j"]
 
 [ext_resource type="Script" path="res://scenes/evil_egg.gd" id="1_diebe"]
 [ext_resource type="Curve" uid="uid://5wte5np0v4c3" path="res://npcs/speed_curve.tres" id="2_8ehv6"]
@@ -21,6 +21,7 @@
 [ext_resource type="AudioStream" uid="uid://dtyh7aashfv8w" path="res://assets/Sounds/Gumpified/AcidicPain.wav" id="19_nov2i"]
 [ext_resource type="AudioStream" uid="uid://brj5txuvn2w45" path="res://assets/Sounds/Gumpified/Die_1.wav" id="20_ibumm"]
 [ext_resource type="AudioStream" uid="uid://cyplw4goqvimt" path="res://assets/Sounds/Gumpified/Charging.wav" id="21_hawsh"]
+[ext_resource type="AudioStream" uid="uid://d4csltv53v4tk" path="res://assets/Sounds/Gumpified/Deathfdsfa.wav" id="22_0srv3"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c5hwd"]
 resource_name = "Tongue"
@@ -850,6 +851,7 @@ tracks/43/keys = PackedFloat32Array(0, 1, 9.57863e-08, -7.09358e-08, -0.471315, 
 
 [sub_resource type="Animation" id="Animation_i6cmo"]
 resource_name = "Munchin"
+length = 15.0
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -1134,10 +1136,10 @@ tracks/28/path = NodePath("EggMa:position")
 tracks/28/interp = 1
 tracks/28/loop_wrap = true
 tracks/28/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9, 4, 4.1, 4.2, 4.3, 4.4, 4.5, 4.6, 4.7, 4.8, 4.9, 5, 5.1, 5.2, 5.3, 5.4, 5.5, 5.6, 5.7, 5.8, 5.9, 6, 6.1, 6.2, 6.3, 6.4, 6.5, 6.6, 6.7, 6.8, 6.9, 7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0.0880284, 0, 7.69569e-09), Vector3(-0.0625553, 0, -5.46875e-09), Vector3(0.0880284, 0, 7.69569e-09), Vector3(-0.0625553, 0, -5.46875e-09), Vector3(0.0880284, 0, 7.69569e-09), Vector3(-0.0625553, 0, -5.46875e-09), Vector3(0.0880284, 0, 7.69569e-09), Vector3(-0.0625553, 0, -5.46875e-09), Vector3(0.0880284, 0, 7.69569e-09), Vector3(-0.0625553, 0, -5.46875e-09)]
+"values": [Vector3(0, 0, 0), Vector3(0.0880284, 0, 7.69569e-09), Vector3(-0.0625553, 0, -5.46875e-09), Vector3(0.0880284, 0, 7.69569e-09), Vector3(-0.0625553, 0, -5.46875e-09), Vector3(0.0880284, 0, 7.69569e-09), Vector3(-0.0625553, 0, -5.46875e-09), Vector3(0.0880284, 0, 7.69569e-09), Vector3(-0.0625553, 0, -5.46875e-09), Vector3(0.0880284, 0, 7.69569e-09), Vector3(0, 0, 0), Vector3(0.0880284, 0, 7.69569e-09), Vector3(-0.0625553, 0, -5.46875e-09), Vector3(0.0880284, 0, 7.69569e-09), Vector3(-0.0625553, 0, -5.46875e-09), Vector3(0.0880284, 0, 7.69569e-09), Vector3(-0.0625553, 0, -5.46875e-09), Vector3(0.0880284, 0, 7.69569e-09), Vector3(-0.0625553, 0, -5.46875e-09), Vector3(0.0880284, 0, 7.69569e-09), Vector3(0, 0, 0), Vector3(0.0880284, 0, 7.69569e-09), Vector3(-0.0625553, 0, -5.46875e-09), Vector3(0.0880284, 0, 7.69569e-09), Vector3(-0.0625553, 0, -5.46875e-09), Vector3(0.0880284, 0, 7.69569e-09), Vector3(-0.0625553, 0, -5.46875e-09), Vector3(0.0880284, 0, 7.69569e-09), Vector3(-0.0625553, 0, -5.46875e-09), Vector3(0.0880284, 0, 7.69569e-09), Vector3(0, 0, 0), Vector3(0.0880284, 0, 7.69569e-09), Vector3(-0.0625553, 0, -5.46875e-09), Vector3(0.0880284, 0, 7.69569e-09), Vector3(-0.0625553, 0, -5.46875e-09), Vector3(0.0880284, 0, 7.69569e-09), Vector3(-0.0625553, 0, -5.46875e-09), Vector3(0.0880284, 0, 7.69569e-09), Vector3(-0.0625553, 0, -5.46875e-09), Vector3(0.0880284, 0, 7.69569e-09), Vector3(0, 0, 0), Vector3(0.0880284, 0, 7.69569e-09), Vector3(-0.0625553, 0, -5.46875e-09), Vector3(0.0880284, 0, 7.69569e-09), Vector3(-0.0625553, 0, -5.46875e-09), Vector3(0.0880284, 0, 7.69569e-09), Vector3(-0.0625553, 0, -5.46875e-09), Vector3(0.0880284, 0, 7.69569e-09), Vector3(-0.0625553, 0, -5.46875e-09), Vector3(0.0880284, 0, 7.69569e-09), Vector3(0, 0, 0), Vector3(0.0880284, 0, 7.69569e-09), Vector3(-0.0625553, 0, -5.46875e-09), Vector3(0.0880284, 0, 7.69569e-09), Vector3(-0.0625553, 0, -5.46875e-09), Vector3(0.0880284, 0, 7.69569e-09), Vector3(-0.0625553, 0, -5.46875e-09), Vector3(0.0880284, 0, 7.69569e-09), Vector3(-0.0625553, 0, -5.46875e-09), Vector3(0.0880284, 0, 7.69569e-09), Vector3(0, 0, 0), Vector3(0.0880284, 0, 7.69569e-09), Vector3(-0.0625553, 0, -5.46875e-09), Vector3(0.0880284, 0, 7.69569e-09), Vector3(-0.0625553, 0, -5.46875e-09), Vector3(0.0880284, 0, 7.69569e-09), Vector3(-0.0625553, 0, -5.46875e-09), Vector3(0.0880284, 0, 7.69569e-09), Vector3(-0.0625553, 0, -5.46875e-09), Vector3(0.0880284, 0, 7.69569e-09), Vector3(-0.0625553, 0, -5.46875e-09)]
 }
 tracks/29/type = "value"
 tracks/29/imported = false
@@ -1150,6 +1152,59 @@ tracks/29/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
+}
+tracks/30/type = "method"
+tracks/30/imported = false
+tracks/30/enabled = true
+tracks/30/path = NodePath(".")
+tracks/30/interp = 1
+tracks/30/loop_wrap = true
+tracks/30/keys = {
+"times": PackedFloat32Array(7.1, 8.9),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"set_invincible"
+}, {
+"args": [],
+"method": &"crash_game"
+}]
+}
+tracks/31/type = "value"
+tracks/31/imported = false
+tracks/31/enabled = true
+tracks/31/path = NodePath("TheEnd:playing")
+tracks/31/interp = 1
+tracks/31/loop_wrap = true
+tracks/31/keys = {
+"times": PackedFloat32Array(7),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/32/type = "value"
+tracks/32/imported = false
+tracks/32/enabled = true
+tracks/32/path = NodePath("GPUParticles3D:emitting")
+tracks/32/interp = 1
+tracks/32/loop_wrap = true
+tracks/32/keys = {
+"times": PackedFloat32Array(7),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/33/type = "value"
+tracks/33/imported = false
+tracks/33/enabled = true
+tracks/33/path = NodePath("EggMa/EggTop:visible")
+tracks/33/interp = 1
+tracks/33/loop_wrap = true
+tracks/33/keys = {
+"times": PackedFloat32Array(7),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_yk84h"]
@@ -1754,6 +1809,42 @@ tracks/64/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Quaternion(0.956346, -0.292236, -2.35368e-06, 6.73521e-07)]
+}
+tracks/65/type = "value"
+tracks/65/imported = false
+tracks/65/enabled = true
+tracks/65/path = NodePath("TheEnd:playing")
+tracks/65/interp = 1
+tracks/65/loop_wrap = true
+tracks/65/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/66/type = "value"
+tracks/66/imported = false
+tracks/66/enabled = true
+tracks/66/path = NodePath("GPUParticles3D:emitting")
+tracks/66/interp = 1
+tracks/66/loop_wrap = true
+tracks/66/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/67/type = "value"
+tracks/67/imported = false
+tracks/67/enabled = true
+tracks/67/path = NodePath("EggMa/EggTop:visible")
+tracks/67/interp = 1
+tracks/67/loop_wrap = true
+tracks/67/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_1ya1j"]
@@ -2407,6 +2498,24 @@ bind/33/pose = Transform3D(0.0272563, 1.11775e-06, -0.00976978, -0.00973697, -0.
 radius = 1.26469
 height = 2.81436
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_2dg0q"]
+direction = Vector3(0, 1, 0)
+spread = 17.0
+initial_velocity_min = 7.41
+initial_velocity_max = 7.41
+gravity = Vector3(0, 0, 0)
+linear_accel_min = 41.58
+linear_accel_max = 41.58
+damping_max = 29.425
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1gn45"]
+albedo_color = Color(1, 0, 0.0209074, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_vstla"]
+material = SubResource("StandardMaterial3D_1gn45")
+radius = 0.1
+height = 0.2
+
 [node name="EvilEgg" type="CharacterBody3D" groups=["enemy"]]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.142236, 0, 0)
 collision_layer = 16
@@ -2591,14 +2700,14 @@ bones/0/name = "Bone"
 bones/0/parent = -1
 bones/0/rest = Transform3D(1, 2.98023e-08, 2.00851e-07, -2.98023e-08, 1, -9.31859e-08, -2.00851e-07, 9.31859e-08, 1, 0.0543965, 0.369194, -0.233367)
 bones/0/enabled = true
-bones/0/position = Vector3(0.0543965, 0.369194, -0.233367)
+bones/0/position = Vector3(0.0543967, 0.369194, -0.233367)
 bones/0/rotation = Quaternion(4.6593e-08, 1.00425e-07, -1.49012e-08, 1)
 bones/0/scale = Vector3(1, 0.999999, 1)
 bones/1/name = "Bone.001"
 bones/1/parent = 0
 bones/1/rest = Transform3D(-0.485776, -0.874083, -1.19991e-07, 0.874083, -0.485776, 2.7671e-07, -3.00157e-07, 2.9537e-08, 1, -1.0956e-07, 1.3312, 8.65542e-09)
 bones/1/enabled = true
-bones/1/position = Vector3(-1.0956e-07, 1.3312, 8.65542e-09)
+bones/1/position = Vector3(0.00527524, 3.27102, -2.60456e-07)
 bones/1/rotation = Quaternion(-1.21865e-07, 8.88281e-08, 0.86191, 0.507062)
 bones/1/scale = Vector3(0.999999, 1, 1)
 bones/2/name = "Bone.002"
@@ -2915,5 +3024,15 @@ stream = ExtResource("20_ibumm")
 
 [node name="Eatin" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("21_hawsh")
+
+[node name="TheEnd" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("22_0srv3")
+volume_db = 20.0
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+emitting = false
+amount = 10000
+process_material = SubResource("ParticleProcessMaterial_2dg0q")
+draw_pass_1 = SubResource("SphereMesh_vstla")
 
 [connection signal="body_entered" from="EatZone" to="." method="_on_eat_zone_body_entered"]
