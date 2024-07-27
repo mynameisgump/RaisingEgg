@@ -173,6 +173,12 @@ texture_albedo = ExtResource("9_aidyc")
 [node name="EvilEgg" parent="." instance=ExtResource("9_dlnba")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.77292, 0.943148, -12.4508)
 
+[node name="SpawnTimer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
+[node name="Enemies" type="Node3D" parent="."]
+
 [connection signal="bb_egg_location" from="." to="EvilEgg" method="_on_main_bb_egg_location"]
 [connection signal="drop_egg" from="EvilEgg" to="bb_egg" method="_on_evil_egg_drop_egg"]
 [connection signal="eat_egg" from="EvilEgg" to="bb_egg" method="_on_evil_egg_eat_egg"]

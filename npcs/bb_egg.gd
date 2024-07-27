@@ -12,6 +12,7 @@ var movement_target_position: Vector3 = Vector3(-3.0,0.0,2.0)
 @export var egg_mesh: EggMesh;
 @onready var navigation_agent: NavigationAgent3D = $NavigationAgent3D
 
+@onready var collision_shape = $CollisionShape3D;
 var being_eaten = false;
 
 func _ready():
@@ -27,6 +28,7 @@ func dropped(drop_position: Vector3) -> void:
 	
 func eated():
 	egg_mesh.visible = false;
+	collision_shape.disabled = true
 	being_eaten = true;
 	
 func actor_setup():
@@ -60,7 +62,6 @@ func _physics_process(delta):
 
 
 func _on_evil_egg_drop_egg(pos: Vector3) -> void:
-	print("Dropping egg")
 	dropped(pos);
 
 

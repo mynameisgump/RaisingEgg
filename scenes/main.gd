@@ -6,6 +6,10 @@ extends Node3D
 @onready var player := $PlayerFlat
 signal bb_egg_location(location: Vector3)
 # Called when the node enters the scene tree for the first time.
+@onready var spawn_timer := $SpawnTimer
+@onready var evil_egg = preload("res://scenes/evil_egg.tscn");
+@onready var enemies = $Enemies
+
 func _ready():
 	pass # Replace with function body.
 
@@ -16,4 +20,19 @@ func _process(delta):
 	camera_pos.y = 0;
 	bb_egg.set_movement_target(camera_pos);
 	bb_egg_location.emit(bb_egg.position);
-	pass
+	if spawn_timer.is_stopped():
+		spawn_timer.start()
+		spawn_random_enemy()
+
+func spawn_random_enemy():
+	print("Spawning")
+	var angle = randf()*PI*2;
+	var x = cos(angle)*50;
+	var z = sin(angle)*50;
+	var y = 0.943
+	var new_enemy = evil_egg.instantiate();
+	enemies.add_child(new_enemy)
+	new_enemy.position = Vector3(x,y,z);
+	new_enemy.connect("drop_egg", bb_egg._on_evil_egg_drop_egg);
+	new_enemy.connect("eat_egg", bb_egg._on_evil_egg_eat_egg);
+	bb_egg_location.connect(new_enemy._on_main_bb_egg_location)
